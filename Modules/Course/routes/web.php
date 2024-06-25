@@ -1,0 +1,58 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use Modules\Course\App\Http\Controllers\Admin\CourseCategoryController;
+use Modules\Course\App\Http\Controllers\Admin\CourseController;
+use Modules\Course\App\Http\Controllers\Admin\CourseFaqController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::webSuperGroup('admin', function () {
+    Route::delete('courses.multipleDelete', 'CourseController@multipleDelete')
+        ->name('courses.multipleDelete');
+
+    Route::delete('comments.multipleDelete', 'CourseCommentController@multipleDelete')
+        ->name('comments.multipleDelete');
+
+    Route::delete('faqs/multipleDelete', 'CourseFaqController@multipleDelete')
+        ->name('faqs.multipleDelete');
+
+    Route::delete('course-category/multipleDelete', 'CourseCategoryController@multipleDelete')
+        ->name('course-categories.multipleDelete');
+    Route::patch('course-categories','CourseCategoryController@modalUpdate')
+        ->name('course-categories.modalUpdate');
+
+    Route::delete('course-registers/multipleDelete', 'CourseRegisterController@multipleDelete')
+        ->name('course-registers.multipleDelete');
+
+
+
+    Route::Resource('course-categories', CourseCategoryController::class);
+    Route::Resource('courses', CourseController::class);
+
+    route::get('faqs-list/{course}',[CourseFaqController::class,'index'])->name('faqs-list');
+
+    Route::Resource('faqs', CourseFaqController::class)->except('index');
+    Route::Resource('comments', \Modules\Course\App\Http\Controllers\Admin\CourseCommentController::class);
+
+    route::Resource('course-registers', 'CourseRegisterController');
+
+});
+
+Route::Resource('courses', \Modules\Course\App\Http\Controllers\Front\CourseController::class)->only(['index','show']);
+Route::post('course-comments/store', [\Modules\Course\App\Http\Controllers\Front\CourseCommentController::class, 'store'])->name('course-comments.store');
+
+
+Route::get('course-registers', [\Modules\Course\App\Http\Controllers\Front\CourseRegisterController::class, 'index'])
+    ->name('course-registers.index');
+Route::post('course-registers/store', [\Modules\Course\App\Http\Controllers\Front\CourseRegisterController::class, 'store'])
+    ->name('course-registers.store');

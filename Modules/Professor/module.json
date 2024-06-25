@@ -1,0 +1,11 @@
+{
+    "name": "Professor",
+    "alias": "professor",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Professor\\App\\Providers\\ProfessorServiceProvider"
+    ],
+    "files": []
+}

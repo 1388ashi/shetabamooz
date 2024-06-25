@@ -1,0 +1,11 @@
+{
+    "name": "Bootcamp",
+    "alias": "bootcamp",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Bootcamp\\App\\Providers\\BootcampServiceProvider"
+    ],
+    "files": []
+}

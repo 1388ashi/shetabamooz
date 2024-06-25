@@ -1,0 +1,15 @@
+{
+    "Auth": true,
+    "Admin": true,
+    "Course": true,
+    "Blog": true,
+    "About": true,
+    "Professor": true,
+    "Core": true,
+    "Dashboard": true,
+    "Tag": true,
+    "Request": true,
+    "Home": true,
+    "Setting": true,
+    "Bootcamp": true
+}
