@@ -6,22 +6,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Modules\Bootcamp\App\Models\Bootcamp;
-use Modules\Professor\App\Models\Professor;
 
-class BootcampController extends Controller
+class BootcampFaqController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $bootcamps = Bootcamp::query()
-            ->SearchKeywords()
-            ->latest('id')
-            ->paginate(10);
-
-        return view('bootcamp::admin.bootcamp.index', compact('bootcamps'));
+        return view('bootcamp::index');
     }
 
     /**
@@ -29,9 +22,7 @@ class BootcampController extends Controller
      */
     public function create()
     {
-        $professors = Professor::query()->select('id','name','role')->latest('id')->where('status',1)->get();
-
-        return view('bootcamp::admin.bootcamp.create',compact('professors'));
+        return view('bootcamp::create');
     }
 
     /**

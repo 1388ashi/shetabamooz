@@ -33,12 +33,11 @@
             </li>
             <li class="slide">
                 <a class="side-menu__item" data-toggle="slide" href="#">
-                    <i class="feather feather-school-o sidemenu_icon"></i>
+                    <i class=" fa fa-graduation-cap sidemenu_icon"></i>
                     <span class="side-menu__label">مدیریت بوتکمپ ها</span><i class="angle fa fa-angle-left"></i>
                 </a>
                 <ul class="slide-menu">
                     <li><a href="{{route('admin.bootcamps.index')}}" class="slide-item">بوتکمپ ها</a></li>
-                    <li><a href="{{route('admin.bootcamp-faqs.index')}}" class="slide-item">بوتکمپ ها</a></li>
                 </ul>
             </li>
 
@@ -97,7 +96,7 @@
 
             <li class="slide">
                 <a class="side-menu__item" data-toggle="slide" href="{{ route('admin.logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                            document.getElementById('logout-form').submit();">
                     <i class="feather feather-power ml-3 fs-16 my-auto"></i>
                     <span class="side-menu__label">خروج</span>
                 </a>

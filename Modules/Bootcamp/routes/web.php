@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Modules\Bootcamp\App\Http\Controllers\Admin\BootcampController;
+use Modules\Bootcamp\App\Http\Controllers\Admin\BootcampFaqController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,9 +37,9 @@ Route::webSuperGroup('admin', function () {
 
     Route::Resource('bootcamps', BootcampController::class);
 
-    // route::get('faqs-list/{course}',[CourseFaqController::class,'index'])->name('faqs-list');
+    route::get('faqs-list/{course}',[CourseFaqController::class,'index'])->name('faqs-list');
 
-    // Route::Resource('faqs', CourseFaqController::class)->except('index');
+    Route::Resource('bootcamp-faqs', BootcampFaqController::class)->except('index');
 });
 
 // Route::Resource('courses', \Modules\Course\App\Http\Controllers\Front\CourseController::class)->only(['index','show']);

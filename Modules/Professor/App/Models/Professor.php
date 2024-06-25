@@ -5,6 +5,7 @@ namespace Modules\Professor\App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Http\Request;
 use Kyslik\ColumnSortable\Sortable;
 use Modules\Bootcamp\App\Models\Bootcamp;
@@ -110,9 +111,9 @@ class Professor extends Model implements HasMedia
     {
         return $this->belongsToMany(Bootcamp::class);
     }
-    public function specialties(): BelongsToMany
+    public function specialties(): HasMany
     {
-        return $this->belongsToMany(Specialty::class);
+        return $this->hasMany(Specialty::class);
     }
 
     protected static function newFactory(): ProfessorFactory

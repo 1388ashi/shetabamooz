@@ -87,6 +87,11 @@
                                     <td>{{Str::limit($professor->role,30)}}</td>
                                     <td>@include('components.status', ['status' => $professor->status])</td>
                                     <td>
+                                        <a href="{{route('admin.specialties-list',[$professor->id])}}"
+                                            class="btn btn-success btn-sm text-white" data-toggle="tooltip"
+                                            data-original-title="نمایش مشخصات استاد">
+                                            <i class="fa fa-question" data-original-title="mdi-account"></i>
+                                        </a>
                                         <a href="{{route('admin.professors.edit',$professor->id)}}" data-original-title="ویرایش" data-toggle="tooltip" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></a>
                                         {{-- Delete --}}
                                         <button class="btn btn-danger btn-sm text-white" onclick="confirmDelete('delete-{{ $professor->id }}')" {{ $professor->isDeletable() ? '' : ' disabled' }}><i class="fa fa-trash-o"></i></button>

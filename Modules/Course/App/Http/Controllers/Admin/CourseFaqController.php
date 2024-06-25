@@ -67,7 +67,7 @@ class CourseFaqController extends Controller
     {
         $faq=CourseFaq::findOrFail($id);
         $faq->delete();
-        return redirect()->route('admin.faqs-list');
+        return redirect()->route('admin.courses.index');
     }
 
     public function multipleDelete(Request $request): \Illuminate\Http\JsonResponse

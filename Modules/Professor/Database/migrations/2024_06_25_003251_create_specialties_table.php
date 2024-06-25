@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('specialties', function (Blueprint $table) {
             $table->id();
             $table->text('description');
+            $table->foreignId('professor_id')->constrained('professors')->cascadeOnDelete();
             $table->timestamps();
         });
     }
