@@ -9,7 +9,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">ثبت سرفصل دوره - {{ $course->title }}</h5>
+                <h5 class="modal-title">ثبت سرفصل بوت کمپ - {{ $bootcamp->title }}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -30,7 +30,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="text-center">
-                                <input type="hidden" name="course_id" value="{{ $course->id }}">
+                                <input type="hidden" name="bootcamp_id" value="{{ $bootcamp->id }}">
                                 <button class="btn btn-pink" type="submit">ثبت و ذخیره</button>
                             </div>
                         </div>

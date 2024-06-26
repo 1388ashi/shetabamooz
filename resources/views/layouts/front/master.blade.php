@@ -235,6 +235,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('consultation-requests.index') }}">تماس با ما</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://panel.shetabamooz.com/">پنل</a>
+                    </li>
 {{--                    <li class="nav-item">--}}
 {{--                        <a class="nav-link" href="{{ route('cooperation-requests.index') }}">درخواست همکاری</a>--}}
 {{--                    </li>--}}

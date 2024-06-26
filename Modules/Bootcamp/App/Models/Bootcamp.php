@@ -58,6 +58,12 @@ class Bootcamp extends Model implements HasMedia, Viewable
             ],
         );
     }
+    function getPriceWithDiscount(){
+        $price = $this->attributes['price'];
+		$discount = $this->attributes['discount'];
+
+        return $price - $discount;
+    }
     protected function video(): Attribute
     {
         $media = $this->getFirstMedia('bootcamp_videos');

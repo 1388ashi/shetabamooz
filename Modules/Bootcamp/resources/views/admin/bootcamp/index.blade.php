@@ -102,9 +102,10 @@
                                              <i class="fa fa-question" data-original-title="mdi-account"></i>
                                          </a>
                                         {{-- Show --}}
-                                        {{-- <a href="{{route('admin.courses.show',[$bootcamp->id])}}"
-                                           class="btn btn-primary btn-sm text-white" data-toggle="tooltip"
-                                           data-original-title="مشاهده"><i class="fa fa-eye"></i></a> --}}
+                                        <a href="{{ route('admin.bootcamps.show', [$bootcamp->id]) }}"
+                                            class="btn btn-primary btn-sm text-white" data-toggle="tooltip"
+                                            data-original-title="نمایش"><i class="fa fa-eye"></i></a>
+
                                         {{-- Edit --}}
                                         <a href="{{route('admin.bootcamps.edit',[$bootcamp->id])}}"
                                            class="btn btn-warning btn-sm text-white" data-toggle="tooltip"

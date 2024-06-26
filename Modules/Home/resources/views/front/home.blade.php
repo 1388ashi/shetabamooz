@@ -332,13 +332,14 @@
                         </figure>
                         <!-- Title -->
                         <h1 class="mb-0 display-8">
-                            {{ \Modules\Setting\App\Models\Setting::getFromName('home_title') }}
+                            آیندتو با آکادمی شتاب آموز بساز
                             <span class="position-relative">
-                  -شتاب آموز
+
                                 <!-- SVG START -->
                   <span
                       class="position-absolute top-50 start-50 translate-middle ms-3 z-index-n1"
                   >
+
                     <svg
                         width="300px"
                         height="62.1px"
@@ -352,13 +353,14 @@
                       />
                     </svg>
                   </span>
+
                                 <!-- SVG END -->
                 </span>
                         </h1>
 
                         <!-- Content -->
                         <p class="my-4 lead">
-                            {{ \Modules\Setting\App\Models\Setting::getFromName('home_description') }}
+                            دوره های تخصصی آموزش برنامه شتاب آموز ، محلی برای یادگیری پیشرفت و کسب تجربه از بهترین های آموزش برنامه نویسی در گرگان .
                         </p>
 
                         <!-- Info -->
@@ -706,7 +708,7 @@
                     <div class="col-lg-8 text-center mx-auto">
                         <h2 class="fs-1">دوره های شتاب آموز</h2>
                         <p class="mb-0">
-                            با آموزش حرفه ای، دوره کارآموزی ، بازار کار راحت کسب درآمد کنید
+                            بهترین انتخاب برای شروعی متفاوت در مسیر یادگیری
                         </p>
                     </div>
                 </div>
@@ -752,9 +754,9 @@
                 <!-- Title -->
                 <div class="row mb-4">
                     <div class="col-lg-8 mx-auto text-center">
-                        <h2>دیدگاه هنرجویان</h2>
+                        <h2>نظرات شتاب آموزی ها</h2>
                         <p class="mb-0">
-                            با ما باشید با بهترین دوره های برنامه نویسی در گرگان
+                            آخرین دیدگاه هنرجویان آکادمی شتاب آموز
                         </p>
                     </div>
                 </div>
@@ -825,9 +827,9 @@
                 <div class="row mb-4">
                     <div class="col-12">
                         <h2 class="fs-1 fw-bold">
-                            <span class="position-relative z-index-9">مدرسان</span>
+                            <span class="position-relative z-index-9">مدرسین شتاب آموز</span>
                             <span class="position-relative z-index-1"
-                            >شتاب آموز
+                            >
                                 <!-- SVG START -->
                   <span
                       class="position-absolute top-50 start-50 translate-middle z-index-n1"
@@ -842,7 +844,7 @@
                                 <!-- SVG END -->
                 </span>
                         </h2>
-                        <p class="mb-0">دانش خود را با اساتید ما تقویت کنید</p>
+                        <p class="mb-0">دانش آکادمیک همراه با کسب تجارب در بازار کار</p>
                     </div>
                 </div>
 
@@ -941,8 +943,7 @@
                                         <div class="col-lg-7">
                                             <h3 class="text-white">مدرس شویـد!</h3>
                                             <p class="text-white mb-3 mb-lg-0">
-                                                به هزاران دانش آموز آموزش دهید و به راحتی درآمد کسب
-                                                کنید!
+                                                با ارسال رزومه خود به جمع ده ها مدرس حرفه ای شتاب آموز بپیوندید
                                             </p>
                                         </div>
                                         <!-- Content and input -->
@@ -973,14 +974,15 @@
                     <div
                         class="d-md-flex justify-content-md-between align-items-center"
                     >
-                        <h2 class="mb-2 mb-md-0">آخرین مقالات</h2>
+                        <h2 class="mb-2 mb-md-0">آخرین مقالات شتاب </h2>
+                        <p class="mb-2 mb-md-0">از آموزش های رایگان و اخرین اخبار شتاب آموز عقب نمونی</p>
                         <div>
                             <a href="{{ route('posts.index') }}" class="btn btn-sm btn-primary-soft mb-0"
                             >همه مقالات<i class="fas fa-angle-right ms-2"></i
                                 ></a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
                 <div class="row">
                     <!-- Slider START -->

@@ -57,9 +57,12 @@ class BootcampController extends Controller
     /**
      * Show the specified resource.
      */
-    public function show($id)
+    public function show(Bootcamp $bootcamp)
     {
-        return view('bootcamp::show');
+        $bootcamp->loadCount(['headlines', 'bootcampfaqs']);
+
+
+        return view('bootcamp::admin.bootcamp.show',compact('bootcamp'));
     }
 
     /**

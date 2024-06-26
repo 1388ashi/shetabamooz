@@ -20,7 +20,7 @@
         </div>
     </div>
 
-    @include('core::includes.validation-errors')
+    @include('components.errors')
 
     <!-- Row -->
     <div class="row">
@@ -30,18 +30,16 @@
                     <h3 class="header p-3">اطلاعات اولیه بوت کمپ</h3>
                     <ul class="list-group">
                         <li class="list-group-item"><b>عنوان: </b>{{ $bootcamp->title }}</li>
-                        <li class="list-group-item"><b>قیمت : </b>{{ $bootcamp->getPrice() }} تومان</li>
-                        <li class="list-group-item"><b>درصد تخفیف: </b>{{ $bootcamp->discount }}</li>
-                        <li class="list-group-item"><b>قیمت با تخفیف : </b>@numberFmt($bootcamp->getPriceWithDiscount())
+                        <li class="list-group-item"><b>قیمت(تومان): </b>{{ $bootcamp->getPrice() }} تومان</li>
+                        <li class="list-group-item"><b>  تخفیف(تومان): </b>{{ $bootcamp->discount }}</li>
+                        <li class="list-group-item"><b>قیمت با تخفیف : </b>{{number_format($bootcamp->getPriceWithDiscount())}}
                             تومان
                         </li>
-                        <li class="list-group-item"><b>مدت زمان بوت کمپ: </b>{{ $bootcamp->time }}</li>
+                        <li class="list-group-item"><b>مدت زمان بوت کمپ: </b>{{ $bootcamp->time }}ساعت</li>
                         <li class="list-group-item"><b>وضعیت
-                                نمایش: </b>@include('bootcamp::admin.bootcamp.includes._status', ['status' => $bootcamp->status])</li>
-                        @if($bootcamp->status == \Modules\bootcamp\App\Enums\bootcampStatus::STATUS_PRESALE->value)
-                            <li class="list-group-item"><b>تاریخ انقضا پیش فروش: </b>{{ verta($bootcamp->expires_at)->formatJalaliDate() }}</li>
-                        @endif
-                        <li class="list-group-item"><b>تاریخ ثبت: </b>@jalaliDate($bootcamp->created_at)</li>
+                                نمایش: </b>@include('components.status', ['status' => $bootcamp->status])</li>
+                            <li class="list-group-item"><b>تاریخ برگزاری: </b>{{verta($bootcamp->published_at)->format('Y/m/d H:i')}}</li>
+                        <li class="list-group-item"><b>تاریخ ثبت: </b>{{$bootcamp->getJalaliCreatedAt()}}</li>
                     </ul>
                 </div>
             </div>
@@ -51,59 +49,21 @@
                 <div class="card-body">
                     <h3 class="header p-3">دسترسی به دیگر اطلاعات بوت کمپ</h3>
                     <div class="row">
-                        @can('view suitable_bootcamps')
-                            <div class="col">
-                                <p>مناسب بوت کمپ های ثبت شده: {{ $bootcamp->suitable_bootcamps_count }} <a
-                                        class="btn btn-primary mr-2"
-                                        href="{{ route('admin.suitable-bootcamps.index', ['bootcamp_id' => $bootcamp->id]) }}">
-                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                    </a>
-                                </p>
-                            </div>
-                        @endcan
-                        @can('view headlines')
-                            <div class="col">
-                                <p>سرفصل های ثبت شده: {{ $bootcamp->headlines_count }} <a class="btn btn-pink mr-2"
-                                                                                        href="{{ route('admin.headlines.index', ['bootcamp_id' => $bootcamp->id]) }}"
-                                    >
-                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                    </a></p>
-                            </div>
-                        @endcan
-                    </div>
-                    <div class="row">
-                        @can('view faqs')
-                            <div class="col">
-                                <p>پرسش متداول های ثبت شده: {{ $bootcamp->faqs_count }} <a class="btn btn-warning mr-2"
-                                                                                         href="{{ route('admin.faq-bootcamps.index', ['bootcamp_id' => $bootcamp->id]) }}"
-                                    >
-                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                    </a></p>
-                            </div>
-                        @endcan
-                        @can('view comments')
-                            <div class="col">
-                                <p>نظرات ثبت شده: {{ $bootcamp->comments_count }} <a class="btn btn-danger mr-2"
-                                                                                   href="{{ route('admin.bootcamp-comments.index', ['bootcamp_id' => $bootcamp->id]) }}"
-                                    >
-                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                    </a></p>
-                            </div>
-                        @endcan
-                    </div>
-                    <div class="row">
-                        @can('view orders')
-                            <div class="col">
-                                <p>تعداد سفارش های موفق بوت کمپ: {{ $bootcamp->success_orders_count }} <a
-                                        class="btn btn-success mr-2"
-                                        href="{{ route('admin.orders.index', ['bootcamp_id' => $bootcamp->id]) }}"
-                                    >
-                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                    </a></p>
-                            </div>
-                        @endcan
                         <div class="col">
-                            <p>تعداد بازدید های بوت کمپ: {{ $bootcamp->viewsCount() }}</p>
+                            <p>سرفصل های ثبت شده: {{ $bootcamp->headlines_count }} <a class="btn btn-pink mr-2"
+                                                                                    href="{{ route('admin.headlines.index', ['bootcamp_id' => $bootcamp->id]) }}"
+                                >
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </a></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p>پرسش متداول های ثبت شده: {{ $bootcamp->faqs_count }} <a class="btn btn-warning mr-2"
+                                                                                        href="{{route('admin.faqs-bootcamp',$bootcamp->id)}}"
+                                >
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </a></p>
                         </div>
                     </div>
                 </div>
@@ -123,7 +83,7 @@
         </div>
     </div>
 
-    <div class="row">
+    {{-- <div class="row">
         <div class="col">
             <div class="card overflow-hidden">
                 <div class="card-body">
@@ -179,19 +139,17 @@
                                         <td>{{ $file->id }}</td>
                                         <td>{{ $file->name }}</td>
                                         <td>{{ $file->file['extension'] }}</td>
-                                        <td>
-{{--                                            download--}}
+                                        <td> --}}
+                                           {{-- download
                                             <a href="{{ route('admin.files.show', $file->id) }}" class="btn btn-primary btn-sm">
                                                 <i class="fa fa-download" aria-hidden="true"></i>
                                             </a>
 
-                                            @can('edit files')
                                                 @include('bootcamp::admin.bootcamp.includes._edit-file-modal', compact('file'))
-                                            @endcan
 
-                                            @can('delete files')
+                                            @can('delete files') --}}
                                                 {{-- Delete--}}
-                                                <button class="btn btn-danger btn-sm text-white"
+                                                {{-- <button class="btn btn-danger btn-sm text-white"
                                                         onclick="confirmDelete('delete-{{ $file->id }}')">
                                                     <i class="fa fa-trash-o"></i></button>
                                                 <form action="{{ route('admin.files.destroy', $file->id) }}"
@@ -208,9 +166,9 @@
                             </table>
 
                             @can('edit files')
-                                @foreach($bootcamp->files as $file)
+                                @foreach($bootcamp->files as $file) --}}
                                 <!-- Modal -->
-                                <div class="modal fade" id="edit-{{ $file->id }}" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+                                {{-- <div class="modal fade" id="edit-{{ $file->id }}" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
                                      aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
@@ -280,6 +238,6 @@
                 </div>
             </div>
         </div>
-    @endif
+    @endif --}}
 
 @endsection
