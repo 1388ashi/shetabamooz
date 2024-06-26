@@ -29,7 +29,7 @@ class Bootcamp extends Model implements HasMedia, Viewable
      */
     protected $fillable = [
         'title','subtitle','eventplace','support','catering','gifts'
-        ,'summary','description','published_at','price'
+        ,'summary','description','published_at','price','type'
         ,'discount','prerequisite','contacts','time','status',
     ];
 
@@ -147,8 +147,13 @@ class Bootcamp extends Model implements HasMedia, Viewable
     {
         return $this->belongsToMany(Professor::class);
     }
-    public function headlines(): BelongsToMany
+    public function BootcampFaqs()
     {
-        return $this->belongsToMany(Headline::class);
+        return $this->hasMany(BootcampFaq::class);
     }
+    public function headlines(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Headline::class, 'bootcamp_id')->orderBy('order');
+    }
+
 }

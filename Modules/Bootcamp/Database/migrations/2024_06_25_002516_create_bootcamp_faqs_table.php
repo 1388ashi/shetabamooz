@@ -16,8 +16,6 @@ return new class extends Migration
             $table->text('question');
             $table->text('answer');
             $table->foreignId('bootcamp_id')->constrained('bootcamps')->cascadeOnDelete();
-            $table->unsignedInteger('order')->nullable();
-            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }

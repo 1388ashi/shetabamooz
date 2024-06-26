@@ -29,11 +29,6 @@ class CourseFaq extends Model implements HasMedia
     ];
 
 
-    public static function getStatus($status)
-    {
-
-    }
-
     public function scopeActive($query)
     {
         return $query->where('status',1);

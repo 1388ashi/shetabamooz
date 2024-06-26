@@ -34,10 +34,10 @@
             <li class="slide">
                 <a class="side-menu__item" data-toggle="slide" href="#">
                     <i class=" fa fa-graduation-cap sidemenu_icon"></i>
-                    <span class="side-menu__label">مدیریت بوتکمپ ها</span><i class="angle fa fa-angle-left"></i>
+                    <span class="side-menu__label">مدیریت بوت کمپ ها</span><i class="angle fa fa-angle-left"></i>
                 </a>
                 <ul class="slide-menu">
-                    <li><a href="{{route('admin.bootcamps.index')}}" class="slide-item">بوتکمپ ها</a></li>
+                    <li><a href="{{route('admin.bootcamps.index')}}" class="slide-item">بوت کمپ ها</a></li>
                 </ul>
             </li>
 

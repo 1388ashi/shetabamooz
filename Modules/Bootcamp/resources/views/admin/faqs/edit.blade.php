@@ -9,7 +9,7 @@
     <div class="page-header">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}"><i class="fe fe-life-buoy ml-1"></i>داشبورد</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('admin.faqs-list',$faq->course_id) }}">لیست سوالات</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('admin.faqs-bootcamp',$faq->bootcamp_id) }}">لیست سوالات</a></li>
             <li class="breadcrumb-item active" aria-current="page">ویرایش سوال</li>
         </ol>
     </div>
@@ -24,7 +24,7 @@
             <div class="bg-white widget-user mb-5">
                 <div class="card-body">
                     <div class="border-0">
-                        <form action="{{route('admin.faqs.update',$faq->id)}}" method="post" id="faqsForm">
+                        <form action="{{route('admin.bootcamp-faqs.update',$faq->id)}}" method="post" id="faqsForm">
                             @csrf
                             @method('put')
                             <div class="tab-content">
@@ -86,7 +86,7 @@
 {{--                                                                </div>--}}
 {{--                                                            </div>--}}
 
-                                                            <input type="hidden" name="course_id" value="{{ $faq->course_id }}">
+                                                            <input type="hidden" name="bootcamp_id" value="{{ $faq->bootcamp_id }}">
 
                                                             <div class="col-sm-6">
                                                                 <div class="form-group">

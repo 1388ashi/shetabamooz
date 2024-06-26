@@ -16,7 +16,7 @@
         "nwidart/laravel-modules": "^10.0",
         "pishran/laravel-persian-slug": "^2.2",
         "spatie/laravel-activitylog": "^4.8",
-        "spatie/laravel-medialibrary": "^11.0.0",
+        "spatie/laravel-medialibrary": "^10.0.0",
         "spatie/laravel-sluggable": "^3.6",
         "spatie/laravel-tags": "^4.6",
         "unisharp/laravel-filemanager": "^2.8"

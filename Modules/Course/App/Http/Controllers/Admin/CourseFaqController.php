@@ -15,7 +15,6 @@ class CourseFaqController extends Controller
     {
         $faqs=CourseFaq::query()
             ->where('course_id',$id)
-//            ->SearchKeyword()
             ->sortable()
             ->orderBy('id','DESC')
             ->paginate(10);
@@ -29,7 +28,6 @@ class CourseFaqController extends Controller
     {
         return view('course::admin.faqs.create');
     }
-
 
     public function store(FaqStoreRequest $request)
     {

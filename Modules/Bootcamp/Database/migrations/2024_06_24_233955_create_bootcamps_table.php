@@ -17,17 +17,18 @@ return new class extends Migration
             $table->string('subtitle');
             $table->text('summary');
             $table->longText('description');
-            $table->timestamp('published_at');
-            $table->unsignedInteger('price');
+            $table->unsignedInteger('price')->nullable();
             $table->unsignedInteger('discount')->nullable();
             $table->text('prerequisite');
             $table->text('contacts');
             $table->string('time');
+            $table->string('type');
             $table->string('eventplace');
             $table->string('support');
             $table->string('catering')->nullable();
             $table->string('gifts')->nullable();
             $table->boolean('status')->default(1);
+            $table->timestamp('published_at');
             $table->timestamps();
         });
     }

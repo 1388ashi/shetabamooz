@@ -5,8 +5,8 @@
     <div class="page-header">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}"><i class="fe fe-life-buoy ml-1"></i> داشبورد</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('admin.bootcamps.index') }}">لیست بوتکمپ ها</a></li>
-            <li class="breadcrumb-item active" aria-current="page">ثبت بوتکمپ جدید</li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('admin.bootcamps.index') }}">لیست بوت کمپ ها</a></li>
+            <li class="breadcrumb-item active" aria-current="page">ثبت بوت کمپ جدید</li>
         </ol>
     </div>
     <!--  Page-header closed -->
@@ -18,7 +18,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">اطلاعات بوتکمپ</h3>
+                    <h3 class="card-title">اطلاعات بوت کمپ</h3>
                 </div>
                 <form action="{{ route('admin.bootcamps.store') }}" method="post" class="save" enctype="multipart/form-data"
                         id="articleForm">
@@ -28,7 +28,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="title" class="control-label">عنوان بوتکمپ</label>
+                                        <label for="title" class="control-label">عنوان بوت کمپ</label>
                                         <span class="text-danger">&starf;</span>
                                         <input type="text" name="title" value="{{ old('title') }}"
                                             class="form-control" id="title"
@@ -47,7 +47,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="control-label">استادان</label><span class="text-danger">&starf;</span>
-                                        <select class="form-control" id="properties" name="professors[]" multiple>             
+                                        <select class="form-control" id="properties" name="professors[]" multiple>
                                             @foreach($professors as $professor)
                                             <option  value="{{$professor->id}}" @if(old('professors')) selected @endif>{{$professor->name}}</option>
                                             @endforeach
@@ -56,17 +56,22 @@
                                 </div>
                             </div>
                             <div class="row">
-
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="label" class="control-label">تصویر اصلی</label><span class="text-danger">&starf;</span>
+                                        <input class="form-control" type="file" name="image" required>
+                                    </div>
+                                </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="time" class="control-label">مدت زمان</label>
                                         <input type="number" name="time" value="{{ old('time') }}"
-                                            class="form-control" id="time"
-                                            placeholder="زمان دوره را وارد کنید..." required>
+                                        class="form-control" id="time"
+                                        placeholder="زمان دوره را وارد کنید..." required>
                                         <span class="text-info">لطفا زمان دوره(ساعت) را وارد کنید.</span>
                                     </div>
                                 </div>
-                                <div class="col">
+                                <div class="col-md-4">
                                     <div
                                         class="form-group">
                                         <label for="price" class="control-label">قیمت (تومان)</label>
@@ -77,117 +82,125 @@
                                     </div>
                                 </div>
                             </div>
-
-
                             <div class="row">
-                                <div class="col">
-
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="level" class="control-label">سطح</label>
-                                        <span class="text-danger">&starf;</span>
-                                        <select class="form-control" name="level" aria-label=".form-control example">
-                                            @foreach($levels as $level)
-                                                <option value="{{$level}}">
-                                                    {{\Modules\Course\App\Models\Course::getLevelLabelAttribute($level)}}
-                                                </option>
-                                            @endforeach
-                                        </select>
-
-                                        <span class="text-info">لطفا سطح دوره را وارد کنید.</span>
+                                        <div class="form-group">
+                                            <label class="control-label">ویدیو</label>
+                                            <span class="text-danger">&starf;</span>
+                                            <input class="form-control" type="file" name="video" required>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="professor_id" class="control-label">استاد</label>
-                                        <span class="text-danger">&starf;</span>
-                                        <select class="form-control" name="professor_id" aria-label=".form-control example">
-                                            @foreach($professors as $professor)
-                                                <option value="{{$professor->id}}">
-                                                    {{ $professor->name }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="image"
-                                               class="control-label">تصویر</label>
-                                        <span
-                                            class="text-danger">&starf;</span>
-                                        <input type="file" name="image" value="{{ old('image') }}"
-                                               class="form-control"
-                                               id="image" required>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
+                                <div class="col-md-4">
                                     <div
-                                        class="form-group">
-                                        <label for="price" class="control-label">قیمت (تومان)</label>
-                                        <input type="text" name="price" value="{{ old('price') }}"
-                                               class="form-control comma" id="price"
-                                               placeholder="قیمت را اینجا وارد کنید...">
-                                        <span class="text-info">اگر قیمت را وارد نکنید دوره رایگان می باشد.</span>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div
-                                        class="form-group">
+                                    class="form-group">
                                         <label for="discount" class="control-label">تخفیف (تومان)</label>
                                         <input type="text" name="discount" value="{{ old('discount') }}"
-                                               class="form-control comma" id="discount"
-                                               placeholder="تخفیف را اینجا وارد کنید...">
+                                        class="form-control comma" id="discount"
+                                        placeholder="تخفیف را اینجا وارد کنید...">
                                     </div>
                                 </div>
-                                <div class="col">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-label">دسته بندی</label>
-                                        <select class="form-control custom-select select2 js-example-basic-multiple" name="category_id" data-placeholder="دسته بندی را انتخاب کنید ...">
-                                            @foreach($categories as $category)
-                                                <option value="{{$category->id}}">{{$category->name}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="properties" class="control-label">ویژگی ها</label>
-                                        <select name="properties[]" id="properties" class="form-control select2 w-100" multiple data-placeholder="ویژگی ها را اینجا وارد کنید">
-                                            <option></option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="short_description"  class="control-label">توضیحات کوتاه</label>
+                                        <label for="contacts" class="control-label">مخاطبین</label>
                                         <span class="text-danger">&starf;</span>
-                                        <textarea class="form-control" placeholder="لطفا متن خود را وارد کنید" name="short_description" rows="3" required></textarea>
+                                        <input type="text" name="contacts" value="{{ old('contacts') }}"
+                                            class="form-control" id="contacts"
+                                            placeholder="مخاطبین را اینجا وارد کنید..." required autofocus>
                                     </div>
                                 </div>
                             </div>
-
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="gifts" class="control-label">هدایا</label>
+                                        <span class="text-danger">&starf;</span>
+                                        <input type="text" name="gifts" value="{{ old('gifts') }}"
+                                            class="form-control" id="gifts"
+                                            placeholder="هدایا را اینجا وارد کنید..." required autofocus>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="type" class="control-label">نوع آموزش</label>
+                                        <span class="text-danger">&starf;</span>
+                                        <input type="text" name="type" value="{{ old('type') }}"
+                                        class="form-control" id="contacts"
+                                        placeholder="نوع آموزش را اینجا وارد کنید..." required autofocus>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="form-label">زمان برگزاری</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <i class="feather feather-calendar"></i>
+                                                </div>
+                                            </div>
+                                            <input class="form-control fc-datepicker" id="payment_date_show" placeholder="تاریخ انتشار" type="text" autocomplete="off" value="{{ verta(old('published_at', today()->format('Y-m-d')))->format('Y-m-d') }}">
+                                            <input name="published_at" id="payment_date" type="hidden" value="{{old('published_at', today()->format('Y-m-d')) }}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="eventplace" class="control-label">محل برگزاری</label>
+                                        <span class="text-danger">&starf;</span>
+                                        <input type="text" name="eventplace" value="{{ old('eventplace') }}"
+                                        class="form-control" id="contacts"
+                                        placeholder="محل برگزاری را اینجا وارد کنید..." required autofocus>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="support" class="control-label">پشتیبانی</label>
+                                        <span class="text-danger">&starf;</span>
+                                        <input type="text" name="support" value="{{ old('support') }}"
+                                            class="form-control" id="support"
+                                            placeholder="پشتیبانی را اینجا وارد کنید..." required autofocus>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="catering" class="control-label">پذیرایی</label>
+                                        <span class="text-danger">&starf;</span>
+                                        <input type="text" name="catering" value="{{ old('catering') }}"
+                                            class="form-control" id="catering"
+                                            placeholder="پذیرایی را اینجا وارد کنید..." required autofocus>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label for="summary"  class="control-label">توضیحات کوتاه</label>
+                                        <span class="text-danger">&starf;</span>
+                                        <textarea class="form-control" id="summary" placeholder="لطفا متن خود را وارد کنید" name="summary" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="prerequisite" class="control-label">پیش نیاز</label>
+                                        <span class="text-danger">&starf;</span>
+                                        <textarea name="prerequisite" class="form-control" placeholder="پیش نیاز را اینجا وارد کنید..."  required>{{ old('prerequisite') }}</textarea>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col">
                                     <div
                                         class="form-group">
                                         <label for="description"
                                                class="control-label">توضیحات</label>
+                                               <span class="text-danger">&starf;</span>
                                         @include('components.editor',['name' => 'description','required' => 'true'])
                                     </div>
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col-2">
                                     <p class="form-label">وضعیت نمایش <span class="text-danger">&starf;</span></p>
@@ -288,7 +301,18 @@
 
         $('#properties').select2({
             minimumResultsForSearch: '',
-            tags: true
+            tags: false
+        });
+
+        $('#payment_date_show').MdPersianDateTimePicker({
+            targetDateSelector: '#payment_date',
+            targetTextSelector: '#payment_date_show',
+            englishNumber: false,
+            toDate:true,
+            enableTimePicker: false,
+            dateFormat: 'yyyy-MM-dd',
+            textFormat: 'yyyy-MM-dd',
+            groupId: 'rangeSelector1',
         });
     </script>
 @endsection

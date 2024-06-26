@@ -609,12 +609,12 @@
                                     <h5
                                         class="purecounter mb-0 fw-bold"
                                         data-purecounter-start="0"
-                                        data-purecounter-end="10"
+                                        data-purecounter-end="200"
                                         data-purecounter-delay="200"
                                     >
                                         0
                                     </h5>
-                                    <span class="mb-0 h5">K</span>
+                                    <span class="mb-0 h5">+</span>
                                 </div>
                                 <p class="mb-0">دوره برگزار شده</p>
                             </div>
@@ -633,14 +633,14 @@
                                     <h5
                                         class="purecounter mb-0 fw-bold"
                                         data-purecounter-start="0"
-                                        data-purecounter-end="200"
-                                        data-purecounter-delay="200"
+                                        data-purecounter-end="20"
+                                        data-purecounter-delay="20"
                                     >
                                         0
                                     </h5>
                                     <span class="mb-0 h5">+</span>
                                 </div>
-                                <p class="mb-0">مدرسان شتاب آموز</p>
+                                <p class="mb-0">استاد با تجربه و حرفه ای</p>
                             </div>
                         </div>
                     </div>
@@ -657,12 +657,11 @@
                                     <h5
                                         class="purecounter mb-0 fw-bold"
                                         data-purecounter-start="0"
-                                        data-purecounter-end="60"
-                                        data-purecounter-delay="200"
+                                        data-purecounter-end="5000"
                                     >
                                         0
                                     </h5>
-                                    <span class="mb-0 h5">K+</span>
+                                    <span class="mb-0 h5">+</span>
                                 </div>
                                 <p class="mb-0">هنرجویان شتاب آموز</p>
                             </div>
@@ -681,14 +680,14 @@
                                     <h5
                                         class="purecounter mb-0 fw-bold"
                                         data-purecounter-start="0"
-                                        data-purecounter-end="6"
+                                        data-purecounter-end="10000"
                                         data-purecounter-delay="300"
                                     >
                                         0
                                     </h5>
-                                    <span class="mb-0 h5">K+</span>
+                                    <span class="mb-0 h5">+</span>
                                 </div>
-                                <p class="mb-0">گواهی صادر شده</p>
+                                <p class="mb-0">ساعت آموزش </p>
                             </div>
                         </div>
                     </div>
@@ -877,7 +876,7 @@
                                         <h5 class="card-title">
                                             <a href="#">{{ $professor->name }}</a>
                                         </h5>
-                                        <p class="mb-2">back-end developer</p>
+                                        <p class="mb-2">{{ $professor->role}}</p>
                                     </div>
                                 </div>
 

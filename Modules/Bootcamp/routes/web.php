@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Modules\Bootcamp\App\Http\Controllers\Admin\BootcampController;
 use Modules\Bootcamp\App\Http\Controllers\Admin\BootcampFaqController;
+use Modules\Bootcamp\App\Http\Controllers\Admin\HeadlineController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,30 +17,27 @@ use Modules\Bootcamp\App\Http\Controllers\Admin\BootcampFaqController;
 */
 
 Route::webSuperGroup('admin', function () {
-    Route::delete('courses.multipleDelete', 'CourseController@multipleDelete')
-        ->name('courses.multipleDelete');
+    Route::delete('bootcamps.multipleDelete', 'BootcampController@multipleDelete')
+        ->name('bootcamps.multipleDelete');
 
-    Route::delete('comments.multipleDelete', 'CourseCommentController@multipleDelete')
-        ->name('comments.multipleDelete');
-
-    Route::delete('faqs/multipleDelete', 'CourseFaqController@multipleDelete')
-        ->name('faqs.multipleDelete');
-
-    Route::delete('course-category/multipleDelete', 'CourseCategoryController@multipleDelete')
-        ->name('course-categories.multipleDelete');
-    Route::patch('course-categories','CourseCategoryController@modalUpdate')
-        ->name('course-categories.modalUpdate');
-
-    Route::delete('course-registers/multipleDelete', 'CourseRegisterController@multipleDelete')
-        ->name('course-registers.multipleDelete');
+        Route::delete('bootcamp-faqs/multipleDelete', 'BootcampFaqController@multipleDelete')
+        ->name('bootcampfaqs.multipleDelete');
 
 
+    // Route::delete('course-registers/multipleDelete', 'CourseRegisterController@multipleDelete')
+    //     ->name('course-registers.multipleDelete');
 
     Route::Resource('bootcamps', BootcampController::class);
 
-    route::get('faqs-list/{course}',[CourseFaqController::class,'index'])->name('faqs-list');
+    route::get('bootcamp-faqs-list/{bootcamp}',[BootcampFaqController::class,'index'])->name('faqs-bootcamp');
 
     Route::Resource('bootcamp-faqs', BootcampFaqController::class)->except('index');
+
+    Route::patch('headlines/sort', [HeadlineController::class, 'sort'])->name('headlines.sort');
+    Route::resource('headlines', HeadlineController::class)->except([
+        'create', 'show', 'edit'
+    ]);
+
 });
 
 // Route::Resource('courses', \Modules\Course\App\Http\Controllers\Front\CourseController::class)->only(['index','show']);

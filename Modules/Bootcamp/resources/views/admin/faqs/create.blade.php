@@ -9,7 +9,7 @@
     <div class="page-header">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}"><i class="fe fe-life-buoy ml-1"></i>داشبورد</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('admin.faqs-list',request()->course) }}">لیست سوالات</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('admin.faqs-bootcamp',request()->bootcamp) }}">لیست سوالات</a></li>
             <li class="breadcrumb-item active" aria-current="page">ثبت سوال جدید</li>
         </ol>
     </div>
@@ -24,7 +24,7 @@
             <div class="bg-white widget-user mb-5">
                 <div class="card-body">
                     <div class="border-0">
-                        <form action="{{route('admin.faqs.store')}}" method="post" class="save"
+                        <form action="{{route('admin.bootcamp-faqs.store')}}" method="post" class="save"
                               id="faqsForm">
                             @csrf
                             <div class="tab-content">
@@ -47,34 +47,7 @@
                                                         </div>
 
                                                         <div class="row">
-{{--                                                            <div class="col-sm-6">--}}
-{{--                                                                <div class="form-group">--}}
-{{--                                                                    <label for="category" class="control-label">دسته بندی</label>--}}
-{{--                                                                    <span class="text-danger">&starf;</span>--}}
-{{--                                                                    <select name="category" id="category" class="form-control">--}}
-{{--                                                                        @foreach($categories as $category)--}}
-{{--                                                                            <option value="{{ $category->id }}">--}}
-{{--                                                                                {{ $category->name }}--}}
-{{--                                                                            </option>--}}
-{{--                                                                        @endforeach--}}
-{{--                                                                    </select>--}}
-{{--                                                                </div>--}}
-{{--                                                            </div>--}}
-
-{{--                                                            <div class="col-sm-6">--}}
-{{--                                                                <div class="form-group">--}}
-{{--                                                                    <label for="category" class="control-label">دوره</label>--}}
-{{--                                                                    <span class="text-danger">&starf;</span>--}}
-{{--                                                                    <select name="course" id="course" class="form-control">--}}
-{{--                                                                        @foreach($courses as $course)--}}
-{{--                                                                            <option value="{{ $course->id }}">--}}
-{{--                                                                                {{ $course->title }}--}}
-{{--                                                                            </option>--}}
-{{--                                                                        @endforeach--}}
-{{--                                                                    </select>--}}
-{{--                                                                </div>--}}
-{{--                                                            </div>--}}
-                                                            <input type="hidden" name="course_id" value="{{ request()->course }}">
+                                                            <input type="hidden" name="bootcamp_id" value="{{ request()->bootcamp }}">
 
                                                             <div class="col-sm-6">
                                                                 <div class="form-group">

@@ -5,7 +5,7 @@
     <div class="page-header">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}"><i class="fe fe-life-buoy ml-1"></i>داشبورد</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('admin.faqs-list',$faq->course_id) }}">لیست سوالات</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('admin.faqs-list',$faq->bootcamp_id) }}">لیست سوالات</a></li>
             <li class="breadcrumb-item active" aria-current="page">مشاهده سوال</li>
         </ol>
     </div>
@@ -35,8 +35,8 @@
                         <br>
                         <div class="row">
                             <div class="col">
-                                <span class="text-bold">دوره:</span>
-                                <span>{{$faq->course->title}}</span>
+                                <span class="text-bold">بوت کمپ:</span>
+                                <span>{{$faq->bootcamp->title}}</span>
                             </div>
 {{--                            <div class="col">--}}
 {{--                                <span class="text-bold">دسته بندی:</span>--}}
@@ -50,6 +50,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="icons">
+            <a class="btn btn-danger icons" href="{{route('admin.faqs-bootcamp',$faq->bootcamp_id)}}"> برگشت</a>
         </div>
     </div>
 
