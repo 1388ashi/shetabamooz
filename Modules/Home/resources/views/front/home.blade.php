@@ -975,7 +975,7 @@
                         class="d-md-flex justify-content-md-between align-items-center"
                     >
                         <h2 class="mb-2 mb-md-0">آخرین مقالات شتاب </h2>
-                        <p class="mb-2 mb-md-0">از آموزش های رایگان و اخرین اخبار شتاب آموز عقب نمونی</p>
+
                         <div>
                             <a href="{{ route('posts.index') }}" class="btn btn-sm btn-primary-soft mb-0"
                             >همه مقالات<i class="fas fa-angle-right ms-2"></i
@@ -984,6 +984,7 @@
                         </div>
                     </div>
 
+                    <p class="mb-5">از آموزش های رایگان و اخرین اخبار شتاب آموز عقب نمونی</p>
                 <div class="row">
                     <!-- Slider START -->
                     <div class="tiny-slider arrow-round arrow-creative arrow-blur">
