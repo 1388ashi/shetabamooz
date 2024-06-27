@@ -160,7 +160,6 @@
                                         aria-labelledby="course-pills-tab-1"
                                     >
                                         <!-- Course detail START -->
-                                        <h5 class="mb-3">توضیحات دوره</h5>
                                         <p class="mb-3">
                                             {!! $course->description !!}
                                         </p>

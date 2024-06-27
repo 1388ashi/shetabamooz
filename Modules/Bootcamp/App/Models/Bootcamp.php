@@ -148,10 +148,13 @@ class Bootcamp extends Model implements HasMedia, Viewable
     {
         return verta($this->created_at)->format('Y/m/d H:i');
     }
-
     public function professors(): BelongsToMany
     {
         return $this->belongsToMany(Professor::class);
+    }
+    public function users(): BelongsToMany
+    {
+        return $this->belongsToMany(BootcampUser::class);
     }
     public function BootcampFaqs()
     {
@@ -161,5 +164,4 @@ class Bootcamp extends Model implements HasMedia, Viewable
     {
         return $this->hasMany(Headline::class, 'bootcamp_id')->orderBy('order');
     }
-
 }

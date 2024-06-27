@@ -18,7 +18,7 @@ class Headline extends Model implements Sortable
      * The attributes that are mass assignable.
      */
     protected $fillable = [
-        'id','title','description','bootcamp_id','order'
+        'id','title','description','bootcamp_id','order_column'
     ];
 
     public function getActivitylogOptions(): LogOptions

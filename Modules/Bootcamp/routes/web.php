@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Modules\Bootcamp\App\Http\Controllers\Admin\AdvisorController;
 use Modules\Bootcamp\App\Http\Controllers\Admin\BootcampController;
 use Modules\Bootcamp\App\Http\Controllers\Admin\BootcampFaqController;
 use Modules\Bootcamp\App\Http\Controllers\Admin\HeadlineController;
+use Modules\Bootcamp\App\Http\Controllers\Admin\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,7 +41,8 @@ Route::webSuperGroup('admin', function () {
     Route::resource('headlines', HeadlineController::class)->except([
         'create', 'show', 'edit'
     ]);
-
+    Route::resource('users',UsersController::class);
+    Route::resource('advisors',AdvisorController::class);
 });
 
 // Route::Resource('courses', \Modules\Course\App\Http\Controllers\Front\CourseController::class)->only(['index','show']);

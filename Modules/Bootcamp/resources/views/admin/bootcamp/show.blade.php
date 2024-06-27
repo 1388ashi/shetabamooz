@@ -65,7 +65,7 @@
                                 </a></p>
                         </div>
                         <div class="col-md-4">
-                            <p>پرسش متداول های ثبت شده: {{ $bootcamp->faqs_count }} <a class="btn btn-warning mr-2"
+                            <p>پرسش متداول های ثبت شده: {{ $bootcamp->bootcampfaqs_count }} <a class="btn btn-warning mr-2"
                                                                                         href="{{route('admin.faqs-bootcamp',$bootcamp->id)}}"
                                 >
                                     <i class="fa fa-eye" aria-hidden="true"></i>
@@ -88,7 +88,45 @@
             </div>
         </div>
     </div>
-
+    <div class="col-xl-6 col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="product-slider">
+                    <div class="product-carousel">
+                        <div id="carousel" class="carousel slide" data-ride="false">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <a href="{{ $bootcamp->image['url'] }}" target="_blanck">
+                                    <img src="{{ $bootcamp->image['url'] }}" class="img-fluid"  alt="{{ $bootcamp->image['name'] }}">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @if ($bootcamp->video['url'])
+    <div class="col-xl-6 col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="product-slider bg">
+                    <div class="product-carousel">
+                        <div id="carousel" class="carousel slide" data-ride="false">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <a href="{{ $bootcamp->video['url'] }}" target="_blanck">
+                                    <video src="{{ $bootcamp->video['url'] }}" controls></video>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
     {{-- <div class="row">
         <div class="col">
             <div class="card overflow-hidden">

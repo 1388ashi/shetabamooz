@@ -49,6 +49,7 @@ Route::webSuperGroup('admin', function () {
 });
 
 Route::Resource('courses', \Modules\Course\App\Http\Controllers\Front\CourseController::class)->only(['index','show']);
+
 Route::post('course-comments/store', [\Modules\Course\App\Http\Controllers\Front\CourseCommentController::class, 'store'])->name('course-comments.store');
 
 

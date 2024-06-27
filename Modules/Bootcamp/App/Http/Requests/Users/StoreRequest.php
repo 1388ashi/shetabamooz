@@ -1,11 +1,10 @@
 <?php
 
-namespace Modules\Bootcamp\App\Http\Requests\Headline;
+namespace Modules\Bootcamp\App\Http\Requests\Users;
 
-use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
-class UpdateRequest extends FormRequest
+
+class StoreRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -13,15 +12,9 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => [
-                'required',
-                'string',
-            ],
-            'description' => 'required',
-            'bootcamp_id' => 'required',
+            //
         ];
     }
-
 
     /**
      * Determine if the user is authorized to make this request.

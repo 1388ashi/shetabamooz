@@ -20,7 +20,7 @@ class HeadlineController extends Controller
         $headlines = Headline::query()
             ->ordered()
             ->where('bootcamp_id', $bootcamp->id)
-            ->get(['id', 'title','description','order', 'bootcamp_id']);
+            ->get(['id', 'title','description','order_column', 'bootcamp_id']);
 
         return view('bootcamp::admin.headline.index', compact('headlines', 'bootcamp'));
     }

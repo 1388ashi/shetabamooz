@@ -1,3 +1,4 @@
+@extends('layouts.admin.master')
 @section('content')
     <!--  Page-header opened -->
     <div class="page-header">
@@ -14,9 +15,7 @@
         </ol>
         <div class="mt-3 mt-lg-0">
             <div class="d-flex align-items-center flex-wrap text-nowrap">
-                @can('create headlines')
                     @include('bootcamp::admin.bootcamp.includes._create-headline-modal', compact('bootcamp'))
-                @endcan
             </div>
         </div>
     </div>
@@ -41,41 +40,51 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('admin.headlines.sort') }}" method="post" class="save">
-                        @csrf
-                        @method('PATCH')
-
-                        <ul id="tree1" class="list-group">
-                            @foreach($headlines as $headline)
-                                <li class="list-group-item">
-                                    @can('delete headlines')
-                                        <a href="#" class="btn btn-danger btn-sm float-left mr-3"
-                                           onclick="confirmDelete('delete-{{ $headline->id }}')" @disabled(!$headline->isDeletable())><i
-                                                    class="fa fa-trash text-white"></i></a>
-                                    @endcan
-                                    @can('edit headlines')
-                                        <a href="#" class="btn btn-warning btn-sm float-left mr-3"
+                    <div class="table-responsive">
+                        <table id="example-2" class="table table-striped table-bordered text-nowrap text-center">
+                            <thead>
+                            <tr>
+                                <th class="border-top">@sortablelink('id', 'ردیف')</th>
+                                <th class=" border-top" >@sortablelink('title', 'عنوان')</th>
+                                <th class=" border-top" >@sortablelink('descrition', 'توضیحات')</th>
+                                <th class=" border-top">@sortablelink('created_at', 'تاریخ ثبت')</th>
+                                <th class="wd-10p border-top" >عملیات</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @forelse($headlines as $i => $headline)
+                                <tr>
+                                    <td>{{ ++$i }}</td>
+                                    <td>{{ Str::limit($headline->title, 30) }}</td>
+                                    <td>{{ Str::limit($headline->description, 30) }}</td>
+                                    <td>{{ verta($headline->created_at) }}</td>
+                                    <td class="text-center">
+                                        <button  class="btn btn-warning btn-sm mr-3"
                                            data-toggle="modal" data-target="#edit-{{ $headline->id }}">
-                                            <i class="fa fa-edit text-white"></i>
-                                        </a>
-                                    @endcan
-                                    <input type="hidden" name="headline_ids[]"
-                                           value="{{ $headline->id }}">
-                                </li>
-                            @endforeach
-                        </ul>
-                        <div class="text-center mt-3">
-                            <button class="btn btn-pink" type="submit">
-                                ذخیره مرتب سازی
-                                <i class="fa fa-sort" aria-hidden="true"></i>
-                            </button>
+                                           <i class="fa fa-pencil"></i>
+                                        </button>
+                                        <button  class="btn btn-danger btn-sm mr-3"
+                                        onclick="confirmDelete('delete-{{ $headline->id }}')" ><i
+                                                 class="fa fa-trash text-white"></i></button>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="100%">
+                                        <p class="text-danger"><strong>در حال حاضر
+                                                هیچ سر فصلی
+                                                یافت نشد!</strong></p>
+                                    </td>
+                                </tr>
+                            @endforelse
+                            </tbody>
+                        </table>
+                        {{-- Pagination --}}
                         </div>
-                    </form>
                 </div>
                 <!-- table-wrapper -->
 
                 @foreach($headlines as $headline)
-                    @can('edit headlines')
                         <!-- Modal -->
                         <div class="modal fade" id="edit-{{ $headline->id }}" tabindex="-1" role="dialog"
                              aria-labelledby="modelTitleId"
@@ -96,17 +105,19 @@
                                             @method('PATCH')
 
                                             <div class="row">
-                                                <div class="col">
+                                                <div class="col-12">
                                                     <div class="form-group">
                                                         <label for="title{{ $headline->id }}" class="control-label">عنوان
                                                             <span class="text-danger">&starf;</span></label>
-                                                        <input type="text" class="form-control" name="title"
-                                                               id="title{{ $headline->id }}"
-                                                               placeholder="عنوان را اینجا وارد کنید"
+                                                            <input type="text" class="form-control" name="title"
+                                                            id="title{{ $headline->id }}"
+                                                            placeholder="عنوان را اینجا وارد کنید"
                                                                value="{{ old('title', $headline->title) }}" required>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-8">
+                                            </div>
+                                            <div class="row">
+                                            <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="description"  class="control-label">توضیحات</label>
                                                         <span class="text-danger">&starf;</span>
@@ -114,7 +125,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-
+                                            <input type="hidden" name="bootcamp_id" value="{{ $bootcamp->id  }}">
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="text-center">
@@ -132,15 +143,11 @@
                                 </div>
                             </div>
                         </div>
-                    @endcan
-
-                    @can('delete headlines')
                         <form action="{{ route('admin.headlines.destroy', $headline->id) }}" method="post"
                               id="delete-{{ $headline->id }}" style="display: none">
                             @csrf
                             @method('DELETE')
                         </form>
-                    @endcan
                 @endforeach
 
             </div>

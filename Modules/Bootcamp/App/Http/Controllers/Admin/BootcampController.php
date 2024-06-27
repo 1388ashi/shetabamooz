@@ -61,7 +61,6 @@ class BootcampController extends Controller
     {
         $bootcamp->loadCount(['headlines', 'bootcampfaqs']);
 
-
         return view('bootcamp::admin.bootcamp.show',compact('bootcamp'));
     }
 

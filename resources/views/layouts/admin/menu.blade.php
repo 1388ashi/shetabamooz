@@ -22,7 +22,7 @@
 
             <li class="slide">
                 <a class="side-menu__item" data-toggle="slide" href="#">
-                    <i class="feather feather-users sidemenu_icon"></i>
+                    <i class="fa fa-video-camera sidemenu_icon"></i>
                     <span class="side-menu__label">مدیریت دوره ها</span><i class="angle fa fa-angle-left"></i>
                 </a>
                 <ul class="slide-menu">
@@ -38,6 +38,8 @@
                 </a>
                 <ul class="slide-menu">
                     <li><a href="{{route('admin.bootcamps.index')}}" class="slide-item">بوت کمپ ها</a></li>
+                    <li><a href="{{route('admin.users.index')}}" class="slide-item"> کاربران بوت کمپ</a></li>
+                    <li><a href="{{route('admin.advisors.index')}}" class="slide-item"> مشاوره های بوت کمپ</a></li>
                 </ul>
             </li>
 
@@ -67,7 +69,7 @@
 
             <li class="slide">
                 <a class="side-menu__item" data-toggle="slide" href="#">
-                    <i class="feather feather-globe sidemenu_icon"></i>
+                    <i class="fa fa-info-circle sidemenu_icon"></i>
                     <span class="side-menu__label">مدیریت درخواست ها</span><i class="angle fa fa-angle-left"></i>
                 </a>
                 <ul class="slide-menu">
