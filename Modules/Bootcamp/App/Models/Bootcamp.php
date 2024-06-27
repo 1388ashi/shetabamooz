@@ -162,6 +162,6 @@ class Bootcamp extends Model implements HasMedia, Viewable
     }
     public function headlines(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(Headline::class, 'bootcamp_id')->orderBy('order');
+        return $this->hasMany(Headline::class)->orderBy('order');
     }
 }

@@ -32,7 +32,11 @@
                         <li class="list-group-item"><b>عنوان: </b>{{ $bootcamp->title }}</li>
                         <li class="list-group-item"><b>رو تیتر: </b>{{ $bootcamp->subtitle }}</li>
                         <li class="list-group-item"><b>قیمت(تومان): </b>{{ $bootcamp->getPrice() }} تومان</li>
-                        <li class="list-group-item"><b>  تخفیف(تومان): </b>{{ $bootcamp->discount }}</li>
+                        <li class="list-group-item"><b>  تخفیف(تومان): </b>
+                            @if ($bootcamp->discount) {{ $bootcamp->discount }}
+                            @else -
+                            @endif
+                        </li>
                         <li class="list-group-item"><b>قیمت با تخفیف : </b>{{number_format($bootcamp->getPriceWithDiscount())}}
                             تومان
                         </li>
@@ -88,9 +92,11 @@
             </div>
         </div>
     </div>
-    <div class="col-xl-6 col-md-12">
-        <div class="card">
-            <div class="card-body">
+    <div class="row">
+
+        <div class="col-xl-6 col-md-12">
+            <div class="card">
+                <div class="card-body">
                 <div class="product-slider">
                     <div class="product-carousel">
                         <div id="carousel" class="carousel slide" data-ride="false">
@@ -98,8 +104,7 @@
                                 <div class="carousel-item active">
                                     <a href="{{ $bootcamp->image['url'] }}" target="_blanck">
                                     <img src="{{ $bootcamp->image['url'] }}" class="img-fluid"  alt="{{ $bootcamp->image['name'] }}">
-                                    </a>
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -107,6 +112,7 @@
             </div>
         </div>
     </div>
+</div>
     @if ($bootcamp->video['url'])
     <div class="col-xl-6 col-md-12">
         <div class="card">
@@ -127,6 +133,7 @@
         </div>
     </div>
     @endif
+</div>
     {{-- <div class="row">
         <div class="col">
             <div class="card overflow-hidden">
