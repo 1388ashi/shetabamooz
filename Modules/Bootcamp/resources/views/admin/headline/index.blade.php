@@ -23,6 +23,7 @@
     <!--  Page-header closed -->
 
     @include('components.errors')
+
     <!-- row opened -->
     <div class="row">
         <div class="col-md-12 col-lg-12">
@@ -38,6 +39,38 @@
                                     class="fe fe-maximize"></i></a>
                         <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
                     </div>
+                </div>
+                <div class="card-body">
+                    <form action="{{ route('admin.headlines.sort') }}" method="post" class="save">
+                        @csrf
+                        @method('PATCH')
+
+                        <ul id="tree1" class="list-group">
+                            @foreach($headlines as $headline)
+                                <li class="list-group-item">
+                                    @can('delete headlines')
+                                        <a href="#" class="btn btn-danger btn-sm float-left mr-3"
+                                           onclick="confirmDelete('delete-{{ $headline->id }}')" @disabled(!$headline->isDeletable())><i
+                                                    class="fa fa-trash text-white"></i></a>
+                                    @endcan
+                                    @can('edit headlines')
+                                        <a href="#" class="btn btn-warning btn-sm float-left mr-3"
+                                           data-toggle="modal" data-target="#edit-{{ $headline->id }}">
+                                            <i class="fa fa-edit text-white"></i>
+                                        </a>
+                                    @endcan
+                                    <input type="hidden" name="headline_ids[]"
+                                           value="{{ $headline->id }}">
+                                </li>
+                            @endforeach
+                        </ul>
+                        <div class="text-center mt-3">
+                            <button class="btn btn-pink" type="submit">
+                                ذخیره مرتب سازی
+                                <i class="fa fa-sort" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </form>
                 </div>
                 <!-- table-wrapper -->
 
@@ -119,6 +152,9 @@
 
 
 @section('scripts')
+    <script src="{{ asset('assets/js/sortable.min.js') }}"></script>
     <script>
+        let el = document.getElementById('tree1');
+        let sortable = Sortable.create(el);
     </script>
 @endsection

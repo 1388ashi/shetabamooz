@@ -6,17 +6,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\EloquentSortable\Sortable;
+use Spatie\EloquentSortable\SortableTrait;
 
 
-class Headline extends Model
+class Headline extends Model implements Sortable
 {
-    use HasFactory,LogsActivity;
+    use HasFactory,LogsActivity, SortableTrait;
 
     /**
      * The attributes that are mass assignable.
      */
     protected $fillable = [
-        'id','title','description','bootcamp_id'
+        'id','title','description','bootcamp_id','order'
     ];
 
     public function getActivitylogOptions(): LogOptions
