@@ -262,8 +262,8 @@
                     </div>
                 </div>
                 <div class="navbar-nav d-none d-lg-inline-block">
-                    <a href="https://panel.shetabamooz.com/" class="btn btn-danger-soft mb-0">
-                      <i class="fas fa-sign-in-alt me-2"></i>ورود | ثبت نام
+                    <a href="https://panel.shetabamooz.com/student/" class="btn btn-danger-soft mb-0">
+                      <i class="fas fa-sign-in-alt me-2"></i>ورود هنرجو
                     </a>
                   </div>
                 <!-- Nav Search END -->
