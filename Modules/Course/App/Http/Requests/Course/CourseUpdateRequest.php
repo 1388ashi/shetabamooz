@@ -14,7 +14,7 @@ class CourseUpdateRequest extends FormRequest
             'time' => 'required',
             'sections' => 'required',
             'level' => 'required',
-            'price' => 'required',
+            'price' => 'nullable',
             'discount' => 'nullable',
             'short_description' => 'required|min:3|max:5000',
             'description' => 'required|min:3|max:100000',

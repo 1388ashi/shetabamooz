@@ -2,6 +2,7 @@
 
 namespace Modules\Bootcamp\App\Http\Requests\Headline;
 
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 class UpdateRequest extends FormRequest
@@ -18,7 +19,8 @@ class UpdateRequest extends FormRequest
                 Rule::unique('headlines')->where(function (Builder $query) {
                     return $query->where('bootcamp_id', $this->input('bootcamp_id'));
                 })->ignore($this->route('headline')->id)
-            ]
+            ],
+            'description' => 'required'
         ];
     }
 

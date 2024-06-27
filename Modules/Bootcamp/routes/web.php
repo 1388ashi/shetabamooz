@@ -33,7 +33,6 @@ Route::webSuperGroup('admin', function () {
 
     Route::Resource('bootcamp-faqs', BootcampFaqController::class)->except('index');
 
-    Route::patch('headlines/sort', [HeadlineController::class, 'sort'])->name('headlines.sort');
     Route::resource('headlines', HeadlineController::class)->except([
         'create', 'show', 'edit'
     ]);

@@ -18,10 +18,9 @@ class StoreRequest extends FormRequest
             'title' => [
                 'required',
                 'string',
-                Rule::unique('headlines')->where(function (Builder $query) {
-                    return $query->where('bootcamp_id', $this->input('bootcamp_id'));
-                })
-            ]
+            ],
+            'order' => 'nullable',
+            'description' => 'required'
         ];
     }
 

@@ -30,12 +30,20 @@
                     <h3 class="header p-3">اطلاعات اولیه بوت کمپ</h3>
                     <ul class="list-group">
                         <li class="list-group-item"><b>عنوان: </b>{{ $bootcamp->title }}</li>
+                        <li class="list-group-item"><b>رو تیتر: </b>{{ $bootcamp->subtitle }}</li>
                         <li class="list-group-item"><b>قیمت(تومان): </b>{{ $bootcamp->getPrice() }} تومان</li>
                         <li class="list-group-item"><b>  تخفیف(تومان): </b>{{ $bootcamp->discount }}</li>
                         <li class="list-group-item"><b>قیمت با تخفیف : </b>{{number_format($bootcamp->getPriceWithDiscount())}}
                             تومان
                         </li>
+                        <li class="list-group-item"><b>محل برگزاری: </b>{{ $bootcamp->eventplace }}</li>
+                        <li class="list-group-item"><b>مناسب برای: </b>{{ $bootcamp->type }}</li>
+                        <li class="list-group-item"><b>هدایا: </b>{{ $bootcamp->gifts }}</li>
+                        <li class="list-group-item"><b>پذیرایی: </b>{{ $bootcamp->catering }}</li>
+                        <li class="list-group-item"><b>پیش نیاز: </b>{{ $bootcamp->prerequisite }}</li>
+                        <li class="list-group-item"><b>مخاطبین: </b>{{ $bootcamp->contacts }}</li>
                         <li class="list-group-item"><b>مدت زمان بوت کمپ: </b>{{ $bootcamp->time }}ساعت</li>
+                        <li class="list-group-item"><b>پشتیبانی: </b>{{ $bootcamp->support }}</li>
                         <li class="list-group-item"><b>وضعیت
                                 نمایش: </b>@include('components.status', ['status' => $bootcamp->status])</li>
                             <li class="list-group-item"><b>تاریخ برگزاری: </b>{{verta($bootcamp->published_at)->format('Y/m/d H:i')}}</li>
@@ -49,16 +57,14 @@
                 <div class="card-body">
                     <h3 class="header p-3">دسترسی به دیگر اطلاعات بوت کمپ</h3>
                     <div class="row">
-                        <div class="col">
+                        <div class="col-md-4">
                             <p>سرفصل های ثبت شده: {{ $bootcamp->headlines_count }} <a class="btn btn-pink mr-2"
                                                                                     href="{{ route('admin.headlines.index', ['bootcamp_id' => $bootcamp->id]) }}"
                                 >
                                     <i class="fa fa-eye" aria-hidden="true"></i>
                                 </a></p>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
+                        <div class="col-md-4">
                             <p>پرسش متداول های ثبت شده: {{ $bootcamp->faqs_count }} <a class="btn btn-warning mr-2"
                                                                                         href="{{route('admin.faqs-bootcamp',$bootcamp->id)}}"
                                 >
@@ -70,14 +76,14 @@
             </div>
             <div class="card overflow-hidden">
                 <div class="card-body">
+                    <h3 class="header p-3">خلاصه توضیحات</h3>
+                    <div>{!! $bootcamp->summary !!}</div>
+                </div>
+            </div>
+            <div class="card overflow-hidden">
+                <div class="card-body">
                     <h3 class="header p-3">توضیحات</h3>
                     <div>{!! $bootcamp->description !!}</div>
-                    <hr>
-                    <h3 class="header p-3">عنوان متا</h3>
-                    <p>{{ $bootcamp->meta_title }}</p>
-                    <hr>
-                    <h3 class="header p-3">توضیحات متا</h3>
-                    <p>{{ $bootcamp->meta_description }}</p>
                 </div>
             </div>
         </div>

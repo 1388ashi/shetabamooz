@@ -235,9 +235,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('consultation-requests.index') }}">تماس با ما</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://panel.shetabamooz.com/">پنل</a>
-                    </li>
 {{--                    <li class="nav-item">--}}
 {{--                        <a class="nav-link" href="{{ route('cooperation-requests.index') }}">درخواست همکاری</a>--}}
 {{--                    </li>--}}
@@ -264,6 +261,11 @@
                         </form>
                     </div>
                 </div>
+                <div class="navbar-nav d-none d-lg-inline-block">
+                    <a href="https://panel.shetabamooz.com/" class="btn btn-danger-soft mb-0">
+                      <i class="fas fa-sign-in-alt me-2"></i>ورود | ثبت نام
+                    </a>
+                  </div>
                 <!-- Nav Search END -->
 
                 <!-- Signout button  -->

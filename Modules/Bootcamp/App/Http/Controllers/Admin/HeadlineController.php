@@ -18,10 +18,8 @@ class HeadlineController extends Controller
         $bootcamp = Bootcamp::findOrFail(request()->query('bootcamp_id'));
 
         $headlines = Headline::query()
-            ->ordered()
             ->where('bootcamp_id', $bootcamp->id)
-            ->withCount('episodes')
-            ->get(['id', 'title', 'bootcamp_id']);
+            ->get(['id', 'title','description', 'bootcamp_id']);
 
         return view('bootcamp::admin.headline.index', compact('headlines', 'bootcamp'));
     }
@@ -48,14 +46,6 @@ class HeadlineController extends Controller
 
         return redirect()->route('admin.headlines.index', ['bootcamp_id' => $headline->bootcamp_id])
             ->with('success', 'سرفصل با موفقیت حذف شد.');
-    }
-
-    public function sort(Request $request)
-    {
-        Headline::setNewOrder($request->input('headline_ids'));
-
-        return redirect()->back()
-            ->with('success', 'سرفصل ها با موفقیت مرتب سازی شدند.');
     }
 
 }
