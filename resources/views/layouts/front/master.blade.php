@@ -262,7 +262,7 @@
                     </div>
                 </div>
                 <div class="navbar-nav d-none d-lg-inline-block">
-                    <a href="https://panel.shetabamooz.com/student/" class="btn btn-danger-soft mb-0">
+                    <a href="https://panel.shetabamooz.com/student/" class="btn btn-danger-soft mb-0 d-flex justify-content-center align-items-center">
                       <i class="fas fa-sign-in-alt me-2"></i>ورود هنرجو
                     </a>
                   </div>
