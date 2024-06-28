@@ -146,8 +146,10 @@ class Course extends Model implements HasMedia, Viewable
     {
         views($this)->record();
     }
-
-
+    public function CourseHeadlines(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(CourseHeadline::class)->orderBy('order');
+    }
     public function faqs()
     {
         return $this->hasMany(CourseFaq::class);

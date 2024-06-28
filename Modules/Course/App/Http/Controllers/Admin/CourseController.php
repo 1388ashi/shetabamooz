@@ -49,6 +49,8 @@ class CourseController extends Controller
         $course= Course::findOrFail($id);
         $properties = json_decode($course->properties);
 
+        $course->loadCount(['courseheadlines', 'faqs']);
+
         return view('course::admin.course.show', compact('course','properties'));
     }
 

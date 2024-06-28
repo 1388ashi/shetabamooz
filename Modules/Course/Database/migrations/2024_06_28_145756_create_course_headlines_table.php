@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Modules\Bootcamp\App\Models\Bootcamp;
+use Modules\Course\App\Models\Course;
 
 return new class extends Migration
 {
@@ -12,15 +12,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('headlines', function (Blueprint $table) {
+        Schema::create('course_headlines', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Bootcamp::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Course::class)->constrained()->cascadeOnDelete();
             $table->string('title'); //unique by course
             $table->string('description');
             $table->bigInteger('order_column')->nullable();
             $table->timestamps();
         });
-
     }
 
     /**
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('headlines');
+        Schema::dropIfExists('course_headlines');
     }
 };

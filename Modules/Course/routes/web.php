@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Modules\Course\App\Http\Controllers\Admin\CourseCategoryController;
 use Modules\Course\App\Http\Controllers\Admin\CourseController;
 use Modules\Course\App\Http\Controllers\Admin\CourseFaqController;
+use Modules\Course\App\Http\Controllers\Admin\HeadlineController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,11 @@ Route::webSuperGroup('admin', function () {
     Route::Resource('comments', \Modules\Course\App\Http\Controllers\Admin\CourseCommentController::class);
 
     route::Resource('course-registers', 'CourseRegisterController');
+
+    Route::patch('course-headlines/sort', [HeadlineController::class, 'sort'])->name('course-headlines.sort');
+    Route::resource('course-headlines', HeadlineController::class)->except([
+        'create', 'show', 'edit'
+    ]);
 
 });
 

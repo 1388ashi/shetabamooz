@@ -15,6 +15,15 @@
             <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('admin.courses.index') }}">لیست دوره ها</a></li>
             <li class="breadcrumb-item active" aria-current="page">نمایش دوره</li>
         </ol>
+        <div class="mt-3 mt-lg-0">
+            <div class="d-flex align-items-center flex-wrap text-nowrap">
+                    <a href="{{ route('admin.courses.edit', $course->id) }}" class="btn btn-warning">
+                        ویرایش دوره
+                        <i class="fa fa-edit"></i>
+                    </a>
+                @include('course::admin.headline.create-headline-modal', compact('course'))
+            </div>
+        </div>
     </div>
     <!--  Page-header closed -->
 
@@ -35,19 +44,32 @@
                                 <li><strong>قیمت دوره (تومان): </strong> {{ $course->getPrice() }}</li>
                                 <li><strong>قیمت تخفیف (تومان): </strong> {{ $course->getDiscount() }}</li>
                                 <li><strong>استاد: </strong> {{ optional($course->professor)->name }}</li>
+                           
                             </ul>
                         </div>
                         <div class="col">
                             <li><strong>نامک: </strong> {{ $course->slug }}</li>
                             <li><strong>الت تصویر: </strong> {{ $course->image_alt }}</li>
+                            <p >سرفصل های ثبت شده: {{ $course->courseheadlines_count }} <a class="btn btn-pink mr-2"
+                                href="{{ route('admin.course-headlines.index', ['course_id' => $course->id]) }}"
+                                >
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                </a></p>
+                                <p>پرسش متداول های ثبت شده: {{ $course->faqs_count }} <a class="btn btn-warning mr-2"
+                                                                    href="{{route('admin.faqs-list',$course->id)}}"
+                                >
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                </a></p>
                         </div>
                         <div class="col">
                             <ul>
                                 <li><strong>تعداد بازدید: </strong> {{ views($course)->count() }}</li>
                                 <li><strong>وضعیت: </strong> @include('components.status', ['status' => $course->status])</li>
                                 <li><strong>تاریخ ثبت: </strong> {{ $course->getJalaliCreatedAt() }}</li>
+                            
                             </ul>
                         </div>
+
 {{--                        <div class="col">--}}
 {{--                            <ul>--}}
 {{--                                <li><strong>نام ایجادکننده: </strong> {{ $course->creator->name }}</li>--}}
