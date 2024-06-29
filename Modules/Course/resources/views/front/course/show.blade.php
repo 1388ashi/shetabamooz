@@ -873,7 +873,7 @@
                                                     href="{{ route('courses.show',$related_course->category->name) }}"
                                                     class="badge bg-info bg-opacity-10 text-info"
                                                 ><i class="fas fa-circle small fw-bold me-2"></i
-                                                    >{{ $course->category->name }}</a
+                                                    >{{ $related_course->category->name }}</a
                                                 >
                                             </div>
                                         </div>

@@ -863,8 +863,8 @@
                         >
                             <!-- Card item START -->
                             @foreach($professors as $professor)
-                                <div class="card bg-transparent">
-                                    <div class="position-relative d-flex justify-content-center align-items-center">
+                                <div class="card bg-transparent pr-0">
+                                    <div class="position-relative d-flex justify-content-center align-items-center pr-0">
                                         <!-- Image -->
                                         <img
                                             src="{{ $professor->image }}"
