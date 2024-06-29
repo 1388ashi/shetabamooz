@@ -98,7 +98,7 @@
     </script>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('front/assets/images/favicon.ico') }}" />
+    <link rel="shortcut icon" href="{{asset('assets/images/brand/favicon.ico')}}" />
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com/" />
