@@ -415,6 +415,9 @@
                                     id="accordionExample2"
                                     >
                                     <!-- Item -->
+                                    @foreach ($headlines as $headline)
+
+                                    @endforeach
                                     <div class="accordion-item mb-3">
                                         <h6 class="accordion-header font-base" id="heading-1">
                                         <button
@@ -425,8 +428,7 @@
                                             aria-expanded="true"
                                             aria-controls="collapse-1"
                                         >
-                                            جلسه اول
-                                            <span class="small ms-0 ms-sm-2">(3 بخش)</span>
+                                            {{$headline->title}}
                                         </button>
                                         </h6>
                                         <div
@@ -443,168 +445,16 @@
                                             <div
                                                 class="position-relative d-flex align-items-center"
                                             >
-                                                <a
-                                                href="#"
-                                                class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static"
-                                                >
-                                                <i class="fas fa-play me-0"></i>
-                                                </a>
-                                                <span
+                                            <p>{{$headline->description}}</p>
+                                                {{-- <span
                                                 class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px"
                                                 >مقدمه</span
-                                                >
+                                                > --}}
                                             </div>
-                                            <p class="mb-0">2m 10s</p>
-                                            </div>
-
-                                            <hr />
-                                            <!-- Divider -->
-
-                                            <!-- Course lecture -->
-                                            <div
-                                            class="d-flex justify-content-between align-items-center"
-                                            >
-                                            <div
-                                                class="position-relative d-flex align-items-center"
-                                            >
-                                                <a
-                                                href="#"
-                                                class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static"
-                                                >
-                                                <i class="fas fa-play me-0"></i>
-                                                </a>
-                                                <span
-                                                class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px"
-                                                >
-                                                معرفی دوره</span
-                                                >
-                                            </div>
-                                            <p class="mb-0 text-truncate">15m 10s</p>
-                                            </div>
-
-                                            <hr />
-                                            <!-- Divider -->
-
-                                            <!-- Course lecture -->
-                                            <div
-                                            class="d-flex justify-content-between align-items-center"
-                                            >
-                                            <div
-                                                class="position-relative d-flex align-items-center"
-                                            >
-                                                <a
-                                                href="#"
-                                                class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static"
-                                                >
-                                                <i class="fas fa-play me-0"></i>
-                                                </a>
-                                                <span
-                                                class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px"
-                                                >بخش اول معرفی</span
-                                                >
-                                            </div>
-                                            <p class="mb-0">18m 10s</p>
                                             </div>
                                         </div>
                                         </div>
                                     </div>
-
-                                    <!-- Item -->
-                                    <div class="accordion-item mb-3">
-                                        <h6 class="accordion-header font-base" id="heading-2">
-                                        <button
-                                            class="accordion-button fw-bold collapsed rounded d-sm-flex d-inline-block"
-                                            type="button"
-                                            data-bs-toggle="collapse"
-                                            data-bs-target="#collapse-2"
-                                            aria-expanded="false"
-                                            aria-controls="collapse-2"
-                                        >
-                                            جلسه دوم
-                                            <span class="small ms-0 ms-sm-2">(4 بخش)</span>
-                                        </button>
-                                        </h6>
-                                        <div
-                                        id="collapse-1"
-                                        class="accordion-collapse collapse"
-                                        aria-labelledby="heading-1"
-                                        data-bs-parent="#accordionExample2"
-                                        >
-                                        <div class="accordion-body mt-3">
-                                            <!-- Course lecture -->
-                                            <div
-                                            class="d-flex justify-content-between align-items-center"
-                                            >
-                                            <div
-                                                class="position-relative d-flex align-items-center"
-                                            >
-                                                <a
-                                                href="#"
-                                                class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static"
-                                                >
-                                                <i class="fas fa-play me-0"></i>
-                                                </a>
-                                                <span
-                                                class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px"
-                                                >مقدمه</span
-                                                >
-                                            </div>
-                                            <p class="mb-0">2m 10s</p>
-                                            </div>
-
-                                            <hr />
-                                            <!-- Divider -->
-
-                                            <!-- Course lecture -->
-                                            <div
-                                            class="d-flex justify-content-between align-items-center"
-                                            >
-                                            <div
-                                                class="position-relative d-flex align-items-center"
-                                            >
-                                                <a
-                                                href="#"
-                                                class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static"
-                                                >
-                                                <i class="fas fa-play me-0"></i>
-                                                </a>
-                                                <span
-                                                class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px"
-                                                >
-                                                معرفی دوره</span
-                                                >
-                                            </div>
-                                            <p class="mb-0 text-truncate">15m 10s</p>
-                                            </div>
-
-                                            <hr />
-                                            <!-- Divider -->
-
-                                            <!-- Course lecture -->
-                                            <div
-                                            class="d-flex justify-content-between align-items-center"
-                                            >
-                                            <div
-                                                class="position-relative d-flex align-items-center"
-                                            >
-                                                <a
-                                                href="#"
-                                                class="btn btn-danger-soft btn-round btn-sm mb-0 stretched-link position-static"
-                                                >
-                                                <i class="fas fa-play me-0"></i>
-                                                </a>
-                                                <span
-                                                class="d-inline-block text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-400px"
-                                                >بخش اول معرفی</span
-                                                >
-                                            </div>
-                                            <p class="mb-0">18m 10s</p>
-                                            </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                    <!-- Course accordion END -->
                                     </div>
                                     <!-- Content END -->
                                     <!-- Content START -->
