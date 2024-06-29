@@ -870,6 +870,7 @@
                                             src="{{ $professor->image }}"
                                             class="card-img"
                                             alt="course image"
+                                            style="width: 200px;height: 200px;"
                                         />
                                     </div>
                                     <!-- Card body -->
