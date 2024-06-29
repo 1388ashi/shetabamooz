@@ -417,7 +417,6 @@
                                     <!-- Item -->
                                     @foreach ($headlines as $headline)
 
-                                    @endforeach
                                     <div class="accordion-item mb-3">
                                         <h6 class="accordion-header font-base" id="heading-1">
                                         <button
@@ -454,6 +453,8 @@
                                             </div>
                                         </div>
                                         </div>
+                                    </div>
+                                    @endforeach
                                     </div>
                                     </div>
                                     <!-- Content END -->
