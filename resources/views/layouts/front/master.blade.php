@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
 <head>
+    <meta name="google-site-verification" content="Tuswx2bwtXj4JC9zlVK6aN1H0XeqRZo8f6v6667Xu5U" />
     <title>شتاب آموز - آموزش برنامه نویسی گرگان</title>
 
     <!-- Meta Tags -->
@@ -97,7 +98,7 @@
     </script>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{asset('assets/images/brand/favicon.ico')}}" />
+    <link rel="shortcut icon" href="{{ asset('front/assets/images/favicon.ico') }}" />
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com/" />
