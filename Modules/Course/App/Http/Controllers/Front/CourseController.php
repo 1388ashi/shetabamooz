@@ -11,6 +11,7 @@ use Modules\Course\App\Models\Course;
 use Modules\Course\App\Models\CourseCategory;
 use Modules\Course\App\Models\CourseComment;
 use Modules\Course\App\Models\CourseFaq;
+use Modules\Course\App\Models\CourseHeadline;
 use Modules\Professor\App\Models\Professor;
 
 class CourseController extends Controller
@@ -35,9 +36,10 @@ class CourseController extends Controller
         }
 
         $properties = json_decode($course->properties);
-        $related_courses = Course::query()->latest('id')->take(8)->get();
+        $related_courses = Course::query()->where('category_id',$course->category_id)->take(8)->get();
         $comments = CourseComment::query()->where('course_id',$course->id)->latest('id')->where('status',1)->get();
         $faqs = CourseFaq::query()->latest('id')->where('course_id',$course->id)->get();
+        $headlines = CourseHeadline::query()->latest('id')->where('course_id',$course->id)->get();
 
         return view('course::front.course.show', compact('course','properties','related_courses','course','comments','faqs'));
     }
