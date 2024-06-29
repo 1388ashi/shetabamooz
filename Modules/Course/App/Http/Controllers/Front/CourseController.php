@@ -41,7 +41,7 @@ class CourseController extends Controller
         $faqs = CourseFaq::query()->latest('id')->where('course_id',$course->id)->get();
         $headlines = CourseHeadline::query()->latest('id')->where('course_id',$course->id)->get();
 
-        return view('course::front.course.show', compact('course','properties','related_courses','course','comments','faqs'));
+        return view('course::front.course.show', compact('course','headlines','properties','related_courses','course','comments','faqs'));
     }
 
 }
