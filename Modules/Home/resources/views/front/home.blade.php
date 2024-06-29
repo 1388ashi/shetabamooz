@@ -863,7 +863,7 @@
                         >
                             <!-- Card item START -->
                             @foreach($professors as $professor)
-                                <div class="card bg-transparent pr-0">
+                                <div class="card bg-transparent pr-0" style="padding: 0pxl;padding-right: 0px">
                                     <div class="position-relative d-flex justify-content-center align-items-center pr-0">
                                         <!-- Image -->
                                         <img
