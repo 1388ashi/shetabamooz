@@ -27,33 +27,31 @@
                 </div>
 
                 <!-- Contact info box -->
-                <div class="row g-4 g-md-5 mt-0 mt-lg-3">
+                <div class="row g-5 g-md-5 mt-0 mt-lg-5 d-flex justify-content-center ">
                     <!-- Box item -->
-                    <div class="col-lg-4 mt-lg-0">
-                        <div
-                            class="card card-body bg-primary shadow py-5 text-center h-100"
-                        >
+                    <div class="col-lg-9 mt-lg-0">
+                        <div class="card card-body shadow py-5 text-center h-100">
                             <!-- Title -->
-                            <h5 class="text-white mb-3">پشتیبانی کاربران</h5>
+                            <h5 class="mb-3">آدرس ما</h5>
                             <ul class="list-inline mb-0">
                                 <!-- Address -->
-                                <li class="list-item mb-3">
-                                    <a href="#" class="text-white">
-                                        <i class="fas fa-fw fa-map-marker-alt me-2 mt-1"></i>شهرک
-                                        ویلاشهر/ویلای 4 /ساختمان گیتی
+                                <li class="list-item mb-3 h6 fw-light">
+                                    <a href="#">
+                                        <i class="fas fa-fw fa-map-marker-alt me-2 mt-1"></i>
+                                        گرگان ، ویلاشهر ، رو به رو ویلاشهر 14 ، مجتمع گیتی ، طبقه 4 ، واحد 31
                                     </a>
                                 </li>
                                 <!-- Phone number -->
-                                <li class="list-item mb-3">
-                                    <a href="#" class="text-white">
-                                        <i class="fas fa-fw fa-phone-alt me-2"></i>09117703538
+                                <li class="list-item mb-3 h6 fw-light">
+                                    <a href="#">
+                                        <i class="fas fa-fw fa-phone-alt me-2"></i>09119002509
                                     </a>
                                 </li>
                                 <!-- Email id -->
-                                <li class="list-item mb-0">
-                                    <a href="#" class="text-white">
+                                <li class="list-item mb-0 h6 fw-light">
+                                    <a href="#">
                                         <i class="far fa-fw fa-envelope me-2"></i
-                                        >example@email.com
+                                        >info@shetabamooz.com
                                     </a>
                                 </li>
                             </ul>
@@ -61,64 +59,24 @@
                     </div>
 
                     <!-- Box item -->
-                    <div class="col-lg-4 mt-lg-0">
+                    {{-- <div class="col-lg-6 mt-lg-0">
                         <div class="card card-body shadow py-5 text-center h-100">
                             <!-- Title -->
-                            <h5 class="mb-3">آدرس کاربران</h5>
-                            <ul class="list-inline mb-0">
-                                <!-- Address -->
-                                <li class="list-item mb-3 h6 fw-light">
-                                    <a href="#">
-                                        <i class="fas fa-fw fa-map-marker-alt me-2 mt-1"></i> شهرک
-                                        امام/کوچه هفتم / کوچه اول
-                                    </a>
+                            <h5 class="mb-3">شبکه های اجتماعی</h5>
+                            <ul class="list-inline mb-0 ms-sm-2">
+                                <li class="list-inline-item">
+                                    <a class="fs-5 me-1 text-instagram" href="#"
+                                    ><i class="fab fa-fw fa-instagram"></i
+                                        ></a>
                                 </li>
-                                <!-- Phone number -->
-                                <li class="list-item mb-3 h6 fw-light">
-                                    <a href="#">
-                                        <i class="fas fa-fw fa-phone-alt me-2"></i>09117703538
-                                    </a>
-                                </li>
-                                <!-- Email id -->
-                                <li class="list-item mb-0 h6 fw-light">
-                                    <a href="#">
-                                        <i class="far fa-fw fa-envelope me-2"></i
-                                        >example@email.com
-                                    </a>
+                                <li class="list-inline-item">
+                                    <a class="fs-5 me-1 text-linkedin" href="#"
+                                    ><i class="fab fa-fw fa-linkedin-in"></i
+                                        ></a>
                                 </li>
                             </ul>
                         </div>
-                    </div>
-
-                    <!-- Box item -->
-                    <div class="col-lg-4 mt-lg-0">
-                        <div class="card card-body shadow py-5 text-center h-100">
-                            <!-- Title -->
-                            <h5 class="mb-3">مشخصات مشتریان</h5>
-                            <ul class="list-inline mb-0">
-                                <!-- Address -->
-                                <li class="list-item mb-3 h6 fw-light">
-                                    <a href="#">
-                                        <i class="fas fa-fw fa-map-marker-alt me-2 mt-1"></i
-                                        >گلشهر/ شهرک رازی / کوچه لاله / پلاک 10
-                                    </a>
-                                </li>
-                                <!-- Phone number -->
-                                <li class="list-item mb-3 h6 fw-light">
-                                    <a href="#">
-                                        <i class="fas fa-fw fa-phone-alt me-2"></i>09308639770
-                                    </a>
-                                </li>
-                                <!-- Email id -->
-                                <li class="list-item mb-0 h6 fw-light">
-                                    <a href="#">
-                                        <i class="far fa-fw fa-envelope me-2"></i
-                                        >example@email.com
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>
@@ -145,33 +103,13 @@
                             <h5 class="mb-0">Follow us on:</h5>
                             <ul class="list-inline mb-0 ms-sm-2">
                                 <li class="list-inline-item">
-                                    <a class="fs-5 me-1 text-facebook" href="#"
-                                    ><i class="fab fa-fw fa-facebook-square"></i
-                                        ></a>
-                                </li>
-                                <li class="list-inline-item">
                                     <a class="fs-5 me-1 text-instagram" href="#"
                                     ><i class="fab fa-fw fa-instagram"></i
                                         ></a>
                                 </li>
                                 <li class="list-inline-item">
-                                    <a class="fs-5 me-1 text-twitter" href="#"
-                                    ><i class="fab fa-fw fa-twitter"></i
-                                        ></a>
-                                </li>
-                                <li class="list-inline-item">
                                     <a class="fs-5 me-1 text-linkedin" href="#"
                                     ><i class="fab fa-fw fa-linkedin-in"></i
-                                        ></a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a class="fs-5 me-1 text-dribbble" href="#"
-                                    ><i class="fas fa-fw fa-basketball-ball"></i
-                                        ></a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a class="fs-5 me-1 text-pinterest" href="#"
-                                    ><i class="fab fa-fw fa-pinterest"></i
                                         ></a>
                                 </li>
                             </ul>
