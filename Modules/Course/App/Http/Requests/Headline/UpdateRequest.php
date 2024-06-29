@@ -16,7 +16,7 @@ class UpdateRequest extends FormRequest
                 'required',
                 'string',
             ],
-            'description' => 'required',
+            'description' => 'nullable',
             'course_id' => 'required',
         ];
     }

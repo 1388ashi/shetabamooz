@@ -29,8 +29,7 @@
                     <div class="">
                         <div class="form-group">
                             <label for="description"  class="control-label">توضیحات</label>
-                            <span class="text-danger">&starf;</span>
-                            <textarea class="form-control" id="description" placeholder="توضیحات خود را وارد کنید" name="description" required>{{ old('description') }}</textarea>
+                            <textarea class="form-control" id="description" placeholder="توضیحات خود را وارد کنید" name="description" >{{ old('description') }}</textarea>
                         </div>
                     </div>
                     <div class="row">

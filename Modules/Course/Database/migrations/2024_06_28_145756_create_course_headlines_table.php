@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Course::class)->constrained()->cascadeOnDelete();
             $table->string('title'); //unique by course
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->bigInteger('order_column')->nullable();
             $table->timestamps();
         });

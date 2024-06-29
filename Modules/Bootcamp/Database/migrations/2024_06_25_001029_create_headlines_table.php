@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Bootcamp::class)->constrained()->cascadeOnDelete();
             $table->string('title'); //unique by course
-            $table->string('description');
+            $table->longText('description');
             $table->bigInteger('order_column')->nullable();
             $table->timestamps();
         });
