@@ -89,7 +89,7 @@
                                             <i class="fa fa-question" data-original-title="mdi-account"></i>
                                         </a>
                                         {{-- Show --}}
-                                        <a href="{{route('admin.courses.show',[$course->id,$course->slug])}}"
+                                        <a href="{{route('admin.courses.show',[$course->slug])}}"
                                            class="btn btn-primary btn-sm text-white" data-toggle="tooltip"
                                            data-original-title="مشاهده"><i class="fa fa-eye"></i></a>
                                         {{-- Edit --}}
