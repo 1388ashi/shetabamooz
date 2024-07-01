@@ -725,7 +725,7 @@
                                 <div class="card-img-overlay d-flex">
                                     <!-- Info -->
                                     <div class="mt-auto card-text">
-                                        <a href="{{ route('courses.show',[$course->slug]) }}" class="text-white mt-auto h5 stretched-link"
+                                        <a href="{{ route('courses.show',$course->slug) }}" class="text-white mt-auto h5 stretched-link"
                                         >{{ $course->title }}</a
                                         >
                                         <div class="text-white">{{ $course->time }} ساعت</div>
