@@ -29,6 +29,9 @@
     .list-inline-item {
         font-size: 13px;
     }
+    .card-body {
+        padding-right: 9px;
+    }
 }
 </style>
     <!-- **************** MAIN CONTENT START **************** -->
