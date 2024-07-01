@@ -81,7 +81,7 @@
                                                     <div class="ribbon"><span>رایگان</span></div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-7">
                                                 <div class="card-body">
                                                     <!-- Badge and rating -->
                                                     <div
