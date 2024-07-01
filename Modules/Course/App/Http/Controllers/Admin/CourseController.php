@@ -44,9 +44,9 @@ class CourseController extends Controller
             ->with('success', 'دوره با موفقیت ثبت شد.');
     }
 
-    public function show($id)
+    public function show($slug)
     {
-        $course= Course::findOrFail($id);
+        $course = Course::where('slug',$slug)->first();
         $properties = json_decode($course->properties);
 
         $course->loadCount(['courseheadlines', 'faqs']);
