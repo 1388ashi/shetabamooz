@@ -87,7 +87,7 @@
                                     <div class="card shadow overflow-hidden p-2 pb-0">
                                         <div class="row g-0">
                                             <div class="col-md-5 overflow-hidden">
-                                                <a    href="{{ route('courses.show',[$course->id,$course->slug]) }}">
+                                                <a    href="{{ route('courses.show',[$course->slug]) }}">
 
                                                     <img
                                                     src="{{ $course->image }}"
@@ -108,7 +108,7 @@
                                                     >
                                                         <!-- Badge -->
                                                         <a
-                                                            href="{{ route('courses.show',[$course->id,$course->slug]) }}"
+                                                            href="{{ route('courses.show',[$course->slug]) }}"
                                                             class="badge text-bg-primary mb-2 mb-sm-0 cat-title"
                                                         >{{ $course->category->name }}</a
                                                         >
@@ -116,7 +116,7 @@
 
                                                     <!-- Title -->
                                                     <h5 class="card-title">
-                                                        <a href="{{ route('courses.show',[$course->id,$course->slug]) }}">{{ $course->title }}</a>
+                                                        <a href="{{ route('courses.show',[$course->slug]) }}">{{ $course->title }}</a>
                                                     </h5>
                                                     <p class="text-truncate-2 d-none d-lg-block">
                                                         پیش از شروع آموزش و گذارندن دوره آموزش حضوری زبان پی

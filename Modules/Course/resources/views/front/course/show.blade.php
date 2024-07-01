@@ -728,14 +728,14 @@
 
                                             <!-- Title -->
                                             <h5 class="card-title">
-                                                <a href="{{ route('courses.show',[$related_course->id,$related_course->slug]) }}">{{ $related_course->title }}</a>
+                                                <a href="{{ route('courses.show',[$related_course->slug]) }}">{{ $related_course->title }}</a>
                                             </h5>
                                             <!-- Badge and Price -->
                                             <div
                                                 class="d-flex justify-content-between align-items-center"
                                             >
                                                 <a
-                                                    href="{{ route('courses.show',$related_course->id) }}"
+                                                    href="{{ route('courses.show',[$related_course->slug]) }}"
                                                     class="badge bg-info bg-opacity-10 text-info"
                                                 ><i class="fas fa-circle small fw-bold me-2"></i
                                                     >{{ $related_course->category->name }}</a
