@@ -29,6 +29,9 @@
     .list-inline-item {
         font-size: 13px;
     }
+    .cat-title {
+        font-size: 10px;
+    }
     .card-body {
         padding-right: 9px;
     }
@@ -106,7 +109,7 @@
                                                         <!-- Badge -->
                                                         <a
                                                             href="{{ route('courses.show',[$course->id,$course->slug]) }}"
-                                                            class="badge text-bg-primary mb-2 mb-sm-0"
+                                                            class="badge text-bg-primary mb-2 mb-sm-0 cat-title"
                                                         >{{ $course->category->name }}</a
                                                         >
                                                     </div>
