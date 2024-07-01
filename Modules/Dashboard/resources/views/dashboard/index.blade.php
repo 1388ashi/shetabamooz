@@ -35,6 +35,25 @@
         </div>
         <div class="col-xl-3 col-lg-6 col-md-12">
             <div class="card">
+                <a href="{{route('admin.bootcamps.index')}}">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-7">
+                                <div class="mt-0 text-right">
+                                    <span class="fs-16 font-weight-semibold">بوت کمپ ها</span>
+                                    <h3 class="mb-0 mt-1 text-primary  fs-25">{{ $count['bootcamps'] }}</h3>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div class="icon1 bg-primary-transparent my-auto  float-left"> <i class="fa fa-graduation-cap"></i> </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-md-12">
+            <div class="card">
                 <a href="{{route('admin.professors.index')}}">
                     <div class="card-body">
                         <div class="row">
