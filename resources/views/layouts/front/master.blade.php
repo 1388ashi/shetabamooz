@@ -223,7 +223,7 @@
 
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('posts.index') }}">بلاگ</a>
+                        <a class="nav-link" href="{{ route('weblogs.index') }}">بلاگ</a>
                     </li>
                     <!-- Nav item 4 Component-->
                     <li class="nav-item">
@@ -324,7 +324,7 @@ Footer START -->
                         <a class="nav-link text-white" href="{{ route('courses.index') }}">دوره ها</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="{{ route('posts.index') }}">مقالات</a>
+                        <a class="nav-link text-white" href="{{ route('weblogs.index') }}">مقالات</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{{ route('about-us') }}">درباره ما</a>

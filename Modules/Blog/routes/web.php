@@ -43,4 +43,4 @@ Route::webSuperGroup('admin', function () {
     route::post('post-comments/{comment}/makeInAvailable',[\Modules\Blog\App\Http\Controllers\Admin\PostCommentController::class,'makeInAvailable'])
         ->name('post-comments.makeInAvailable');
 });
-Route::resource('posts', \Modules\Blog\App\Http\Controllers\Front\PostController::class)->only(['index','show']);
+Route::resource('weblogs', \Modules\Blog\App\Http\Controllers\Front\PostController::class)->only(['index','show']);

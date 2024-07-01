@@ -295,7 +295,7 @@ Related blog START -->
                                     <div class="card-body">
                                         <!-- Title -->
                                         <h6 class="card-title">
-                                            <a href="{{ route('posts.show',$related_posts->id) }}">{{ $related_posts->title }}</a>
+                                            <a href="{{ route('weblogs.show',$related_posts->id) }}">{{ $related_posts->title }}</a>
                                         </h6>
                                         <span class="small">{{ verta($related_posts->created_at)->formatDifference() }}</span>
                                     </div>

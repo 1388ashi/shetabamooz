@@ -65,7 +65,7 @@ Page content START -->
                                 <div class="card-img-overlay d-flex align-items-start p-3">
                                     <!-- badge -->
                                     @foreach($post->categories as $category)
-                                        <a href="{{ route('posts.index') }}" class="badge text-bg-primary">{{ $category->name }}</a>
+                                        <a href="{{ route('weblogs.index') }}" class="badge text-bg-primary">{{ $category->name }}</a>
                                     @endforeach
                                 </div>
                             </div>
@@ -74,7 +74,7 @@ Page content START -->
                             <div class="card-body">
                                 <!-- Title -->
                                 <h5 class="card-title">
-                                    <a href="{{ route('posts.show',$post->id) }}">{{ $post->title }}</a>
+                                    <a href="{{ route('weblogs.show',$post->id) }}">{{ $post->title }}</a>
                                 </h5>
                                 <p class="text-truncate-2">
                                     {{ $post->short_description }}
