@@ -71,11 +71,14 @@
                                     <div class="card shadow overflow-hidden p-2 pb-0">
                                         <div class="row g-0">
                                             <div class="col-md-5 overflow-hidden">
-                                                <img
+                                                <a    href="{{ route('courses.show',[$course->id,$course->slug]) }}">
+
+                                                    <img
                                                     src="{{ $course->image }}"
                                                     class="rounded-2"
                                                     alt="Card image"
-                                                />
+                                                    />
+                                                </a>
                                                 <!-- Ribbon -->
                                                 {{-- <div class="card-img-overlay">
                                                     <div class="ribbon"><span>رایگان</span></div>
