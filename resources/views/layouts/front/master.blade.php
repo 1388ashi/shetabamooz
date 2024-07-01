@@ -227,7 +227,7 @@
                     </li>
                     <!-- Nav item 4 Component-->
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('about') }}">درباره ما</a>
+                        <a class="nav-link" href="{{ route('about-us') }}">درباره ما</a>
                     </li>
 
 
