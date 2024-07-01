@@ -124,7 +124,7 @@
                                     <div class="bg-overlay bg-dark opacity-4"></div>
                                     <div class="card-img-overlay d-flex align-items-start p-3">
                                         <!-- badge -->
-                                        <a href="{{ route('posts.index') }}" class="badge text-bg-primary">مقالات</a>
+                                        <a href="{{ route('weblogs.index') }}" class="badge text-bg-primary">مقالات</a>
                                     </div>
                                 </div>
 
