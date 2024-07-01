@@ -160,6 +160,7 @@
                                         class="form-group">
                                         <label for="description"
                                                class="control-label">توضیحات</label>
+                                               <span class="text-danger">&starf;</span>
                                         @include('components.editor',['name' => 'description','required' => 'true'])
                                     </div>
                                 </div>

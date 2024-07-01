@@ -184,6 +184,7 @@
                                     <div
                                         class="form-group">
                                         <label for="description" class="control-label">توضیحات</label>
+                                        <span class="text-danger">&starf;</span>
                                         <div class="col">
                                             <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
                                                 <span class="text-danger">&starf;</span>
