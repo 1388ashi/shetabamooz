@@ -725,8 +725,7 @@
                                     <!-- Info -->
                                     <div class="mt-auto card-text">
                                         <a  class="text-white mt-auto h5 stretched-link"
-                                        >{{ $course->title }}</a
-                                        >
+                                        >{{ $course->title }}</a>
                                         <div class="text-white">{{ $course->time }} ساعت</div>
                                     </div>
                                 </div>
