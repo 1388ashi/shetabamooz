@@ -14,4 +14,4 @@ use Modules\About\App\Http\Controllers\Front\AboutController;
 |
 */
 
-Route::get('about', [AboutController::class, 'index'])->name('about');
+Route::get('about-us', [AboutController::class, 'index'])->name('about');

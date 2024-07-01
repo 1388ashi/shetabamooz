@@ -27,12 +27,12 @@ Route::webSuperGroup('admin', function () {
 
 });
 
-Route::get('consultation-requests', [\Modules\Request\App\Http\Controllers\Front\ConsultationRequestController::class, 'index'])
+Route::get('contact-us', [\Modules\Request\App\Http\Controllers\Front\ConsultationRequestController::class, 'index'])
     ->name('consultation-requests.index');
 Route::post('consultation-requests/store', [\Modules\Request\App\Http\Controllers\Front\ConsultationRequestController::class, 'store'])
     ->name('consultation-requests.store');
 
-Route::get('cooperation-requests', [\Modules\Request\App\Http\Controllers\Front\CooperationRequestController::class, 'index'])
+Route::get('contact-us', [\Modules\Request\App\Http\Controllers\Front\CooperationRequestController::class, 'index'])
     ->name('cooperation-requests.index');
 Route::post('cooperation-requests/store', [\Modules\Request\App\Http\Controllers\Front\CooperationRequestController::class, 'store'])
     ->name('cooperation-requests.store');
