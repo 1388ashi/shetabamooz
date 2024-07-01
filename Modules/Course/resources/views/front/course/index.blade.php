@@ -62,7 +62,7 @@
             <div class="container">
                 <div class="row d-flex justify-content-center">
                     <!-- Main content START -->
-                    <div class="col-xl-9 col-xxl-9">
+                    <div class="col-xl-12 col-xxl-12">
                         <!-- Course list START -->
                         <div class="row g-4">
                             @foreach($courses as $course)
