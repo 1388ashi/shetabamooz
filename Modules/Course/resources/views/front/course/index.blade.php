@@ -89,7 +89,7 @@
                                                     >
                                                         <!-- Badge -->
                                                         <a
-                                                            href="#"
+                                                            href="{{ route('courses.show',[$course->id,$course->slug]) }}"
                                                             class="badge text-bg-primary mb-2 mb-sm-0"
                                                         >{{ $course->category->name }}</a
                                                         >
@@ -123,31 +123,7 @@
                                                             >{{ \Modules\Course\App\Models\Course::getLevelLabelAttribute($course->level) }}
                                                         </li>
                                                     </ul>
-
                                                     <!-- Price and avatar -->
-                                                    <div
-                                                        class="d-sm-flex justify-content-sm-between align-items-center"
-                                                    >
-                                                        <!-- Avatar -->
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="avatar">
-                                                                <img
-                                                                    class="avatar-img rounded-circle"
-                                                                    src="{{ $course->professor->image }}"
-                                                                    alt="avatar"
-                                                                />
-                                                            </div>
-                                                            <p class="mb-0 ms-2">
-                                                                <a href="#" class="h6 fw-light"
-                                                                >{{ $course->professor->name }}</a
-                                                                >
-                                                            </p>
-                                                        </div>
-                                                        <!-- Price -->
-                                                        <div class="mt-3 mt-sm-0">
-                                                            <a href="{{ route('courses.show',[$course->id,$course->slug]) }}" class="btn btn-dark">مشاهده جزییات</a>
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
