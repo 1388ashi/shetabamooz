@@ -180,17 +180,14 @@
                             </div>
 
                             <div class="row">
-                                <div class="col">
+                                <div class="col-md-12">
                                     <div
                                         class="form-group">
-                                        <label for="description" class="control-label">توضیحات</label>
-                                        <span class="text-danger">&starf;</span>
-                                        <div class="col">
+                                        <label for="description" class="control-label">توضیحات</label> <span class="text-danger">&starf;</span>
                                             <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
-                                                <span class="text-danger">&starf;</span>
+
                                                 <textarea class="ckeditor form-control" id="ckEditor" name="description">{!! old('description',$course->description) !!}</textarea>
                                             </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
