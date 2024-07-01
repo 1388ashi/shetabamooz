@@ -21,6 +21,13 @@
 
 
 @section('contact')
+<style>
+    @media only screen and (max-width: 600px) {
+    .card-title {
+        font-size: 16px;
+    }
+}
+</style>
     <!-- **************** MAIN CONTENT START **************** -->
     <main>
         <!-- =======================
@@ -134,7 +141,6 @@
                                 </div>
                                 <!-- Card list END -->
                             @endforeach
-
                         </div>
                         <!-- Course list END -->
                         {{ $courses->links() }}
