@@ -978,7 +978,7 @@
                         <h2 class="mb-2 mb-md-0">آخرین مقالات شتاب </h2>
 
                         <div>
-                            <a href="{{ route('posts.index') }}" class="btn btn-sm btn-primary-soft mb-0"
+                            <a href="{{ route('weblogs.index') }}" class="btn btn-sm btn-primary-soft mb-0"
                             >همه مقالات<i class="fas fa-angle-right ms-2"></i
                                 ></a>
                             </div>
