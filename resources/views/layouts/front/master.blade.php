@@ -327,7 +327,7 @@ Footer START -->
                         <a class="nav-link text-white" href="{{ route('posts.index') }}">مقالات</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="{{ route('about') }}">درباره ما</a>
+                        <a class="nav-link text-white" href="{{ route('about-us') }}">درباره ما</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{{ route('consultation-requests.index') }}">تماس با ما</a>
