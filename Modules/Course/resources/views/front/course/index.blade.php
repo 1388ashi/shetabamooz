@@ -26,6 +26,9 @@
     .card-title {
         font-size: 16px;
     }
+    .list-inline-item {
+        font-size: 13px;
+    }
 }
 </style>
     <!-- **************** MAIN CONTENT START **************** -->
