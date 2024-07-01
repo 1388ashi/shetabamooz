@@ -728,7 +728,7 @@
 
                                             <!-- Title -->
                                             <h5 class="card-title">
-                                                <a href="{{ route('courses.show',$related_course->id) }}">{{ $related_course->title }}</a>
+                                                <a href="{{ route('course.show',$related_course->id,$related_course->slug) }}">{{ $related_course->title }}</a>
                                             </h5>
                                             <!-- Badge and Price -->
                                             <div

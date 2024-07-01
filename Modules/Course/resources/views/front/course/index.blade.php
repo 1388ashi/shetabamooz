@@ -145,7 +145,7 @@
                                                         </div>
                                                         <!-- Price -->
                                                         <div class="mt-3 mt-sm-0">
-                                                            <a href="{{ route('courses.show',$course->id,$course->slug) }}" class="btn btn-dark">مشاهده جزییات</a>
+                                                            <a href="{{ route('course.show',$course->id,$course->slug) }}" class="btn btn-dark">مشاهده جزییات</a>
                                                         </div>
                                                     </div>
                                                 </div>
