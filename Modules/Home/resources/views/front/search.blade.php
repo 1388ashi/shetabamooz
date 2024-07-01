@@ -84,7 +84,7 @@
                                 <div class="card-body">
                                     <!-- Title -->
                                     <h5 class="card-title">
-                                        <a href="{{ route('courses.show',$course->id) }}">{{ $course->title }}</a>
+                                        <a href="{{ route('courses.show',$course->slug) }}">{{ $course->title }}</a>
                                     </h5>
                                     <p class="text-truncate-2">
                                         {{ $course->short_description }}
@@ -132,7 +132,7 @@
                                 <div class="card-body">
                                     <!-- Title -->
                                     <h5 class="card-title">
-                                        <a href="{{ route('posts.show',$post->id) }}">{{ $post->title }}</a>
+                                        <a href="{{ route('weblogs.show',$post->id) }}">{{ $post->title }}</a>
                                     </h5>
                                     <p class="text-truncate-2">
                                         {{ $post->short_description }}
