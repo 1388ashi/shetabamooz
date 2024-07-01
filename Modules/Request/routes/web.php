@@ -27,7 +27,7 @@ Route::webSuperGroup('admin', function () {
 
 });
 
-Route::get('contact-us', [\Modules\Request\App\Http\Controllers\Front\ConsultationRequestController::class, 'index'])
+Route::get('consultation-requests', [\Modules\Request\App\Http\Controllers\Front\ConsultationRequestController::class, 'index'])
     ->name('consultation-requests.index');
 Route::post('consultation-requests/store', [\Modules\Request\App\Http\Controllers\Front\ConsultationRequestController::class, 'store'])
     ->name('consultation-requests.store');
