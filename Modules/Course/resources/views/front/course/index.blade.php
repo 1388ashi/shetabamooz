@@ -70,7 +70,7 @@
                                 <div class="col-6">
                                     <div class="card shadow overflow-hidden p-2">
                                         <div class="row g-0">
-                                            <div class="col-md-3 overflow-hidden">
+                                            <div class="col-md-5 overflow-hidden">
                                                 <img
                                                     src="{{ $course->image }}"
                                                     class="rounded-2"
