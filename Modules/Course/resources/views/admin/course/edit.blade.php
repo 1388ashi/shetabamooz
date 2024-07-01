@@ -112,7 +112,7 @@
                                                class="form-control"
                                                id="image">
                                         @if($course->image)
-                                            <img src="{{ $course->image }}" alt="image" height="200px">
+                                            <img src="{{ $course->image }}" style="margin-top: 2px" alt="image" height="200px">
                                         @endif
                                     </div>
                                 </div>
