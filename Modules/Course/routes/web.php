@@ -38,7 +38,8 @@ Route::webSuperGroup('admin', function () {
 
 
     Route::Resource('course-categories', CourseCategoryController::class);
-    Route::Resource('courses', CourseController::class);
+    Route::Resource('courses', CourseController::class)->except('show');
+    Route::get("/courses/{id}/{slug?}",[CourseController::class,'show'])->name('courses.show');
 
     route::get('faqs-list/{course}',[CourseFaqController::class,'index'])->name('faqs-list');
 
