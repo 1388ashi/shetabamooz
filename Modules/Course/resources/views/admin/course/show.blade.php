@@ -44,7 +44,7 @@
                                 <li><strong>قیمت دوره (تومان): </strong> {{ $course->getPrice() }}</li>
                                 <li><strong>قیمت تخفیف (تومان): </strong> {{ $course->getDiscount() }}</li>
                                 <li><strong>استاد: </strong> {{ optional($course->professor)->name }}</li>
-                           
+
                             </ul>
                         </div>
                         <div class="col">
@@ -56,7 +56,7 @@
                                 <i class="fa fa-eye" aria-hidden="true"></i>
                                 </a></p>
                                 <p>پرسش متداول های ثبت شده: {{ $course->faqs_count }} <a class="btn btn-warning mr-2"
-                                                                    href="{{route('admin.faqs-list',$course->id)}}"
+                                    href="{{route('admin.faqs-list',$course->id)}}"
                                 >
                                 <i class="fa fa-eye" aria-hidden="true"></i>
                                 </a></p>
@@ -66,7 +66,7 @@
                                 <li><strong>تعداد بازدید: </strong> {{ views($course)->count() }}</li>
                                 <li><strong>وضعیت: </strong> @include('components.status', ['status' => $course->status])</li>
                                 <li><strong>تاریخ ثبت: </strong> {{ $course->getJalaliCreatedAt() }}</li>
-                            
+
                             </ul>
                         </div>
 

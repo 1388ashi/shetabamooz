@@ -714,7 +714,7 @@
                                                     class="card-element-hover d-flex justify-content-end"
                                                 >
                                                     <a
-                                                        href="{{ route('courses.show',$related_course->id) }}"
+                                                        href="{{ route('courses.show',$related_course->slug) }}"
                                                         class="icon-md bg-white rounded-circle text-center"
                                                     >
                                                         <i class="fas fa-shopping-cart text-danger"></i>
