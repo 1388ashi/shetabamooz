@@ -97,7 +97,7 @@
 
                                                     <!-- Title -->
                                                     <h5 class="card-title">
-                                                        <a href="#">{{ $course->title }}</a>
+                                                        <a href="{{ route('courses.show',[$course->id,$course->slug]) }}">{{ $course->title }}</a>
                                                     </h5>
                                                     <p class="text-truncate-2 d-none d-lg-block">
                                                         پیش از شروع آموزش و گذارندن دوره آموزش حضوری زبان پی
