@@ -715,7 +715,6 @@
 
                 <div class="row g-4">
                     <!-- Course item -->
-
                     @foreach($courses as $course)
                         <div class="col-sm-6 col-lg-4 col-xl-3">
                             <!-- Image -->
