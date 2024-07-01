@@ -77,9 +77,9 @@
                                                     alt="Card image"
                                                 />
                                                 <!-- Ribbon -->
-                                                <div class="card-img-overlay">
+                                                {{-- <div class="card-img-overlay">
                                                     <div class="ribbon"><span>رایگان</span></div>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                             <div class="col-md-7">
                                                 <div class="card-body pb-0">
