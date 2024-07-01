@@ -183,9 +183,10 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label for="slug" class="control-label">نامک (slug)</label>
+                                                <span class="text-danger">&starf;</span>
                                                 <input type="text" name="slug" value="{{ old('slug') }}"
                                                        class="form-control" id="slug"
-                                                       placeholder="نامک را اینجا وارد کنید...">
+                                                       placeholder="نامک را اینجا وارد کنید..." required>
                                                 <span class="text-info">افزودن نامک برای SEO مفید است.</span>
                                             </div>
                                         </div>

@@ -19,7 +19,7 @@ class CourseStoreRequest extends FormRequest
             'short_description' => 'required|min:3|max:5000',
             'description' => 'required|min:3|max:100000',
             'properties' => 'nullable',
-            'slug' => 'nullable',
+            'slug' => 'required',
             'image_alt'=> 'nullable',
             'meta_title' => 'nullable',
             'meta_description' => 'nullable',
