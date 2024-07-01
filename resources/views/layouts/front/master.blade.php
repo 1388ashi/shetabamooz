@@ -211,7 +211,7 @@
                         <ul class="dropdown-menu" aria-labelledby="pagesMenu">
                             @foreach(\Modules\Course\App\Models\Course::query()->get() as $course)
                                 <li>
-                                    <a class="dropdown-item" href="{{ route('courses.show',$course->id) }}"
+                                    <a class="dropdown-item" href="{{ route('courses.show',[$course->id,$course->slug]) }}"
                                     >
                                         {{ $course->title }}
                                     </a>
