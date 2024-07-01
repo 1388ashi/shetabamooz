@@ -68,7 +68,7 @@
                             @foreach($courses as $course)
                                 <!-- Card list START -->
                                 <div class="col-6">
-                                    <div class="card shadow overflow-hidden p-2">
+                                    <div class="card shadow overflow-hidden p-2 pb-0">
                                         <div class="row g-0">
                                             <div class="col-md-5 overflow-hidden">
                                                 <img
