@@ -31,6 +31,9 @@ class CourseController extends Controller
     public function show($show)
     {
         $course = Course::where('slug',$show)->first();
+        if($course->status){
+            abort(404);
+        }
         if ($course->status ==0){
             abort(404);
         }
