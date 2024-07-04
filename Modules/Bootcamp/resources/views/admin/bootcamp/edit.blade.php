@@ -84,7 +84,7 @@
                                     <div
                                         class="form-group">
                                         <label for="price" class="control-label">قیمت (تومان)</label>
-                                        <input type="text" name="price" value="{{ old('price',$bootcamp->price) }}"
+                                        <input type="text" name="price" value="{{ old('price',number_formata($bootcamp->price)) }}"
                                             class="form-control comma" id="price"
                                             placeholder="قیمت را اینجا وارد کنید...">
                                         <span class="text-info">اگر قیمت را وارد نکنید دوره رایگان می باشد.</span>
@@ -104,7 +104,7 @@
                                     <div
                                     class="form-group">
                                         <label for="discount" class="control-label">تخفیف (تومان)</label>
-                                        <input type="text" name="discount" value="{{ old('discount',$bootcamp->discount) }}"
+                                        <input type="text" name="discount" value="{{ old('discount',number_format($bootcamp->discount)) }}"
                                         class="form-control comma" id="discount"
                                         placeholder="تخفیف را اینجا وارد کنید...">
                                     </div>

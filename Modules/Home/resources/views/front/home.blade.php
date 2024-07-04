@@ -855,7 +855,7 @@
                 <p>{{$bootcamp->summary}}</p>
                 <div class="d-flex justify-content-between align-items-end">
                     <div class="">
-                        @if ($bootcamp->getPrice() == null)
+                        @if ($bootcamp->price !== null)
                         <h6 ><del>قیمت اصلی: {{ $bootcamp->getPrice() }}</del></h6>
                         <h5 style="margin-bottom: 0px" class="text-color-green">قیمت با تخفیف: {{ number_format($bootcamp->getPriceWithDiscount()) }}</h5>
                         @else

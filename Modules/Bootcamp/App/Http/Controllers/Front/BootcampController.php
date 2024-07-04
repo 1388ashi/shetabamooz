@@ -16,13 +16,12 @@ class BootcampController extends Controller
     public function show($show)
     {
         $bootcamp = Bootcamp::where('slug',$show)->first();
-        if(!empty($bootcamp['items'])){
+        if($bootcamp == null){
             abort(404);
         }
         if ($bootcamp->status == 0){
             abort(404);
         }
-
         $properties = json_decode($bootcamp->properties);
         $faqs = BootcampFaq::query()->latest('id')->where('bootcamp_id',$bootcamp->id)->get();
         $headlines = Headline::query()->latest('id')->where('bootcamp_id',$bootcamp->id)->get();
