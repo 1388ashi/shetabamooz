@@ -815,9 +815,61 @@
         </section>
         <!-- =======================
     Client feedback END -->
+    <section class="containerFlouidBootcamp marginSection my-7">
+        <h1 class="text-center">بوت کمپ های شتاب</h1>
+        @foreach ($bootcamps as $bootcamp)
+        <section>
+          <article>
+              <div class="cardBootcamp text-color-indigo-main">
+                  <figure>
+                <img   src="{{ $bootcamp->image['url'] }}" alt="">
+              </figure>
+              <div class="informationCardBootcamp">
+                @php
+                    // $jDate = new \Morilog\Jalali\Jalalian($bootcamp['published_at']);
+                @endphp
+                <div class="dateCard">
+                    <h1>{{verta($bootcamp->published_at)->format('%d')}}</h1>
+                    <span>{{verta($bootcamp->published_at)->format('%B %d')}}</span>
+                </div>
+                <div class="mainInformation">
+                    <h6 class="font-s-xl text-color-indigo-main">{{$bootcamp->title}}</h6>
+                    <div class="clockAndPlace">
+                    <div class="d-flex gap-2 align-items-center">
+                      <div>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3c873a" class="bi bi-clock-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                        </svg>
+                    </div>
+                    <div class="mt-1">{{$bootcamp->fromhours}}</div>
+                </div>
+                <div class="d-flex gap-2 align-items-center">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3c873a" class="bi bi-map" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.5.5 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103M10 1.91l-4-.8v12.98l4 .8zm1 12.98 4-.8V1.11l-4 .8zm-6-.8V1.11l-4 .8v12.98z"/>
+                        </svg>
+                    </div>
+                    <div>{{ $bootcamp->eventplace }}</div>
+                    </div>
+                </div>
+                <p>{{$bootcamp->summary}}</p>
+                <div class="d-flex justify-content-between align-items-end">
+                    <div class="">
+                        <h6 ><del>قیمت اصلی: {{ $bootcamp->getPrice() }}</del></h6>
+                        <h5 style="margin-bottom: 0px" class="text-color-green">قیمت با تخفیف: {{ number_format($bootcamp->getPriceWithDiscount()) }}</h5>
+                    </div>
 
-        <!-- =======================
-    Instructor START -->
+                    <a href="{{route('bootcamps.show',$bootcamp->slug)}}" class="buttonBootCamp">بیشتر</a>
+                </div>
+                </div>
+              </div>
+            </div>
+            </article>
+        </section>
+    @endforeach
+    </section>
+      <!-- =======================
+        Instructor START -->
         <section>
             <div class="container">
                 <!-- Title -->

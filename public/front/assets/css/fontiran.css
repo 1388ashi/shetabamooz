@@ -103,3 +103,6 @@ This set of fonts are used in this project under the license: (.....)
   src: url("../fonts/IRANYekanX-Regular.woff") format("woff"),
     url("../fonts/IRANYekanX-Regular.woff2") format("woff2");
 }
+.font-family{
+  font-family: IRANYekanX-Regular;
+}

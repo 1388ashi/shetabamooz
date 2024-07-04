@@ -7,6 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Modules\Blog\App\Models\Post;
+use Modules\Bootcamp\App\Models\Bootcamp;
 use Modules\Course\App\Models\Course;
 use Modules\Home\App\Models\StudentPov;
 use Modules\Professor\App\Models\Professor;
@@ -19,8 +20,8 @@ class HomeController extends Controller
         $professors = Professor::query()->latest('id')->active()->take(6)->get();
         $posts = Post::query()->latest('id')->active()->take(6)->get();
         $studentPovs = StudentPov::query()->latest('id')->active()->get();
-
-        return view('home::front.home',compact('courses','professors','posts','studentPovs'));
+        $bootcamps = Bootcamp::query()->latest('id')->take(4)->get();
+        return view('home::front.home',compact('courses','professors','posts','studentPovs','bootcamps'));
     }
 
     public function search()

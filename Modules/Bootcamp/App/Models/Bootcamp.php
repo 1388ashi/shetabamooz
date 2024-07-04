@@ -28,7 +28,7 @@ class Bootcamp extends Model implements HasMedia, Viewable
      * The attributes that are mass assignable.
      */
     protected $fillable = [
-        'title','subtitle','eventplace','support','catering','gifts'
+        'title','subtitle','eventplace','support','catering','gifts','fromhours'
         ,'summary','description','published_at','price','type'
         ,'discount','prerequisite','contacts','time','status',
         'slug','image_alt','meta_title','meta_description','meta_robots','canonical_tag',

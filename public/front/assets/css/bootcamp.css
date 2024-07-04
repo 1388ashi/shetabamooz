@@ -1,0 +1,890 @@
+.font-s-xs {
+  font-size: 12px;
+  line-height: 16px;
+}
+.font-s-sm {
+  font-size: 14px;
+  line-height: 20px;
+}
+.font-s-md {
+  font-size: 16px;
+  line-height: 24px;
+}
+.font-s-lg {
+  font-size: 18px;
+  line-height: 28px;
+}
+.font-s-xl {
+  font-size: 27px;
+  line-height: 28px;
+}
+.font-s-2xl {
+  font-size: 20px;
+  line-height: 28px;
+}
+.font-s-3xl {
+  font-size: 22px;
+  line-height: 30px;
+}
+
+.font-w-200 {
+  font-weight: 200;
+}
+.font-w-300 {
+  font-weight: 300;
+}
+.font-w-400 {
+  font-weight: 400;
+}
+.font-w-500 {
+  font-weight: 500;
+}
+.font-w-600 {
+  font-weight: 600;
+}
+.font-w-700 {
+  font-weight: 700;
+}
+.font-w-800 {
+  font-weight: 800;
+}
+.font-w-900 {
+  font-weight: 900;
+}
+
+body {
+  --green-dark: #347733;
+  --green: #3c873a !important;
+  --green-50-transparent: #3c873a80;
+  --green-5: #f6f9f6 !important;
+  --green-7: #f2f7f2 !important;
+  --green-10: #ecf3ec !important;
+  --green-15: #e2ede2 !important;
+  --green-20: #d8e7d8 !important;
+  --green-30: #c5dbc4 !important;
+  --green-50: #9ec39d !important;
+  --green-60: #8ab789 !important;
+  --base-color: #08192b;
+  --indigo-main: #2a3554;
+  --indigo-50: #2d3c4b;
+  --indigo-20: #525e6b;
+  --gray-30:#585858;
+  --gray-20 : #a0a0a0;
+  --white :#fff;
+}
+.text-color-grayLight{
+  color: var(--gray-20);
+}
+.text-color-greenDark{
+  color: var(--green-dark);
+}
+.text-white{
+  color:  var(--white)
+}
+.text-color-green {
+  color: var(--green);
+}
+
+.text-color-green-50-transparent {
+  color: var(--green-50-transparent);
+}
+
+.text-color-green-5 {
+  color: var(--green-5);
+}
+
+.text-color-green-7 {
+  color: var(--green-7);
+}
+
+.text-color-green-10 {
+  color: var(--green-10);
+}
+
+.text-color-green-15 {
+  color: var(--green-15);
+}
+
+.text-color-green-20 {
+  color: var(--green-20);
+}
+
+.text-color-green-30 {
+  color: var(--green-30);
+}
+
+.text-color-green-50 {
+  color: var(--green-50);
+}
+
+.text-color-green-60 {
+  color: var(--green-60);
+}
+
+.text-color-base {
+  color: var(--base-color);
+}
+
+.text-color-indigo-main {
+  color: var(--indigo-main);
+}
+
+.text-color-indigo-50 {
+  color: var(--indigo-50);
+}
+
+.text-color-indigo-20 {
+  color: var(--indigo-20);
+}
+
+
+.bg-color-green {
+  background-color: var(--green);
+}
+
+.bg-color-green-50-transparent {
+  background-color: var(--green-50-transparent);
+}
+
+.bg-color-green-5 {
+  background-color: var(--green-5);
+}
+
+.bg-color-green-7 {
+  background-color: var(--green-7);
+}
+
+.bg-color-green-10 {
+  background-color: var(--green-10);
+}
+
+.bg-color-green-15 {
+  background-color: var(--green-15);
+}
+
+.bg-color-green-20 {
+  background-color: var(--green-20);
+}
+
+.bg-color-green-30 {
+  background-color: var(--green-30);
+}
+
+.bg-color-green-50 {
+  background-color: var(--green-50);
+}
+
+.bg-color-green-60 {
+  background-color: var(--green-60);
+}
+
+.bg-color-base {
+  background-color: var(--base-color);
+}
+
+.bg-color-indigo-main {
+  background-color: var(--indigo-main);
+}
+
+.bg-color-indigo-50 {
+  background-color: var(--indigo-50);
+}
+
+.bg-color-indigo-20 {
+  background-color: var(--indigo-20);
+}
+
+
+
+/* General */
+.containerBootcamp {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.containerFlouidBootcamp {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 0px !important;
+}
+
+.buttonBootCamp {
+  background-color:var(--green-20);
+  border: none;
+  padding: 15px 30px;
+  color: var(--green);
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.buttonBootCamp:hover {
+  background-color: var(--green);
+  color: var(--white);
+  transition: 0.5s;
+}
+
+.marginSection{
+  margin-top: 150px;
+}
+
+/* End General */
+
+
+
+
+
+
+
+
+
+/* Banner */
+
+.bannerContact {
+  display: flex;
+  justify-content: space-between;
+  aspect-ratio: 6/2;
+  margin-top: 50px;
+}
+
+.sectionImg {
+  width: 50%;
+  position: relative;
+  /* background-color: pink; */
+}
+.contentBanner {
+  display: flex;
+  flex-direction: column;
+  row-gap: 22px;
+  width: 50%;
+}
+
+.figureimgBanner {
+  width: 80%;
+  margin-right: 20%;
+  /* margin-top: ; */
+}
+.DivForImg {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  z-index: 1;
+  height: 70%;
+  width: 20%;
+}
+.imgBanner {
+  z-index: 10;
+  position: relative;
+}
+
+.borderleftBanner {
+  border-left: 2px solid var(--green);
+}
+
+.descriptionBanner{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.fontDecrease{
+  font-size: 20px;
+  line-height: 28px;
+}
+.teacherBanner{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+/* End Banner */
+
+
+
+
+
+
+
+
+
+/* Description */
+.descriptionStyle {
+  font-size: 18px;
+  line-height: 40px;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  height: 200px;
+}
+
+
+.descriptionStyle::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(to top, white, transparent);
+}
+
+.descriptionStyle.expanded {
+  height: auto;
+}
+
+.descriptionStyle.expanded::after {
+  display: none;
+}
+
+#showMore {
+  display: block;
+  margin: 20px auto;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: var(--green) !important;
+}
+
+.styleShowMore {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px 20px;
+
+  border: none;
+}
+.styleShowMore p {
+  color: var(--blue-main) !important;
+}
+/* End Description  */
+
+
+
+
+
+
+
+/* Heading Start */
+#heading {
+  background-color: var(--green-20);
+}
+
+#heading summary {
+  list-style: none;
+  display: flex; /* also removes the list marker */
+  align-items: center;
+  transition: 0.2s ease-in-out;
+  padding: 20px 20px;
+  background-color: #ffffff;
+  color: var(--blue-dark);
+  border-radius: 5px;
+}
+
+#heading summary:hover {
+  background-color: var(--green-50-transparent);
+}
+#heading summary .coutMeeting {
+  width: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 300;
+}
+#heading summary .coutMeeting::after {
+  content: "";
+  width: 18px;
+  height: 10px;
+  background: url("../images/bootcamp/icon/Vector22.svg") no-repeat;
+  background-size: contain;
+  margin-left: 0.75em;
+  transition: 0.2s;
+}
+
+#heading summary .coutMeeting::-webkit-details-marker {
+  display: none;
+}
+
+#heading details[open] summary .coutMeeting {
+  transform: rotate(1);
+}
+#heading details[open] summary .coutMeeting::after {
+  background: url("../images/bootcamp/icon/Vector23.svg") no-repeat;
+  background-size: contain;
+}
+
+#heading details {
+  background: #fff;
+  box-shadow: 2px 5px 67px -25px rgba(0, 0, 0, 0.185);
+  border-radius: 5px;
+  color: var(--gray-dark);
+}
+
+
+
+
+@keyframes rotate {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(1);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #heading details[open] summary::after {
+    background: url("../../../assets/images/Home/Vector23.svg") no-repeat;
+    background-size: contain;
+    width: 10%;
+  }
+
+}
+
+#heading ul {
+  list-style: none;
+  padding: 0;
+  width: 97%;
+  margin: 0 auto;
+}
+
+#heading ul li {
+  position: relative;
+  width: 92%;
+  margin: 0 auto;
+  padding: 6px 0;
+  direction: rtl; /* This line changes the direction of the list */
+}
+
+#heading ul li::before {
+  content: "";
+  position: absolute;
+  top: 35%;
+  right: -19px;
+  transform: translateY(-50%);
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: var(--green);
+}
+
+#heading ul li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: -31%;
+  right: -14px;
+  transform: translateY(-50%);
+  width: 2px;
+  border-radius: 10px;
+  height: 25px;
+  background-color: var(--green-30);
+}
+
+.titleHeader {
+
+  margin: 0px 10px;
+  color: var(--green);
+}
+.detailHeading{
+  color: var(--green) !important;
+}
+
+.timeMeeting{
+  display: flex;
+}
+
+
+
+/* Teacher Start */
+
+.box-teacher {
+  display: flex;
+  border-radius: 10px;
+  padding: 30px 0;
+  box-shadow: -1px 0px 36px 10px rgba(61, 135, 58, 0.219);
+  margin-top: 60px;
+}
+.informationTeacher {
+  width: 40%;
+  border-left: 2px solid var(--green);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.informationTeacher figure img {
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 100%;
+}
+
+.teacher figure img {
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  border: 2px Solid #fff;
+}
+.teacher {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: fit-content;
+}
+
+
+
+
+
+/* sign in */
+
+.signinInformationRight {
+  padding: 50px 10px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+}
+.signinInformationLeft {
+  padding: 50px 10px;
+  width: 40%;
+}
+
+.signInMiniCard {
+  display: flex;
+  background-color: var(--green-30);
+  width: 70%;
+  margin: 0 auto;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  height: 100px;
+}
+.signInMiniCard:hover {
+  background-color: var(--green-50);
+  transition: 0.5s;
+}
+
+.listInformationSignIn {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 50px;
+}
+.listInformationSignIn li {
+  list-style: none;
+  list-style-image: url("../images/bootcamp/icon/confrim.svg");
+  background-repeat: no-repeat;
+  background-position: 0 50%; /* تنظیم موقعیت تصویر */
+  padding-left: 25px; /* تنظیم فاصله متن از تصویر */
+  min-height: 24px; /* تنظیم حداقل ارتفاع آیتم‌های لیست */
+}
+
+.signIn{
+  display: flex;
+  flex-direction: row;
+
+}
+
+
+@media screen and (max-width: 1224px) {
+  .font-s-xs {
+    font-size: 10px;
+    line-height: 16px;
+  }
+  .font-s-sm {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .font-s-md {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .font-s-lg {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  .font-s-xl {
+    font-size: 19px;
+    line-height: 28px;
+  }
+  .font-s-2xl {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .font-s-3xl {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .containerBootcamp {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .marginSection{
+    margin-top: 0px;
+  }
+
+/* Banner */
+
+.bannerContact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  aspect-ratio: 6/2;
+  gap: 30px;
+  margin-top: unset;
+}
+.contentBanner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 22px;
+  width: 100%;
+  margin-top: unset;
+
+}
+
+.figureimgBanner {
+  width: 100%;
+  margin-right: unset;
+}
+.sectionImg {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  /* background-color: pink; */
+}
+
+.descriptionBanner{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+}
+.fontDecrease{
+  font-size: 16px;
+  line-height: 24px;
+}
+
+
+.teacherBanner{
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+#heading summary .coutMeeting {
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.headingList{
+  width: 80%;
+  margin: 0 auto;
+}
+.timeMeeting{
+  display: none;
+}
+
+#heading ul li::before {
+  content: "";
+  position: absolute;
+  top: 35%;
+  right: -19px;
+  transform: translateY(-50%);
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: unset;
+}
+
+#heading ul li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: -31%;
+  right: -14px;
+  transform: translateY(-50%);
+  width: 2px;
+  border-radius: 10px;
+  height: 25px;
+  background-color: unset;
+}
+
+
+.box-teacher {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 30px 0;
+  box-shadow: -1px 0px 36px 10px rgba(61, 135, 58, 0.219);
+  margin-top: 60px;
+}
+.informationTeacher {
+  width:90%;
+  margin: 0 auto;
+  border-left: unset;
+  border-bottom: 2px solid var(--green);
+  padding-bottom:20px ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signIn{
+
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+.signinInformationRight {
+  padding: 50px 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+}
+.signinInformationLeft {
+  padding: 50px 10px;
+  width: 100%;
+}
+
+
+}
+
+
+
+
+/* For Page Home */
+.cardBootcamp {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 20px auto;
+  border: 1px solid var(--green);
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.cardBootcamp figure {
+  width: 100%;
+  height: 200px; /* تنظیم ارتفاع برای figure */
+  overflow: hidden;
+  margin: 0; /* حذف فاصله پیش‌فرض figure */
+}
+
+.cardBootcamp figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.informationCardBootcamp {
+  padding: 10px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dateCard {
+  border-bottom: 1px solid #ccc;
+  border-left: none;
+  height: fit-content;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.dateCard h1 {
+  color: var(--green);
+  font-size: 2.5rem;
+}
+
+.clockAndPlace {
+  display: flex;
+  flex-direction: row;
+  gap: 35px;
+  margin-bottom: 20px;
+}
+
+.mainInformation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.mainInformation p {
+  margin: 0;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+
+/* Media Queries for responsiveness */
+@media (min-width: 768px) {
+  .cardBootcamp {
+    flex-direction: row;
+  }
+
+  .cardBootcamp figure, .informationCardBootcamp {
+    width: 50%;
+  }
+
+  .cardBootcamp figure {
+    height: auto; /* حذف ارتفاع مشخص شده برای صفحه‌های بزرگتر */
+  }
+
+  .dateCard {
+    margin-left: 30px;
+    margin-bottom: 0;
+  }
+
+  .clockAndPlace {
+    flex-direction: row;
+    gap: 50px;
+  }
+
+  .informationCardBootcamp {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .dateCard {
+    border-left: 1px solid #ccc;
+    border-bottom: none;
+    height: fit-content;
+    padding-left: 10px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cardBootcamp {
+    width: 80%;
+  }
+
+  .dateCard h1 {
+    font-size: 4rem;
+  }
+
+}

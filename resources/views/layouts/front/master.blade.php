@@ -112,6 +112,11 @@
     <link
         rel="stylesheet"
         type="text/css"
+        href="{{ asset('front/assets/css/bootcamp.css') }}"
+    />
+    <link
+        rel="stylesheet"
+        type="text/css"
         href="{{ asset('front/assets/vendor/font-awesome/css/all.min.css') }}"
     />
     <link
@@ -401,7 +406,13 @@ Footer END -->
 
 <!-- Notifications js -->
 <script src="{{ asset('front/assets/plugins/notify/js/jquery.growl.js') }}"></script>
-
+<script>
+    document.getElementById("showMore").addEventListener("click", function () {
+      var description = document.querySelector(".descriptionStyle");
+      description.classList.add("expanded");
+      this.style.display = "none";
+    });
+  </script>
 </body>
 @include('layouts.front.components.errors')
 

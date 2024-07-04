@@ -28,7 +28,14 @@ return new class extends Migration
             $table->string('catering')->nullable();
             $table->string('gifts')->nullable();
             $table->boolean('status')->default(1);
+            $table->string('fromhours');
             $table->timestamp('published_at');
+            $table->string('slug');
+            $table->string('image_alt')->nullable();
+            $table->text('meta_title')->nullable();
+            $table->text('meta_description')->nullable();
+            $table->boolean('meta_robots')->default(1);
+            $table->text('canonical_tag')->nullable();
             $table->timestamps();
         });
     }

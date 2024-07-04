@@ -45,7 +45,7 @@ Route::webSuperGroup('admin', function () {
     Route::resource('advisors',AdvisorController::class);
 });
 
-// Route::Resource('courses', \Modules\Course\App\Http\Controllers\Front\CourseController::class)->only(['index','show']);
+Route::Resource('bootcamps', \Modules\Bootcamp\App\Http\Controllers\Front\BootcampController::class)->only(['show']);
 // Route::post('course-comments/store', [\Modules\Course\App\Http\Controllers\Front\CourseCommentController::class, 'store'])->name('course-comments.store');
 
 

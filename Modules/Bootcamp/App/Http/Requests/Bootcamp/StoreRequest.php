@@ -25,6 +25,7 @@ class StoreRequest extends FormRequest
             'professors.id' => 'integer|exists:professors,id',
 
             'time' => 'required',
+            'fromhours' => 'required',
             'catering' => 'nullable|max:193',
             'published_at' => 'required|date',
             'price' => 'nullable',
@@ -38,7 +39,7 @@ class StoreRequest extends FormRequest
             'prerequisite' => 'required|min:3|max:1000',
             'status' => 'nullable|boolean',
 
-            'slug' => 'nullable',
+            'slug' => 'required',
             'image_alt'=> 'nullable',
             'meta_title' => 'nullable',
             'meta_description' => 'nullable',

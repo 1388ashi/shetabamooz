@@ -64,7 +64,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="time" class="control-label">مدت زمان</label>
+                                        <label for="time" class="control-label">مدت زمان</label><span class="text-danger">&starf;</span>
                                         <input type="number" name="time" value="{{ old('time') }}"
                                         class="form-control" id="time"
                                         placeholder="زمان دوره را وارد کنید..." required>
@@ -202,6 +202,12 @@
                                 </div>
                             </div>
                             <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="label" class="control-label">از ساعت تا ساعت</label><span class="text-danger">&starf;</span>
+                                        <input class="form-control" type="text" name="fromhours" required>
+                                    </div>
+                                </div>
                                 <div class="col-2">
                                     <p class="form-label">وضعیت نمایش <span class="text-danger">&starf;</span></p>
                                     <label class="custom-control custom-checkbox">
@@ -218,10 +224,10 @@
                                     <div class="row">
                                         <div class="col">
                                             <div class="form-group">
-                                                <label for="slug" class="control-label">نامک (slug)</label>
+                                                <label for="slug" class="control-label">نامک (slug)</label><span class="text-danger">&starf;</span>
                                                 <input type="text" name="slug" value="{{ old('slug') }}"
                                                        class="form-control" id="slug"
-                                                       placeholder="نامک را اینجا وارد کنید...">
+                                                       placeholder="نامک را اینجا وارد کنید..." required>
                                                 <span class="text-info">افزودن نامک برای SEO مفید است.</span>
                                             </div>
                                         </div>

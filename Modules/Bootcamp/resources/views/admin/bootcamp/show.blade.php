@@ -47,6 +47,7 @@
                         <li class="list-group-item"><b>پیش نیاز: </b>{{ $bootcamp->prerequisite }}</li>
                         <li class="list-group-item"><b>مخاطبین: </b>{{ $bootcamp->contacts }}</li>
                         <li class="list-group-item"><b>مدت زمان بوت کمپ: </b>{{ $bootcamp->time }}ساعت</li>
+                        <li class="list-group-item"><b>از ساعت تا ساعت: </b>{{ $bootcamp->fromhours }}</li>
                         <li class="list-group-item"><b>پشتیبانی: </b>{{ $bootcamp->support }}</li>
                         <li class="list-group-item"><b>وضعیت
                                 نمایش: </b>@include('components.status', ['status' => $bootcamp->status])</li>

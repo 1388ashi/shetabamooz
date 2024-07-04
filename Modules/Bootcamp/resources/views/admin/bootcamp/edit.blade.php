@@ -73,7 +73,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="time" class="control-label">مدت زمان</label>
+                                        <label for="time" class="control-label">مدت زمان</label><span class="text-danger">&starf;</span>
                                         <input type="number" name="time" value="{{ old('time',$bootcamp->time) }}"
                                         class="form-control" id="time"
                                         placeholder="زمان دوره را وارد کنید..." required>
@@ -213,6 +213,12 @@
                             </div>
 
                             <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="label" class="control-label">از ساعت تا ساعت</label><span class="text-danger">&starf;</span>
+                                        <input class="form-control" type="text" name="fromhours" value="{{ old('fromhours',$bootcamp->fromhours) }}" required>
+                                    </div>
+                                </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="status" class="control-label">وضعیت نمایش</label>
@@ -243,7 +249,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
-                                        <label for="slug" class="control-label">نامک (slug)</label>
+                                        <label for="slug" class="control-label">نامک (slug)</label><span class="text-danger">&starf;</span>
                                         <input type="text" name="slug" value="{{ old('slug',$bootcamp->slug) }}"
                                                class="form-control" id="slug"
                                                placeholder="نامک را اینجا وارد کنید...">

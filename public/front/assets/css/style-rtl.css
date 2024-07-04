@@ -223,6 +223,10 @@ hr {
   border-top: var(--bs-border-width) solid;
   opacity: 0.25;
 }
+.text-bs-primary{
+  color: var(--bs-primary);
+  font-weight: 900;
+}
 
 h6,
 .h6,
@@ -252,7 +256,7 @@ h1,
 @media (min-width: 1200px) {
   h1,
   .h1 {
-    font-size: 26px;
+    font-size: 2.8125rem;
   }
 }
 
@@ -263,7 +267,7 @@ h2,
 @media (min-width: 1200px) {
   h2,
   .h2 {
-    font-size: 28px;
+    font-size: 2.34375rem;
   }
 }
 
@@ -274,8 +278,7 @@ h3,
 @media (min-width: 1200px) {
   h3,
   .h3 {
-    font-size: 28px;
-    font-family: IRANYekanX-ExtraBlack;
+    font-size: 1.875rem;
   }
 }
 
@@ -297,16 +300,13 @@ h5,
 @media (min-width: 1200px) {
   h5,
   .h5 {
-    font-size: 18px;
-    font-weight: 900;
-    font-family: IRANYekanX-ExtraBlack;
+    font-size: 1.3125rem;
   }
 }
 
 h6,
 .h6 {
-  font-size: 17px;
-  font-family: IRANYekanX-DemiBold;
+  font-size: 0.9375rem;
 }
 
 p {
@@ -697,8 +697,7 @@ progress {
 }
 @media (min-width: 1200px) {
   .display-5 {
-    font-size: 28px;
-    font-family: IRANYekanX-ExtraBlack;
+    font-size: 4rem;
   }
 }
 
@@ -17159,11 +17158,10 @@ fieldset:disabled .btn {
 }
 @media (min-width: 1200px) {
   .fs-1 {
-    font-size: 31px !important;
-    font-family: IRANYekanX-ExtraBlack;
+    font-size: 2.8125rem !important;
   }
   .fs-2 {
-    font-size: 28px !important;
+    font-size: 2.34375rem !important;
   }
   .fs-3 {
     font-size: 1.875rem !important;
