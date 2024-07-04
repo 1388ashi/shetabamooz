@@ -31,7 +31,7 @@ class CourseController extends Controller
     public function show($show)
     {
         $course = Course::where('slug',$show)->first();
-        if(!empty($course['items'])){
+        if($course == null){
             abort(404);
         }
         if ($course->status ==0){
