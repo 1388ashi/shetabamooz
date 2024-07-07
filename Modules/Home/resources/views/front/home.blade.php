@@ -815,7 +815,9 @@
         </section>
         <!-- =======================
     Client feedback END -->
-    @if (!empty($bootcamps['items']))
+    @foreach ($bootcamps as $bootcamp)
+    @endforeach
+    @if (!empty($bootcamp))
     <section class="containerFlouidBootcamp marginSection my-7">
         <h1 class="text-center">بوت کمپ های شتاب</h1>
         @foreach ($bootcamps as $bootcamp)
