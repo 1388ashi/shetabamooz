@@ -866,7 +866,6 @@
                         <h4 class="text-color-green">رایگان</h4>
                         @endif
                     </div>
-
                     <a href="{{route('bootcamps.show',$bootcamp->slug)}}" class="buttonBootCamp">بیشتر</a>
                 </div>
                 </div>
@@ -944,7 +943,6 @@
 
                             @endforeach
                             <!-- Card item END -->
-
                         </div>
                     </div>
                 </div>
