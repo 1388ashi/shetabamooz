@@ -407,7 +407,18 @@ Footer END -->
 <!-- Notifications js -->
 <script src="{{ asset('front/assets/plugins/notify/js/jquery.growl.js') }}"></script>
 <script>
-    document.getElementById("showMore").addEventListener("click", function () {
+    // Play video when modal is shown
+    $('#videoModal').on('shown.bs.modal', function () {
+        document.getElementById('videoPlayerModal').play();
+    });
+
+    // Pause video when modal is hidden
+    $('#videoModal').on('hidden.bs.modal', function () {
+        document.getElementById('videoPlayerModal').pause();
+    });
+</script>
+<script>
+        document.getElementById("showMore").addEventListener("click", function () {
       var description = document.querySelector(".descriptionStyle");
       description.classList.add("expanded");
       this.style.display = "none";

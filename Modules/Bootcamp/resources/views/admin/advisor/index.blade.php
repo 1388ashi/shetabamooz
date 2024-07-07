@@ -34,7 +34,7 @@
                                 <th class="border-top">@sortablelink('id', 'ردیف')</th>
                                 <th class="border-top">@sortablelink('name', 'نام و نام خانوادگی')</th>
                                 <th class="border-top">@sortablelink('mobile', 'شماره موبایل')</th>
-                                <th class="border-top">نوع</th>
+                                <th class="border-top">هدف یادگیری</th>
                                 <th class="border-top">زمان تماس</th>
                                 <th class="border-top">@sortablelink('status', 'وضعیت')</th>
                                 <th class="border-top">عملیات</th>
@@ -51,7 +51,13 @@
                                     <td>
                                         @include('bootcamp::admin.advisor.status', ['status' => $advisor->status])
                                     </td>
+                                    <td>
+                                        <button data-toggle="modal" data-original-title="ویرایش" data-target="#edit-menu-{{ $advisor->id }}"  class="btn btn-warning btn-sm text-white">
+                                            <i class="fa fa-pencil"></i>
+                                        </button>
+                                    </td>
                                 </tr>
+
                             @empty
                                 <tr>
                                     <td colspan="100%">
@@ -70,4 +76,5 @@
         </div>
     </div>
     <!-- row closed -->
+    @include('bootcamp::admin.advisor.edit')
     @endsection

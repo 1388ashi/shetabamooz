@@ -26,51 +26,18 @@ class AdvisorController extends Controller
 
         return view('bootcamp::admin.advisor.index', compact('advisors'));
     }
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function update(Request $request,Advisor $advisor): RedirectResponse
     {
-        return view('bootcamp::create');
-    }
+        $advisor->update([
+            'status' => $request->status,
+        ]);
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request): RedirectResponse
-    {
-        //
-    }
+        $data = [
+            'status' => 'success',
+            'message' => 'مشاوره با موفقیت به روزرسانی شد'
+        ];
 
-    /**
-     * Show the specified resource.
-     */
-    public function show($id)
-    {
-        return view('bootcamp::show');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit($id)
-    {
-        return view('bootcamp::edit');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, $id): RedirectResponse
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy($id)
-    {
-        //
+        return redirect()->route('admin.advisors.index')
+        ->with($data);
     }
 }

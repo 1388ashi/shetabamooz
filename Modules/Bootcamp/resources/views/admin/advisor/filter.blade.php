@@ -22,8 +22,7 @@
                             <select name="status" class="form-control">
                                 <option value="">همه</option>
                                 <option value="new" @selected(request("status") == "new")>جدید</option>
-                                <option value="accepted" @selected(request("status") == "accepted")>ثبت نام میکند</option>
-                                <option value="rejected" @selected(request("status") == "rejected")>ثبت نام نمیکند</option>
+                                <option value="accepted" @selected(request("status") == "accepted")>تماس گرفته شده</option>
                             </select>
                         </div>
                     </div>

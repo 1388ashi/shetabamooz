@@ -65,7 +65,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="time" class="control-label">مدت زمان</label><span class="text-danger">&starf;</span>
-                                        <input type="number" name="time" value="{{ old('time') }}"
+                                        <input type="text" name="time" value="{{ old('time') }}"
                                         class="form-control" id="time"
                                         placeholder="زمان دوره را وارد کنید..." required>
                                         <span class="text-info">لطفا زمان دوره(ساعت) را وارد کنید.</span>
@@ -186,7 +186,9 @@
                                     <div class="form-group">
                                         <label for="prerequisite" class="control-label">پیش نیاز</label>
                                         <span class="text-danger">&starf;</span>
-                                        <textarea name="prerequisite" class="form-control" placeholder="پیش نیاز را اینجا وارد کنید..."  required>{{ old('prerequisite') }}</textarea>
+                                        <input type="text" name="prerequisite" value="{{ old('prerequisite') }}"
+                                        class="form-control" id="prerequisite"
+                                        placeholder="پیش نیاز را اینجا وارد کنید..." required autofocus>
                                     </div>
                                 </div>
                             </div>

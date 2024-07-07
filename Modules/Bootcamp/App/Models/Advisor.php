@@ -14,7 +14,7 @@ class Advisor extends Model
     const STATUS_ACCEPTED = 'accepted';
 
     protected $fillable = [
-        'name','modile','type','time','status'
+        'name','mobile','type','time','status'
     ];
     public static function getAdvisorStatues(): array
     {

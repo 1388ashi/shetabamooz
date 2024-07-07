@@ -31,13 +31,26 @@
             <a href="#bottom"><button class="buttonBootCamp fs-6">سرفصل بوت کمپ</button></a>
           </div>
           <div class="sectionImg">
-            <figure class="figureimgBanner">
+            <figure class="figureimgBanner d-flex justify-content-center align-items-center">
               <img
                 class="w-100 imgBanner"
                 src="{{ $bootcamp->image['url'] }}"
                 alt=""
               />
+
             </figure>
+            {{-- <a
+            data-glightbox
+            data-gallery="office-tour"
+            href="{{ $bootcamp->video['url'] }}"
+            class="btn btn-round btn-primary-shadow mb-0 overflow-visible me-7"
+        >
+            <i class="fas fa-play"></i>
+            <h6 class="mb-0 ms-3 fw-normal position-absolute start-100 top-50 translate-middle-y">
+                مشاهده تیزر
+            </h6>
+        </a> --}}
+            <!-- Button trigger modal -->
             <div class="DivForImg bg-color-green"></div>
           </div>
         </article>
@@ -50,9 +63,9 @@
               </p>
             </div>
             <div class="px-3 w-80">
-              <p class="text-color-green fw-bold font-s-lg">پشتیبانی</p>
+              <p class="text-color-green fw-bold font-s-lg">شروع بوت کمپ</p>
               <p class="font-w-900 fontDecrease text-color-indigo-main">
-                {{ $bootcamp->support }}
+                {{ $bootcamp->fromhours }}
               </p>
             </div>
           </div>
@@ -81,9 +94,9 @@
       <h1 class="text-center my-5 text-color-indigo-main">
         آشنایی با بوت کمپ {{ $bootcamp->title }}
       </h1>
-      <p class="descriptionStyle text-color-indigo-20">
+      <span class="descriptionStyle text-color-indigo-20">
         {!! $bootcamp->description !!}
-    </p>
+      </span>
       <button id="showMore">
         <div class="styleShowMore">
           <svg
@@ -105,7 +118,6 @@
     </section>
 
     <!--Headline START -->
-    @if (!empty($headlines['items']))
     <section id="heading" class="marginSection">
         <section class="containerBootcamp">
           <div
@@ -148,11 +160,10 @@
                       d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
                     />
                   </svg>
-                  <div class="text-color-indigo-main"></div>
+                  <div class="text-color-indigo-main">{{$headline->title}}</div>
                 </div>
 
                 <div class="coutMeeting text-color-grayLight">
-                  <div class="font-s-xs text-color-grayLight ">{{$headline->title}}</div>
                 </div>
               </summary>
 
@@ -162,7 +173,6 @@
                             <ul class="headingList">
                               <li>
                                 <div class="d-flex justify-content-between gap-2 font-s-md font-family font-w-600">
-
                                   <div class="d-flex">
                                       <p class="text-color-indigo-main ">{{$headline->description}}</p>
                                   </div>
@@ -177,7 +187,6 @@
           </div>
         </section>
       </section>
-    @endif
 
     <!-- Teacher STRAT -->
     <section id="teacher" class="containerBootcamp marginSection">
@@ -189,7 +198,7 @@
         @foreach ($professors as $professor)
         <div class="box-teacher mt-7">
           <div class="informationTeacher">
-            <figure>
+            <figure style="width: 50%">
               <img src="{{$professor->image}}" alt="" />
             </figure>
             <h2 class="font-s-3xl my-3 text-color-green">{{$professor->name}}</h2>
@@ -201,20 +210,24 @@
           <div class="d-flex justify-content-center align-items-center p-4 widthTeacher">
             <p class="text-color-green font-s-md font-w-600 ">
               <ul class="listOfTeacher">
+                @foreach ($professor->specialties as $speciality)
                 <li style="list-style-type: none;text-decoration: none">
-                  <div class="d-flex justify-content-between gap-2 font-s-md font-family font-w-600 ">
-                    <div class="d-flex">
-                        <p class="text-color-indigo-main "> {{ $professor->description }}</p>
+                    <div class="d-flex justify-content-between gap-2 font-s-md font-family font-w-600 ">
+                        <div class="d-flex">
+                            <div class="titleHeader font-w-900 text-nowrap" style="margin-bottom: 10px">
+                                {{ $speciality->description }}
+                            </div>
+                        </div>
                     </div>
-                </div>
                 </li>
+                @endforeach
               </ul>
             </p>
           </div>
         </div>
         @endforeach
       </section>
-
+<br>
     <!-- Sign In -->
     <section class="containerFlouidBootcamp bg-color-green-10 marginSection">
       <section class="containerBootcamp">
@@ -248,18 +261,45 @@
             <h4 class="fs-3 my-3 text-color-green">
               زمان را از دست ندهید
             </h4>
-            <p class="font-s-lg text-color-indigo-main font-w-600">
+            <p class="font-s-lg text-color-indigo-main font-w-600 mb-4">
               جامع و پروژه‌محور؛ از پایه تا رسیدن به کسب درآمد
             </p>
-            <h4 class="fs-4 mt-5 mb-4 text-color-green">
-                @if ($bootcamp->price !== null)
-                {{ $bootcamp->getPrice() }} تومان
+            @if ($bootcamp->price !== null)
+                @if($bootcamp->discount !== null)
+                <h6 style="margin-top: 2px;color: gray"><del>قیمت اصلی: {{ $bootcamp->getPrice() }}</del></h6>
+                <h5 style="margin-top: 7px" class="text-color-green">قیمت با تخفیف: {{ number_format($bootcamp->getPriceWithDiscount()) }}</h5>
                 @else
-                رایگان
+                <h5 class="fs-4 mt-2 mb-2 text-color-green">قیمت: {{$bootcamp->getPrice() }}</h5>
                 @endif
-            </h4>
-            <button class="buttonBootCamp">ثبت نام می کنم</button>
-          </div>
+            @else
+            <h4 class="fs-4 mt-5 mb-4 text-color-green">رایگان</h4>
+            @endif
+            <form action="{{ route('users.store') }}" method="post">
+                @csrf
+            <div class="row mt-3">
+            <div class="col-lg-6">
+                <label class="form-label">نام و نام خانوادگی *</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    aria-label="First name"
+                    name="name"
+                    value="{{ old('name') }}"
+                    required
+                />
+            </div>
+            <input type="hidden" name="bootcamp_id" value="{{ request()->bootcamp_id }}">
+            <div class="col-lg-6">
+                <label class="form-label">شماره تماس *</label>
+                <input type="text" class="form-control" name="mobile" value="{{ old('mobile') }}" required/>
+            </div>
+            <input type="hidden" name="bootcamp_id" value="{{$bootcamp->id}}">
+            <div class="d-flex justify-content-center align-items-center">
+                <button type="submit" class="buttonBootCamp  mt-3">ثبت نام</button    >
+            </div>
+            </div>
+        </form>
+        </div>
           <div class="signinInformationLeft bg-color-green-20">
             <div class="signInMiniCard mb-3">
               <h6 class="text-color-greenDark">بیش از {{ $bootcamp->time }} ساعت</h6>
@@ -281,8 +321,7 @@
             </div>
             <div class="signInMiniCard mb-3">
               <div>
-                <h6 class="text-color-greenDark">{{ $bootcamp->support }}</h6>
-                <p class="text-color-indigo-main font-w-600">{{$bootcamp->contacts}}</p>
+                <h6 class="text-color-greenDark">{{$bootcamp->contacts}}</h6>
               </div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -300,7 +339,12 @@
             <ul class="listInformationSignIn text-color-indigo-main font-w-6
 
             00 font-s-md ">
-            <li>{{$bootcamp->prerequisite}}</li>
+            <li><b>پیش نیاز :</b>{{$bootcamp->prerequisite}}</li>
+            <li><b>پشتیبانی :</b>{{$bootcamp->support}}</li>
+            <li><b>پذیرایی :</b>{{$bootcamp->catering}}</li>
+            <li><b>جایزه :</b>{{$bootcamp->gifts}}</li>
+            <li><b>مکان برگذاری :</b>{{$bootcamp->eventplace}}</li>
+            <li><b>نوع بوت کمپ :</b>{{$bootcamp->type}}</li>
             </ul>
           </div>
         </div>
@@ -313,14 +357,15 @@
           <div class="form-container">
             <h1 class="text-color-indigo-main ">در کنار شما هستیم</h1>
             <div class="fs-5 text-color-green">مشاوره ثبت‌نام در دوره متخصص طراحی وب</div>
-            <form class="mt-4">
+            <form class="mt-4" action="{{route('advisors.store')}}" method="POST">
+                @csrf
                 <div class="form-group mb-3" >
                     <label for="name" class="text-nowrap px-2 w-25">نام شما</label>
-                    <input type="text" name="name" class="form-control" id="name" placeholder="مثال: لقمان آوند">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="مثال: عرشیا بطیاری">
                 </div>
                 <div class="form-group">
-                    <label for="phone">شماره موبایل</label>
-                    <input type="text" name="mobile" class="form-control" id="phone" placeholder="091xxxxxxxx">
+                    <label for="mobile">شماره موبایل</label>
+                    <input type="text" name="mobile" class="form-control" id="mobile" placeholder="091xxxxxxxx">
                 </div>
                 <div class="form-group">
                     <label for="goal">هدف شما از یادگیری؟</label>
@@ -381,7 +426,6 @@
         </div>
 
       </section>
-    @if (!empty($faqs['items']))
     <section id="faq" class=" marginSection">
         <section class="containerBootcamp">
           <div
@@ -412,7 +456,7 @@
                       d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
                     />
                   </svg>
-                  <div class="text-color-indigo-main">{{$faq->title}}</div>
+                  <div class="text-color-indigo-main">{{$faq->question}}</div>
                 </div>
 
                 <div class="coutMeeting text-color-grayLight">
@@ -428,7 +472,7 @@
                             <div class="d-flex justify-content-between gap-2 font-s-md font-family font-w-600">
 
                                 <div class="d-flex">
-                                    <p class="text-color-indigo-main ">{{$faq->description}}</p>
+                                    <p class="text-color-indigo-main ">{{$faq->answer}}</p>
                                 </div>
                             </div>
                             </li>
@@ -441,5 +485,4 @@
           </div>
         </section>
     </section>
-    @endif
 @endsection

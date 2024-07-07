@@ -26,8 +26,8 @@ class BootcampController extends Controller
         $faqs = BootcampFaq::query()->latest('id')->where('bootcamp_id',$bootcamp->id)->get();
         $headlines = Headline::query()->latest('id')->where('bootcamp_id',$bootcamp->id)->get();
         $professors = Professor::query()
-        ->whereHas('bootcamps')->get();
-
+        ->with('specialties')->whereHas('bootcamps')->get();
+        
         return view('bootcamp::front.show', compact('bootcamp','headlines','properties','faqs','professors'));
     }
 }

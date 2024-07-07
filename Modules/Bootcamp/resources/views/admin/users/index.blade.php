@@ -42,13 +42,20 @@
                             @forelse($users as $i => $user)
                                 <tr>
                                     <td>{{++$i}}</td>
-                                    <td>{{$user->id}}</td>
                                     <td>{{$user->name}}</td>
                                     <td>{{$user->mobile}}</td>
-                                    <td>{{$user->bootcamp->title}}</td>
-                                    <td>{{Str::limit($request->name,30)}}</td>
+                                    <td>
+                                        @foreach ($user->bootcamps as $bootcamp)
+                                        {{$bootcamp->title}}
+                                        @endforeach
+                                    </td>
                                     <td>
                                         @include('bootcamp::admin.users.status', ['status' => $user->status])
+                                    </td>
+                                    <td>
+                                        <button data-toggle="modal" data-original-title="ویرایش" data-target="#edit-menu-{{ $user->id }}"  class="btn btn-warning btn-sm text-white">
+                                            <i class="fa fa-pencil"></i>
+                                        </button>
                                     </td>
                                 </tr>
                             @empty
@@ -69,4 +76,5 @@
         </div>
     </div>
     <!-- row closed -->
+    @include('bootcamp::admin.user.edit')
     @endsection

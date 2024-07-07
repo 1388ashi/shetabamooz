@@ -42,11 +42,12 @@ Route::webSuperGroup('admin', function () {
         'create', 'show', 'edit'
     ]);
     Route::resource('users',UsersController::class);
-    Route::resource('advisors',AdvisorController::class);
+    Route::resource('advisors',AdvisorController::class)->except('store');
 });
 
 Route::Resource('bootcamps', \Modules\Bootcamp\App\Http\Controllers\Front\BootcampController::class)->only(['show']);
-// Route::post('course-comments/store', [\Modules\Course\App\Http\Controllers\Front\CourseCommentController::class, 'store'])->name('course-comments.store');
+Route::post('advisors/store', [\Modules\Bootcamp\App\Http\Controllers\Front\AdvisorController::class, 'store'])->name('advisors.store');
+Route::post('bootcamp-registers/store', [\Modules\Bootcamp\App\Http\Controllers\Front\UsersController::class, 'store'])->name('users.store');
 
 
 // Route::get('course-registers', [\Modules\Course\App\Http\Controllers\Front\CourseRegisterController::class, 'index'])

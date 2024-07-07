@@ -24,8 +24,8 @@ class StoreRequest extends FormRequest
             'professors' => 'required|array',
             'professors.id' => 'integer|exists:professors,id',
 
-            'time' => 'required',
-            'fromhours' => 'required',
+            'time' => 'required|max:193',
+            'fromhours' => 'required|max:193',
             'catering' => 'nullable|max:193',
             'published_at' => 'required|date',
             'price' => 'nullable',

@@ -18,7 +18,7 @@ class BootcampUser extends Model
     const STATUS_REJECTED = 'rejected';
 
     protected $fillable = [
-        'name','modile','description','status'
+        'name','mobile','description','status'
     ];
     public static function getAvailableStatues(): array
     {
