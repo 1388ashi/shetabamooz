@@ -332,7 +332,7 @@
                         </figure>
                         <!-- Title -->
                         <h1 class="mb-0 display-8">
-                            آیندتو با f شتاب آموز بساز
+                            آیندتو با  شتاب آموز بساز
                             <span class="position-relative">
 
                                 <!-- SVG START -->
