@@ -76,5 +76,5 @@
         </div>
     </div>
     <!-- row closed -->
-    @include('bootcamp::admin.user.edit')
+    @include('bootcamp::admin.users.edit')
     @endsection

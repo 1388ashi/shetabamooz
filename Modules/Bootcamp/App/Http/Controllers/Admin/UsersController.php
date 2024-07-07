@@ -36,27 +36,17 @@ class UsersController extends Controller
 
         return view('bootcamp::admin.users.index', compact('users','bootcamps'));
     }
-    /**
-     * Show the specified resource.
-     */
-    public function show($id)
+    public function update(Request $request,BootcampUser $user): RedirectResponse
     {
-        return view('bootcamp::show');
-    }
+        $user->update([
+            'status' => $request->status,
+        ]);
+        $data = [
+            'status' => 'success',
+            'message' => 'کاربر با موفقیت به روزرسانی شد'
+        ];
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, $id): RedirectResponse
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy($id)
-    {
-        //
+        return redirect()->route('admin.users.index')
+        ->with($data);
     }
 }

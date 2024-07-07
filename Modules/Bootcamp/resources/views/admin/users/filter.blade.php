@@ -18,7 +18,7 @@
                     </div>
                     <div class="col-4 col-lg-4 form-group">
                         <label class="font-weight-bold">بوت کمپ :</label>
-                        <select name="category_id" class="form-control select2">
+                        <select name="bootcamp_id" class="form-control select2">
                             <option value="">همه</option>
                             @foreach ($bootcamps as $bootcamp)
                                 <option value="{{ $bootcamp->id }}" @selected(request("bootcamp_id") == $bootcamp->id)>{{ $bootcamp->title }}</option>

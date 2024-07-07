@@ -332,7 +332,7 @@
                         </figure>
                         <!-- Title -->
                         <h1 class="mb-0 display-8">
-                            آیندتو با  شتاب آموز بساز
+                            آیندتو با f شتاب آموز بساز
                             <span class="position-relative">
 
                                 <!-- SVG START -->
@@ -815,6 +815,7 @@
         </section>
         <!-- =======================
     Client feedback END -->
+    @if (!empty($bootcamps))
     <section class="containerFlouidBootcamp marginSection my-7">
         <h1 class="text-center">بوت کمپ های شتاب</h1>
         @foreach ($bootcamps as $bootcamp)
@@ -825,9 +826,6 @@
                 <img   src="{{ $bootcamp->image['url'] }}" alt="">
               </figure>
               <div class="informationCardBootcamp">
-                @php
-                    // $jDate = new \Morilog\Jalali\Jalalian($bootcamp['published_at']);
-                @endphp
                 <div class="dateCard">
                     <h1>{{verta($bootcamp->published_at)->format('%d')}}</h1>
                     <span>{{verta($bootcamp->published_at)->format('%B %d')}}</span>
@@ -876,6 +874,8 @@
         </section>
     @endforeach
     </section>
+    @endif
+
       <!-- =======================
         Instructor START -->
         <section>
