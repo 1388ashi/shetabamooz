@@ -16,7 +16,7 @@
         <link rel="canonical" href="{{ $course->canonical_tag }}" />
     @endif
 @endsection
-@section('title', "دوره $course->title")
+@section('title', "$course->title")
 @section('contact')
     <main>
         <!-- =======================
