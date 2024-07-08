@@ -1,5 +1,5 @@
 @extends('layouts.front.master')
-@section('title', "ثبت نام در دوره $course->title")
+@section('title', "ثبت نام در  $course->title")
 @section('contact')
 <main>
     <!-- =======================
