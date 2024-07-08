@@ -19,7 +19,7 @@
     @endif
 @endsection
 
-
+@section('title', 'لیست اخرین دوره ها')
 @section('contact')
 <style>
     @media only screen and (max-width: 600px) {

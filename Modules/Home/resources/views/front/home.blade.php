@@ -17,7 +17,7 @@
         <link rel="canonical" href="{{ \Modules\Setting\App\Models\Setting::getFromName('home_meta_canonical') }}" />
     @endif
 @endsection
-
+@section('title', 'شتاب آموز - آموزش برنامه نویسی گرگان')
 @section('contact')
     <main>
         <!-- =======================

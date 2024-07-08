@@ -1,4 +1,5 @@
 @extends('layouts.admin.master')
+@section('title', "بوت کمپ $bootcamp->title")
 @section('content')
     <!--  Page-header opened -->
     <div class="page-header">

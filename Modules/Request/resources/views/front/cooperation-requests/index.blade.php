@@ -1,4 +1,6 @@
 @extends('layouts.front.master')
+
+@section('title', "درخواست همکاری")
 @section('contact')
 <main>
     <!-- =======================

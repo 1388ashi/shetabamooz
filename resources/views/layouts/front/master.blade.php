@@ -2,7 +2,7 @@
 <html lang="en" dir="rtl">
 <head>
     <meta name="google-site-verification" content="Tuswx2bwtXj4JC9zlVK6aN1H0XeqRZo8f6v6667Xu5U" />
-    <title>شتاب آموز - آموزش برنامه نویسی گرگان</title>
+    <title>@yield('title')</title>
 
     <!-- Meta Tags -->
     <meta charset="utf-8" />

@@ -2,7 +2,7 @@
 @section('metas')
     <meta name="robots" content="noindex, nofollow">
 @endsection
-
+@section('title', "در باره ما")
 @section('contact')
     <!-- **************** MAIN CONTENT START **************** -->
     <main>

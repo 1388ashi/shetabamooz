@@ -4,7 +4,7 @@
     <meta name="robots" content="noindex, nofollow">
 @endsection
 
-
+@section('title', "تماس با ما")
 @section('contact')
     <main>
         <!-- =======================

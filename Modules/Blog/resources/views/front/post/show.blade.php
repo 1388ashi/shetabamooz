@@ -18,7 +18,7 @@
         <link rel="canonical" href="{{ $post->canonical_tag }}" />
     @endif
 @endsection
-
+@section('title', "نمایش بلاگ $post->title ")
 @section('contact')
 <main>
     <!-- =======================

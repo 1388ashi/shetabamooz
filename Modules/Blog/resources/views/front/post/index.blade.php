@@ -9,7 +9,7 @@
         <link rel="canonical" href="{{ \Modules\Setting\App\Models\Setting::getFromName('post_list_meta_canonical') }}" />
     @endif
 @endsection
-
+@section('title', "وبلاگ")
 @section('contact')
 <main>
     <!-- =======================
