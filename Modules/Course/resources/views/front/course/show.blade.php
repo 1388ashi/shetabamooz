@@ -676,6 +676,9 @@
 
         <!-- =======================
   Listed courses START -->
+  @foreach ($related_courses as $item)
+  @endforeach
+    @if (!empty($item))
         <section class="pt-0">
             <div class="container">
                 <!-- Title -->
@@ -753,6 +756,7 @@
                 </div>
             </div>
         </section>
+    @endif
         <!-- =======================
   Listed courses END -->
     </main>

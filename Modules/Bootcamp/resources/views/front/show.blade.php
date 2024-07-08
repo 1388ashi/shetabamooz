@@ -359,7 +359,7 @@
             <div class="fs-5 text-color-green">مشاوره ثبت‌نام در دوره متخصص طراحی وب</div>
             <form class="mt-4" action="{{route('advisors.store')}}" method="POST">
                 @csrf
-                <div class="form-group mb-3" >
+                <div class="form-group" >
                     <label for="name" class="text-nowrap px-2 w-25">نام شما</label>
                     <input type="text" name="name" class="form-control" id="name" placeholder="مثال: عرشیا بطیاری">
                 </div>
