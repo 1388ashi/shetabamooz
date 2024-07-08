@@ -110,7 +110,7 @@
                         <th class="text-center">شماره موبایل</th>
                         <th class="text-center">بوت کمپ</th>
                         <th class="text-center">وضعیت</th>
-                        <th class="text-center">تاریخ</th>
+                        <th class="text-center">تاریخ ارسال</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -159,7 +159,7 @@
                             <th class="text-center">موبایل</th>
                             <th class="text-center">دوره</th>
                             <th class="text-center">وضعیت</th>
-                            <th class="text-center">تاریخ</th>
+                            <th class="text-center">تاریخ ارسال</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -203,7 +203,7 @@
                             <th class="text-center">نام</th>
                             <th class="text-center">شماره موبایل</th>
                             <th class="text-center">وضعیت</th>
-                            <th class="text-center">تاریخ</th>
+                            <th class="text-center">تاریخ ارسال</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -246,7 +246,7 @@
                                 <th class="text-center">نام</th>
                                 <th class="text-center">موبایل</th>
                                 <th class="text-center">وضعیت</th>
-                                <th class="text-center">تاریخ</th>
+                                <th class="text-center">تاریخ ارسال</th>
                             </tr>
                             </thead>
                             <tbody>

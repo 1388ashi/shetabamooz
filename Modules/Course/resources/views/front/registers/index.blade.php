@@ -58,7 +58,6 @@ Image and contact form START -->
                         </ul>
                     </div>
                 </div>
-
                 <!-- Contact form START -->
                 <div class="col-md-6">
                     <!-- Title -->
