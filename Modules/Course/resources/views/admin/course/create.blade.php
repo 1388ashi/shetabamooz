@@ -14,7 +14,6 @@
     @include('components.errors')
 
     <div class="row">
-
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
@@ -55,10 +54,8 @@
                                 </div>
                             </div>
 
-
                             <div class="row">
                                 <div class="col">
-
                                     <div class="form-group">
                                         <label for="level" class="control-label">سطح</label>
                                         <span class="text-danger">&starf;</span>

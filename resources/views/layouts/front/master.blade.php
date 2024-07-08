@@ -137,8 +137,7 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!-- Notifications css -->
-    <link href="{{ asset('front/assets/plugins/notify/css/jquery.growl.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('assets/plugins/notify/css/jquery.growl.css') }}" rel="stylesheet">
 
     <!-- Theme CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('front/assets/css/style-rtl.css') }}" />
@@ -157,8 +156,12 @@
 
         gtag("config", "G-7N7LGGGWT1");
     </script>
+    <style>
+        #growls-default {
+            right: 80%;
+        }
+    </style>
 </head>
-
 <body>
 <!-- Header START -->
 <header class="navbar-light navbar-sticky header-static">
@@ -226,7 +229,6 @@
                         </ul>
                     </li>
 
-
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('weblogs.index') }}">بلاگ</a>
                     </li>
@@ -234,8 +236,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('about-us') }}">درباره ما</a>
                     </li>
-
-
 
                     <!-- Nav item 4 Component-->
                     <li class="nav-item">
@@ -389,7 +389,7 @@ Footer END -->
 
 <!-- Bootstrap JS -->
 <script src="{{ asset('front/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-
+<script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>
 <!-- Vendors -->
 <script src="{{ asset('front/assets/vendor/tiny-slider/tiny-slider-rtl.js') }}"></script>
 <script src="{{ asset('front/assets/vendor/glightbox/js/glightbox.js') }}"></script>
@@ -399,13 +399,12 @@ Footer END -->
 <script src="{{asset('front/assets/plugins/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('front/assets/js/image-validation.js')}}"></script>
 
-
 <!-- Template Functions -->
 <script src="{{ asset('front/assets/js/functions.js') }}"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
 <!-- Notifications js -->
-<script src="{{ asset('front/assets/plugins/notify/js/jquery.growl.js') }}"></script>
+<script src="{{ asset('assets/plugins/notify/js/jquery.growl.js') }}"></script>
 <script>
     // Play video when modal is shown
     $('#videoModal').on('shown.bs.modal', function () {
@@ -418,7 +417,7 @@ Footer END -->
     });
 </script>
 <script>
-        document.getElementById("showMore").addEventListener("click", function () {
+    document.getElementById("showMore").addEventListener("click", function () {
       var description = document.querySelector(".descriptionStyle");
       description.classList.add("expanded");
       this.style.display = "none";
@@ -426,8 +425,6 @@ Footer END -->
   </script>
 </body>
 @include('layouts.front.components.errors')
-
-@include('components.notifications')
-
+@include('layouts.front.components.notifications')
 <!-- Mirrored from eduport.webestica.com/rtl/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Mar 2024 08:31:17 GMT -->
 </html>

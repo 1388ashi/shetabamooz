@@ -1,296 +1,127 @@
 @extends('layouts.front.master')
 @section('contact')
-    <main>
-        <!-- =======================
-  Page Banner START -->
-        <section class="bg-light py-5 position-relative overflow-hidden">
-            <!-- SVG decoration -->
-            <figure
-                class="fill-primary opacity-1 position-absolute top-50 end-0 me-n6 d-none d-sm-block"
-            >
-                <svg width="211px" height="211px">
-                    <path
-                        d="M210.030,105.011 C210.030,163.014 163.010,210.029 105.012,210.029 C47.013,210.029 -0.005,163.014 -0.005,105.011 C-0.005,47.015 47.013,-0.004 105.012,-0.004 C163.010,-0.004 210.030,47.015 210.030,105.011 Z"
-                    />
-                </svg>
-            </figure>
-
-            <!-- SVG decoration -->
-            <figure
-                class="fill-primary position-absolute top-50 start-100 translate-middle ms-n7 mt-7 d-none d-sm-block"
-            >
-                <svg
-                    class="opacity-5"
-                    enable-background="new 0 0 160.7 159.8"
-                    height="180px"
-                >
-                    <path
-                        d="m153.2 114.5c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2-0.1-1.2 0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <path
-                        d="m116.4 114.5c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <path
-                        d="m134.8 114.5c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <path
-                        d="m135.1 96.9c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <path
-                        d="m153.5 96.9c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2-0.1-1.2 0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <path
-                        d="m98.3 96.9c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <ellipse cx="116.7" cy="99.1" rx="2.1" ry="2.2"></ellipse>
-                    <path
-                        d="m153.2 149.8c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2-0.1-1.3 0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <path
-                        d="m135.1 132.2c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2 0-1.3 0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <path
-                        d="m153.5 132.2c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2-0.1-1.3 0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <path
-                        d="m80.2 79.3c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s1-2.2 2.1-2.2z"
-                    ></path>
-                    <path
-                        d="m117 79.3c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <path
-                        d="m98.6 79.3c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <path
-                        d="m135.4 79.3c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <path
-                        d="m153.8 79.3c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <path
-                        d="m80.6 61.7c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2-0.1-1.2 0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <ellipse cx="98.9" cy="63.9" rx="2.1" ry="2.2"></ellipse>
-                    <path
-                        d="m117.3 61.7c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <ellipse cx="62.2" cy="63.9" rx="2.1" ry="2.2"></ellipse>
-                    <ellipse cx="154.1" cy="63.9" rx="2.1" ry="2.2"></ellipse>
-                    <path
-                        d="m135.7 61.7c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <path
-                        d="m154.4 44.1c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <path
-                        d="m80.9 44.1c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2-0.1-1.2 0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <path
-                        d="m44.1 44.1c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2-0.1-1.2 0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <path
-                        d="m99.2 44.1c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s1-2.2 2.1-2.2z"
-                    ></path>
-                    <ellipse cx="117.6" cy="46.3" rx="2.1" ry="2.2"></ellipse>
-                    <path
-                        d="m136 44.1c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <path
-                        d="m62.5 44.1c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2-0.1-1.2 0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <path
-                        d="m154.7 26.5c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <path
-                        d="m62.8 26.5c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2-0.1-1.2 0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <ellipse cx="136.3" cy="28.6" rx="2.1" ry="2.2"></ellipse>
-                    <path
-                        d="m99.6 26.5c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2-0.1-1.2 0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <path
-                        d="m117.9 26.5c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s1-2.2 2.1-2.2z"
-                    ></path>
-                    <path
-                        d="m81.2 26.5c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2-0.1-1.2 0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <path
-                        d="m26 26.5c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2c-1.2 0-2.1-1-2.1-2.2s0.9-2.2 2.1-2.2z"
-                    ></path>
-                    <ellipse cx="44.4" cy="28.6" rx="2.1" ry="2.2"></ellipse>
-                    <path
-                        d="m136.6 13.2c-1.2 0-2.1-1-2.1-2.2s1-2.2 2.1-2.2c1.2 0 2.1 1 2.1 2.2 0.1 1.2-0.9 2.2-2.1 2.2z"
-                    ></path>
-                    <path
-                        d="m155 13.2c-1.2 0-2.1-1-2.1-2.2s1-2.2 2.1-2.2c1.2 0 2.1 1 2.1 2.2 0.1 1.2-0.9 2.2-2.1 2.2z"
-                    ></path>
-                    <path
-                        d="m26.3 13.2c-1.2 0-2.1-1-2.1-2.2s1-2.2 2.1-2.2c1.2 0 2.1 1 2.1 2.2s-0.9 2.2-2.1 2.2z"
-                    ></path>
-                    <path
-                        d="m81.5 13.2c-1.2 0-2.1-1-2.1-2.2s1-2.2 2.1-2.2c1.2 0 2.1 1 2.1 2.2s-0.9 2.2-2.1 2.2z"
-                    ></path>
-                    <path
-                        d="m63.1 13.2c-1.2 0-2.1-1-2.1-2.2s1-2.2 2.1-2.2c1.2 0 2.1 1 2.1 2.2s-0.9 2.2-2.1 2.2z"
-                    ></path>
-                    <path
-                        d="m44.7 13.2c-1.2 0-2.1-1-2.1-2.2s1-2.2 2.1-2.2c1.2 0 2.1 1 2.1 2.2s-0.9 2.2-2.1 2.2z"
-                    ></path>
-                    <path
-                        d="m118.2 13.2c-1.2 0-2.1-1-2.1-2.2s1-2.2 2.1-2.2c1.2 0 2.1 1 2.1 2.2 0.1 1.2-0.9 2.2-2.1 2.2z"
-                    ></path>
-                    <path
-                        d="m7.9 13.2c-1.2 0-2.1-1-2.1-2.2s1-2.2 2.1-2.2c1.2 0 2.1 1 2.1 2.2 0.1 1.2-0.9 2.2-2.1 2.2z"
-                    ></path>
-                    <path
-                        d="m99.9 13.2c-1.2 0-2.1-1-2.1-2.2s1-2.2 2.1-2.2c1.2 0 2.1 1 2.1 2.2s-1 2.2-2.1 2.2z"
-                    ></path>
-                </svg>
-            </figure>
-
-            <!-- SVG decoration -->
-            <figure class="position-absolute bottom-0 start-0 d-none d-lg-block">
-                <svg width="822.2px" height="301.9px" viewBox="0 0 822.2 301.9">
-                    <path
-                        class="fill-warning"
-                        d="M752.5,51.9c-4.5,3.9-8.9,7.8-13.4,11.8c-51.5,45.3-104.8,92.2-171.7,101.4c-39.9,5.5-80.2-3.4-119.2-12.1 c-32.3-7.2-65.6-14.6-98.9-13.9c-66.5,1.3-128.9,35.2-175.7,64.6c-11.9,7.5-23.9,15.3-35.5,22.8c-40.5,26.4-82.5,53.8-128.4,70.7 c-2.1,0.8-4.2,1.5-6.2,2.2L0,301.9c3.3-1.1,6.7-2.3,10.2-3.5c46.1-17,88.1-44.4,128.7-70.9c11.6-7.6,23.6-15.4,35.4-22.8 c46.7-29.3,108.9-63.1,175.1-64.4c33.1-0.6,66.4,6.8,98.6,13.9c39.1,8.7,79.6,17.7,119.7,12.1C634.8,157,688.3,110,740,64.6 c4.5-3.9,9-7.9,13.4-11.8C773.8,35,797,16.4,822.2,1l-0.7-1C796.2,15.4,773,34,752.5,51.9z"
-                    />
-                </svg>
-            </figure>
-
-            <div class="container position-relative">
-                <div class="row g-4 align-items-center">
-                    <div class="col-md-6">
-                        <!-- Title -->
-                        <h1>درخواست همکاری با شتاب آموز</h1>
-                        <p>
-                            آموزشگاه عصرنخبگان در تاریخ 1392/11/12 با اخذ مجوز از سازمان
-                            آموزش فنی و حرفه ای شهر تهران در رشته فناوری اطلاعات شروع به
-                            فعالیت نموده و علیرغم وجود مشکلات و چالشهای پیش‌رو، در مدت زمان
-                            قریب به یکسال، موفق به ارائه عملکردی فوق العاده در زمینه
-                            آموزشهای کاربردی گردید
-                        </p>
-                        <!-- Button -->
-                        <a href="#fill-instructor-form" class="btn btn-primary mb-0"
-                        >درخواست همکاری</a
-                        >
-                    </div>
-
-                    <div class="col-md-6 text-center">
-                        <!-- Image -->
-                        <img
-                            src="assets/images/element/04.svg"
-                            class="h-300px h-xl-400px"
-                            alt=""
-                        />
-                    </div>
+<main>
+    <!-- =======================
+Page Banner START -->
+    <section
+        class="pt-5 pb-0"
+        style="
+      background-image: url({{ asset('front/assets/images/element/map.svg') }});
+      background-position: center left;
+      background-size: cover;
+    "
+    >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-xl-8 text-center mx-auto">
+                    <!-- Title -->
+                    <h2 class="mb-4">درخواست همکاری با شتاب آموز!</h2>
+                    <h6 class="text-primary">جهت همکاری به عنوان یکی از مدرسین شتاب آموز رزومه خود را ارسال کنید</h6>
                 </div>
             </div>
-        </section>
-        <!-- =======================
-  Page Banner END -->
+        </div>
+    </section>
+    <!-- =======================
+Page Banner END -->
 
-        <!-- =======================
-  Form and Tabs START -->
-        <section>
-            <div class="container">
-                <div class="row">
-                    <!-- Left Content START -->
+    <!-- =======================
+Image and contact form START -->
+    <section>
+        <div class="container">
+            <div class="row g-4 g-lg-0 align-items-center">
+                <div class="col-md-6 align-items-center text-center">
+                    <!-- Image -->
+                    <img
+                        src="{{ asset('front/assets/images/element/contact.svg') }}"
+                        class="h-400px"
+                        alt=""
+                    />
+
+                    <!-- Social media button -->
                     <div
-                        class="col-lg-5 position-relative mt-xl-0"
-                        id="fill-instructor-form"
+                        class="d-sm-flex align-items-center justify-content-center mt-2 mt-sm-4"
                     >
-                        <!-- SVG decoration -->
-                        <figure
-                            class="position-absolute top-0 start-50 mt-n3 ms-5 d-none d-sm-block z-index-1"
-                        >
-                            <svg width="192.5px" height="89.4px" viewBox="0 0 192.5 89.4">
-                                <path
-                                    class="fill-warning"
-                                    d="M170.2,0.5c-0.1,0-0.2,0-0.4,0c-2.6-0.1-5.2-0.4-7.8-0.5c-2.9-0.1-5.8,0-8.6,0.2c-1.4,0.1-2.9,0.3-4.3,0.5 c-0.5,0.1-1,0-1.5,0c-1-0.1-1.9,0.2-2.9,0.3c-5.6,0.9-11.1,2.1-16.5,3.6c-2.7,0.7-5.4,1.6-8.1,2.5c-0.6,0.2-1.2,0.4-1.8,0.5 c-0.4,0-0.8,0-1.2,0.1c-1.5,0.2-3,1.1-4.3,1.8c-3,1.5-5.9,3.2-8.6,5.2c-2,1.5-3.8,3.1-5.6,4.8c-0.9,0.9-1.7,1.8-2.5,2.7 c-0.4,0.4-1.1,0.7-1.4,1.2c-0.3,0.4-0.6,0.9-0.9,1.4c-0.9,1.2-1.7,2.3-2.7,3.4c-0.3,0.4-0.7,0.6-1.2,0.6c-1.4,0.1-2.8-0.1-4.2-0.1 c-0.7,0-1.2,0.2-1.9,0.2c-3.3,0.4-6.6,0.7-9.8,1.6c-1.7,0.5-3.4,0.9-5.1,1.4c-5.4,1.5-11,2.9-16,5.4c-4.6,2.2-8.7,5.2-12.7,8.3 c-2,1.6-4,3.2-5.9,4.9c-0.8,0.7-1.6,1.2-2.5,1.6c-0.9,0.5-1.7,1.3-2.4,2c-1.4,1.3-2.9,2.6-4.3,3.9c-1.2,1.1-2.5,2.1-3.6,3.3 c-0.9,1-2,1.9-3,2.8c-1,0.9-2.1,1.9-3.1,2.8c-0.8,0.7-1.6,1.2-2.3,1.9c-0.9,0.9-1.7,1.9-2.7,2.7c0-0.7,0.2-1.3,0.2-2 c0-1.8-0.2-3.7-0.7-5.5c-0.2-0.9-0.5-1.8-1.1-2.4c-0.6-0.7-1.7-1-2.4-0.6c-0.1,0.1-0.3,0.2-0.4,0.3c-0.1,0.2-0.1,0.4,0,0.6 c0.7,3.7,1.2,7.4,0.7,11.1c-0.2,2.4-0.9,4.9-2,7c-0.5,1-1.2,1.9-1.7,3c-0.4,1-1.4,1.8-2.1,2.7C0.3,86,0.1,86.3,0,86.6 c-0.1,0.4,0.1,0.7,0.2,1.1c0.3,0.8,0.8,1.6,1.6,1.7c0.5,0,0.9-0.2,1.3-0.5c0.9-0.5,1.7-1.1,2.6-1.6c0.4-0.2,0.7-0.5,1.1-0.7 c1.7-1.3,3.7-2.3,5.7-3.1c4.3-1.7,9.1-2.4,13.8-1.7c0.2,0,0.4,0.1,0.7,0c0.7-0.2,0.9-1.2,0.4-1.8c-0.4-0.6-1.2-0.8-1.9-1 c-2.7-0.8-5.4-1.5-8.2-1.8c-0.7-0.1-1.4-0.1-2.1-0.2c-0.3,0-0.6,0-0.8,0c-0.3,0-0.9,0.2-1.2,0.1C13,77,13,77.1,13,76.8 c0-0.4,0.6-0.8,0.9-1c0.5-0.4,0.9-0.8,1.4-1.2c1.1-1,2.3-1.9,3.4-2.9c0.6-0.5,1.1-1,1.7-1.5c0.3-0.3,0.5-0.7,0.9-1 c1.2-1.1,2.7-1.7,3.9-2.8c0.4-0.4,0.8-0.8,1.2-1.2c0.8-0.8,1.7-1.5,2.6-2.2c1-0.8,2.1-1.6,3.1-2.3c0.9-0.6,1.9-1.1,2.6-2 c0.8-1,2.1-1.7,3.1-2.5c1.1-0.9,2.2-1.8,3.3-2.6c3.9-3.1,7.9-6.2,12.3-8.6c5.2-2.7,10.6-4.9,16.3-6.4c5.5-1.4,11.2-1.8,16.8-2.7 c0.2,0,0.3-0.1,0.5-0.1c1.4-0.2,2.3-0.4,2,1.5c-0.8,4.9,2.3,7.5,5.8,9.8c4,2.5,8,5,12.7,5.8c5.2,0.9,10.4,2.7,15.9,0.8 c3-1,6.3-5,6.2-7.6c0-1.7-0.3-3.5-1-5.1c-0.6-1.4-1.5-3-2.8-3.7c-1-0.5-1.9-1.5-2.8-2.2c-1.1-0.8-2.2-1.5-3.3-2.1 c-2.3-1.2-4.8-2.1-7.3-2.8c-3.5-0.9-7.2-1.4-10.8-1.8c-0.9-0.1-1.7-0.2-2.6-0.2c-0.2,0-1.4,0-1.4-0.2c-0.1-0.2,0.3-0.5,0.4-0.6 c0.8-0.9,1.7-1.8,2.5-2.6c1.7-1.7,3.6-3.3,5.5-4.8c2-1.6,4.2-3,6.4-4.1c1.1-0.6,2.3-1.1,3.5-1.5c0.6-0.2,1.2-0.4,1.8-0.6 c0.4-0.2,0.7-0.5,1.1-0.7c1.2-0.6,2.7-0.9,4-1.3c1.4-0.4,2.8-0.8,4.2-1.2c2.8-0.8,5.6-1.5,8.4-2.2c3.4-0.8,6.9-1.6,10.3-2.4 c7.9-1.7,15.9-2.4,24-1.7c4.4,0.4,8.9,0.9,13.2,2.1c1.3,0.4,2.5,0.8,3.9,1.1c0.7,0.1,1.4,0.5,2,0.9c0.9,0.5,1.7,0.9,2.6,1.4 c0.3,0.2,0.7,0.3,0.9,0.1c0.1-0.1,0.1-0.3,0.1-0.4c0-0.9-0.4-1.8-1-2.5c-0.5-0.6-1.2-1.4-1.9-1.8c-0.9-0.6-2.2-0.9-3.3-1.3 c-1.1-0.4-2.2-0.7-3.3-1c-2.8-0.8-5.6-1.4-8.5-1.9C173.1,0.9,171.6,0.6,170.2,0.5z M106.8,36c5,0.8,11.2,2,16.2,6.2 c1.1,0.9,2.8,1.6,2.3,3.4c-0.4,1.7-2.1,1.8-3.5,2.3c-5,1.5-9.9,0-14.5-1.2c-4.9-1.2-9.7-3.3-13.5-7c-0.6-0.6-1.2-1.3-1.5-2.1 c-0.1-0.3-0.1-0.7-0.2-1c-0.1-0.3-0.3-0.6,0-0.9c0.2-0.2,0.5-0.3,0.9-0.3c2.4-0.4,4.9-0.6,7.4-0.5c0.9,0,1.8,0.4,2.7,0.5 C104.5,35.6,105.7,35.8,106.8,36z"
-                                />
-                            </svg>
-                        </figure>
-
-                        <div class="card card-body shadow p-4">
-                            <!-- Title -->
-                            <h3>لطفا فرم زیر را پر کنین</h3>
-                            <!-- Form START -->
-                            <form class="row g-3 mt-2 position-relative z-index-9" method="post" action="{{ route('cooperation-requests.store') }}">
-                                @csrf
-                                <!-- Name -->
-                                <div class="col-lg-6">
-                                    <label class="form-label">نام و نام خانوادگی *</label>
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        aria-label="First name"
-                                        name="name"
-                                        value="{{ old('name') }}"
-                                        required
-                                    />
-                                </div>
-                                <!-- Email -->
-                                <div class="col-lg-6">
-                                    <label class="form-label">ایمیل *</label>
-                                    <input type="email" class="form-control" name="email" value="{{ old('mobile') }}" required />
-                                </div>
-                                <!-- Number -->
-                                <div class="col-lg-12">
-                                    <label class="form-label">شماره تماس *</label>
-                                    <input type="text" class="form-control" name="mobile" value="{{ old('mobile') }}" required/>
-                                </div>
-                                <!-- Textarea -->
-                                <div class="col-12">
-                                    <label class="form-label">رزومه *</label>
-                                    <textarea
-                                        class="form-control"
-                                        rows="3"
-                                        spellcheck="false"
-                                        name="resume"
-                                        required
-                                    >{{ old('resume') }}</textarea>
-                                </div>
-                                <!-- Button -->
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-primary mb-0">
-                                        درخواست همکاری
-                                    </button>
-                                </div>
-                            </form>
-                            <!-- Form END -->
-                        </div>
+                        <h5 class="mb-0">Follow us on:</h5>
+                        <ul class="list-inline mb-0 ms-sm-2">
+                            <li class="list-inline-item">
+                                <a class="fs-5 me-1 text-instagram" href="#"
+                                ><i class="fab fa-fw fa-instagram"></i
+                                    ></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="fs-5 me-1 text-linkedin" href="#"
+                                ><i class="fab fa-fw fa-linkedin-in"></i
+                                    ></a>
+                            </li>
+                        </ul>
                     </div>
-                    <!-- Left Content END -->
-
-                    <!-- Tabs START -->
-                    <div class="col-lg-7 z-index-9 mt-5 mt-xl-0">
-                        <h3>لطفا قبل از تکمیل فرم به نکات زیر توجه فرمایید:</h3>
-
-                        <!-- Tab contents START -->
-                        <div class="tab-content" id="pills-tabContent">
-                            <!-- Content -->
-                            <div
-                                class="tab-pane fade show active"
-                                id="course-pills-1"
-                                role="tabpanel"
-                                aria-labelledby="course-pills-tab-1"
-                            >
-                                <p>
-                                    آموزشگاه عصرنخبگان در تاریخ 1392/11/12 با اخذ مجوز از سازمان
-                                    آموزش فنی و حرفه ای شهر تهران در رشته فناوری اطلاعات شروع به
-                                    فعالیت نموده و علیرغم وجود مشکلات و چالشهای پیش‌رو، در مدت
-                                    زمان قریب به یکسال، موفق به ارائه عملکردی فوق العاده در
-                                    زمینه آموزشهای کاربردی گردید
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Tab contents END -->
-                    </div>
-                    <!-- Tabs END -->
                 </div>
+
+                <!-- Contact form START -->
+                <div class="col-md-6">
+                    <!-- Title -->
+                    <form  method="post" action="{{ route('cooperation-requests.store') }}">
+                        @csrf
+                        <!-- Name -->
+                        <div class="mb-4 bg-light-input">
+                            <label for="yourName" class="form-label"
+                            >نام و نام خانوادگی *</label
+                            >
+                            <input
+                                type="text"
+                                class="form-control form-control-lg"
+                                name="name"
+                                value="{{ old('name') }}"
+                                id="yourName" required
+                            />
+                        </div>
+                        <div class="mb-4 bg-light-input">
+                            <label for="yourName" class="form-label"
+                            >ایمیل *</label
+                            >
+                            <input
+                                type="text"
+                                class="form-control form-control-lg"
+                                name="email"
+                                value="{{ old('email') }}"
+                                id="yourName" required
+                            />
+                        </div>
+                        <!-- Number -->
+                        <div class="mb-4 bg-light-input">
+                            <label for="emailInput" class="form-label"
+                            >شماره تماس *</label
+                            >
+                            <input
+                                type="text"
+                                class="form-control form-control-lg"
+                                name="mobile"
+                                value="{{ old('mobile') }}"
+                                id="emailInput" required
+                            />
+                        </div>
+                        <!-- Message -->
+                        <div class="mb-4 bg-light-input">
+                            <label for="resume" class="form-label">رزومه*</label>
+                            <textarea
+                                class="form-control"
+                                name="resume"
+                                id="resume"
+                                rows="4" required
+                            >{{ old('resume') }}</textarea>
+                        </div>
+                        <!-- Button -->
+                        <div class="d-grid">
+                            <button class="btn btn-lg btn-primary mb-0" type="submit">
+                                ارسال درخواست
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <!-- Contact form END -->
             </div>
-        </section>
+        </div>
+    </section>
         <!-- =======================
   Form and Tabs END -->
     </main>

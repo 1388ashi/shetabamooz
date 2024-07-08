@@ -27,4 +27,7 @@ class CourseRegister extends Model
     {
         return CourseRegisterFactory::new();
     }
+    public function course(){
+        return $this->belongsTo(Course::class);
+    }
 }

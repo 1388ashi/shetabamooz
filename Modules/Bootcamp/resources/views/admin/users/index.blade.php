@@ -35,6 +35,7 @@
                                 <th class="border-top">@sortablelink('mobile', 'شماره موبایل')</th>
                                 <th class="border-top">بوت کمپ</th>
                                 <th class="border-top">@sortablelink('status', 'وضعیت')</th>
+                                <th class="border-top">تاریخ ارسال</th>
                                 <th class="border-top">عملیات</th>
                             </tr>
                             </thead>
@@ -52,6 +53,7 @@
                                     <td>
                                         @include('bootcamp::admin.users.status', ['status' => $user->status])
                                     </td>
+                                    <td>{{verta($user->created_at)->format('Y/m/d H:i')}}</td>
                                     <td>
                                         <button data-toggle="modal" data-original-title="ویرایش" data-target="#edit-menu-{{ $user->id }}"  class="btn btn-warning btn-sm text-white">
                                             <i class="fa fa-pencil"></i>

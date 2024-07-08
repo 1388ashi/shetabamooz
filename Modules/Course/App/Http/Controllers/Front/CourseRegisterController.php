@@ -23,8 +23,9 @@ class CourseRegisterController extends Controller
 
     public function store(CourseRegisterStoreRequest $request)
     {
+        $course = Course::findOrFail(request()->course_id);
         CourseRegister::create($request->validated());
 
-        return redirect()->back()->with('success','با موفقیت ثبت شد');
+        return redirect()->back()->with('success',"ثبت نام شما در $course->title دوره با موفقیت انجام شد");
     }
 }

@@ -26,6 +26,6 @@ class UsersController extends Controller
         $user = BootcampUser::create($request->validated());
         $user->bootcamps()->attach($request->bootcamp_id);
 
-        return redirect()->back()->with('success','با موفقیت ثبت شد');
+        return redirect()->back()->with('success','شما با موفقیت در بوت کمپ ثبت نام شدید');
     }
 }

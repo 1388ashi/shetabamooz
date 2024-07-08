@@ -10,7 +10,7 @@ class CooperationRequestStore extends FormRequest
     {
         return [
             'name' => 'required|min:3|max:191',
-            'mobile' => 'required|unique:students|regex:/(^09\d{9}$)/u',
+            'mobile' => 'required|regex:/(^09\d{9}$)/u',
             'resume' => 'required|min:10',
             'email' => 'nullable|email',
         ];

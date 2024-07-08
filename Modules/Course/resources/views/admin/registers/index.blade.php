@@ -15,18 +15,9 @@
     <div class="page-header">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}"><i class="fe fe-life-buoy ml-1"></i> داشبورد</a></li>
-            <li class="breadcrumb-item active" aria-current="page">لیست درخواست های همکاری</li>
+            <li class="breadcrumb-item active" aria-current="page">لیست کاربران دوره</li>
         </ol>
-{{--        <div class="mt-3 mt-lg-0">--}}
-{{--            <div class="d-flex align-items-center flex-wrap text-nowrap">--}}
-{{--                <a href="{{ route('admin.requests.create')}}" class="btn btn-twitter">--}}
-{{--                    ثبت درخواست جدید--}}
-{{--                    <i class="fa fa-plus"></i>--}}
-{{--                </a>--}}
-{{--            </div>--}}
-{{--        </div>--}}
     </div>
-    <!--  Page-header closed -->
 <!------->
 
     <!-- row opened -->
@@ -34,32 +25,9 @@
         <div class="col-md-12 col-lg-12">
             <div class="card">
                 <!---index header opened-->
-                <div class="card-header">
+                <div class="card-header border-0">
                     <div class="card-title" style="font-size: 16px;font-weight: bold;">
-                        لیست همه درخواست های همکاری ({{ $requests->total() }})
-                    </div>
-                    <!--search-->
-                    <form method="get" id='basicSearch' action="{{route('admin.cooperation-requests.index')}}"
-                          autocomplete="off"
-                          onblur="document.form1.input.value = this.value;" class="form-inline mr-4">
-                        <div class="search-element">
-                            <input type="search" name="keyword" class="form-control header-search" placeholder="جستجو..."
-                                   aria-label="Search" tabindex="55">
-                            <button class="btn btn-primary">
-                                <i class="feather feather-search"></i>
-                            </button>
-                        </div>
-                    </form>
-                    <!---->
-                    <div class="card-options">
-                        <div class="container-fluid">
-                            <button class="btn btn-danger btn-xs delete-all" data-url="">حذف انتخاب شده ها</button>
-                        </div>
-                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i
-                                class="fe fe-chevron-up"></i></a>
-                        <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i
-                                class="fe fe-maximize"></i></a>
-                        <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                        لیست همه کاربران دوره ({{ $registers->total() }})
                     </div>
                 </div>
                 <!---index header closed-->
@@ -68,44 +36,40 @@
                         <table id="example-2" class="table table-striped table-bordered text-nowrap text-center">
                             <thead>
                             <tr>
-                                <th class="wd-20p border-bottom-0" style="width: 5%;"><input type="checkbox" id="check_all"></th>
-                                <th class="wd-1p border-bottom-0" style="width: 10%;">@sortablelink('id', 'شناسه')</th>
-                                <th class="wd-25p border-bottom-0" style="width: 10%;">@sortablelink('name', 'نام و نام خانوادگی')</th>
-                                <th class="wd-25p border-bottom-0" style="width: 10%;">@sortablelink('status', 'وضعیت')</th>
-                                <th class="wd-10p border-bottom-0" style="width: 10%;">عملیات</th>
+                                <th class="wd-1p border-top" style="width: 10%;">ردیف</th>
+                                <th class="wd-25p border-top" style="width: 10%;">نام و نام خانوادگی</th>
+                                <th class="wd-25p border-top" style="width: 10%;">شماره تماس</th>
+                                <th class="wd-25p border-top" style="width: 10%;">دوره</th>
+                                <th class="wd-25p border-top" style="width: 10%;">وضعیت</th>
+                                <th class="wd-25p border-top" style="width: 10%;">تاریخ ارسال</th>
+                                <th class="wd-10p border-top" style="width: 10%;">عملیات</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @forelse($requests as $request)
+                            @forelse($registers as $i => $register)
                                 <tr>
-                                    <td><input type="checkbox" class="checkbox" data-id="{{$request->id}}"></td>
-                                    <td>{{$request->id}}</td>
-                                    <td>{{Str::limit($request->name,30)}}</td>
-                                    <td>@include('components.checked',['status' => $request->status])</td>
+                                    <td>{{++$i}}</td>
+                                    <td>{{Str::limit($register->name,30)}}</td>
+                                    <td>{{Str::limit($register->mobile,30)}}</td>
+                                    <td>{{$register->course->title}}</td>
+                                    <td>@include('components.checked',['status' => $register->status])</td>
+                                    <td>{{verta($register->created_at)->format('Y/m/d H:i')}}</td>
                                     <td>
-                                        <a href="{{route('admin.cooperation-requests.show',$request->id)}}" data-original-title="نمایش" data-toggle="tooltip" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
-{{--                                        <a href="{{route('admin.requests.edit',$request->id)}}" data-original-title="ویرایش" data-toggle="tooltip" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></a>--}}
-{{--                                        --}}{{-- Delete --}}
-{{--                                        <button class="btn btn-danger btn-sm text-white" data-original-title="حذف" data-toggle="tooltip"--}}
-{{--                                                onclick="confirmDelete('delete-{{ $request->id }}')"{{ $request->isDeletable() ? '' : ' disabled' }}>--}}
-{{--                                            <i class="fa fa-trash-o"></i></button>--}}
-{{--                                        <form action="{{route('admin.requests.destroy',$request->id)}}"--}}
-{{--                                              method="post" id="delete-{{ $request->id }}" style="display: none">--}}
-{{--                                            @csrf--}}
-{{--                                            @method('DELETE')--}}
-{{--                                        </form>--}}
+                                        <button data-toggle="modal" data-original-title="ویرایش" data-target="#edit-menu-{{ $register->id }}"  class="btn btn-warning btn-sm text-white">
+                                            <i class="fa fa-pencil"></i>
+                                        </button>
                                     </td>
                                 </tr>
                             @empty
                                 <tr>
                                     <td colspan="100%">
-                                        <p class="text-danger"><strong>در حال حاضر هیچ درخواستی وجود ندارد</strong></p>
+                                        <p class="text-danger"><strong>در حال حاضر هیچ  وجود ندارد</strong></p>
                                     </td>
                                 </tr>
                             @endforelse
                             </tbody>
                         </table>
-                        {{$requests->links()}}
+                        {{$registers->links()}}
                     </div>
                 </div>
                 <!-- table-wrapper -->
@@ -114,6 +78,7 @@
         </div>
     </div>
     <!-- row closed -->
+    @include('course::admin.registers.edit')
 @endsection
 
 @section('scripts')
@@ -130,31 +95,6 @@
     <script src="{{asset('assets/js/main.js')}}"></script>
 
     <script type="text/javascript">
-
-        var $fromDate = new Date({{request('from_date')}});
-        var $toDate = new Date({{request('to_date')}});
-
-        $('#from_date_show').MdPersianDateTimePicker({
-            targetDateSelector: '#from_date',
-            targetTextSelector: '#from_date_show',
-            englishNumber: false,
-            fromDate:true,
-            enableTimePicker: false,
-            dateFormat: 'yyyy-MM-dd',
-            textFormat: 'yyyy-MM-dd',
-            groupId: 'rangeSelector1',
-        });
-
-        $('#to_date_show').MdPersianDateTimePicker({
-            targetDateSelector: '#to_date',
-            targetTextSelector: '#to_date_show',
-            englishNumber: false,
-            toDate:true,
-            enableTimePicker: false,
-            dateFormat: 'yyyy-MM-dd',
-            textFormat: 'yyyy-MM-dd',
-            groupId: 'rangeSelector1',
-        });
         $(function () {
                 if (sessionStorage.reloadAfterPageLoad == true) {
                     swal({

@@ -12,17 +12,16 @@ use Modules\Course\App\Models\CourseRegister;
 
 class CourseRegisterController extends Controller
 {
-    public function index($id)
+    public function index()
     {
         $registers=CourseRegister::query()
-            ->where('course_id',$id)
-//            ->SearchKeyword()
-            ->sortable()
-            ->orderBy('id','DESC')
-            ->paginate(10);
+        //            ->SearchKeyword()
+                    ->orderBy('id','DESC')
+                    ->with('course')
+                    ->paginate(10);
 
 
-        return view('course::admin.registers.index',compact('registers',));
+                return view('course::admin.registers.index',compact('registers'));
     }
 
 
@@ -39,46 +38,17 @@ class CourseRegisterController extends Controller
         return redirect()->route('admin.registers-list',$register->course_id);
     }
 
-    public function show($id)
+    public function update(Request $request,CourseRegister $CourseRegister): RedirectResponse
     {
-        $register=CourseRegister::findOrFail($id);
-
-        return view('course::admin.registers.show',compact('register'));
-    }
-
-
-    public function edit($id)
-    {
-        $register=CourseRegister::findOrFail($id);
-
-        return view('course::admin.registers.edit',compact('register'));
-    }
-
-
-    public function update(CourseRegisterUpdateRequest $request, $id)
-    {
-        $register=CourseRegister::findOrFail($id);
-
-        $register->update($request->validated());
-
-        return redirect()->route('admin.registers-list',$register->course_id);
-    }
-
-    public function destroy($id)
-    {
-        $register=CourseRegister::findOrFail($id);
-        $register->delete();
-        return redirect()->route('admin.registers-list');
-    }
-
-    public function multipleDelete(Request $request): \Illuminate\Http\JsonResponse
-    {
-        CourseRegister::destroy(explode(",", $request->ids));
-
-        return response()->json([
-            'status' => true,
-            'message' => "موارد با موفقیت حذف شد "
+        $CourseRegister->update([
+            'status' => $request->status,
         ]);
+        $data = [
+            'status' => 'success',
+            'message' => 'کاربر با موفقیت به روزرسانی شد'
+        ];
 
+        return redirect()->route('admin.course-registers.index')
+        ->with($data);
     }
 }

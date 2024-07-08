@@ -192,14 +192,13 @@
 <script src="{{ asset('assets/plugins/sweet-alert/sweetalert.min.js') }}"></script>
 
 <!-- Notifications js -->
-<script src="{{ asset('assets/plugins/notify/js/jquery.growl.js') }}"></script>
 
 <!-- Summernote js  -->
 <script src="{{ asset('assets/plugins/summernote/summernote-bs4.js') }}"></script>
 
 <!-- PersianDateTimePicker js -->
 <script src="{{asset('assets\PersianDateTimePicker-bs4/src/jquery.md.bootstrap.datetimepicker.js')}}"
-        type="text/javascript"></script>
+type="text/javascript"></script>
 
 
 <!-- Custom js-->
@@ -220,9 +219,9 @@
     }
 
 
-     .text-bold{
-         font-weight: bold !important;
-     }
+    .text-bold{
+        font-weight: bold !important;
+    }
     p{
         font-size: 16px;
     }
@@ -237,8 +236,9 @@
         direction: ltr;
         text-align: left;
     }
-</style>
+    </style>
 
+<script src="{{ asset('assets/plugins/notify/js/jquery.growl.js') }}"></script>
 <script src="{{ asset('assets/js/main.js') }}"></script>
 <script>
     $(function (e) {

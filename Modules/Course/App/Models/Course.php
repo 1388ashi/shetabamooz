@@ -154,10 +154,12 @@ class Course extends Model implements HasMedia, Viewable
     {
         return $this->hasMany(CourseFaq::class);
     }
-
     public function category()
     {
         return $this->belongsTo(CourseCategory::class,'category_id');
     }
-
+    public function registers()
+    {
+        return $this->hasMany(CourseRegister::class);
+    }
 }

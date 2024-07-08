@@ -71,7 +71,9 @@
                                 <th class="wd-20p border-bottom-0" style="width: 5%;"><input type="checkbox" id="check_all"></th>
                                 <th class="wd-1p border-bottom-0" style="width: 10%;">@sortablelink('id', 'شناسه')</th>
                                 <th class="wd-25p border-bottom-0" style="width: 10%;">@sortablelink('name', 'نام و نام خانوادگی')</th>
+                                <th class="wd-25p border-bottom-0" style="width: 10%;">@sortablelink('mobile', 'شماره تماس')</th>
                                 <th class="wd-25p border-bottom-0" style="width: 10%;">@sortablelink('status', 'وضعیت')</th>
+                                <th class="wd-25p border-bottom-0" style="width: 10%;">تاریخ ارسال</th>
                                 <th class="wd-10p border-bottom-0" style="width: 10%;">عملیات</th>
                             </tr>
                             </thead>
@@ -81,7 +83,9 @@
                                     <td><input type="checkbox" class="checkbox" data-id="{{$request->id}}"></td>
                                     <td>{{$request->id}}</td>
                                     <td>{{Str::limit($request->name,30)}}</td>
+                                    <td>{{$request->mobile}}</td>
                                     <td>@include('components.checked',['status' => $request->status])</td>
+                                    <td>{{verta($request->created_at)->format('Y/m/d H:i')}}</td>
                                     <td>
                                         <a href="{{route('admin.cooperation-requests.show',$request->id)}}" data-original-title="نمایش" data-toggle="tooltip" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
 {{--                                        <a href="{{route('admin.requests.edit',$request->id)}}" data-original-title="ویرایش" data-toggle="tooltip" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></a>--}}

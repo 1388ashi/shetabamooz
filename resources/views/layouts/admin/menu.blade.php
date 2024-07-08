@@ -38,7 +38,6 @@
                 </a>
                 <ul class="slide-menu">
                     <li><a href="{{route('admin.bootcamps.index')}}" class="slide-item">بوت کمپ ها</a></li>
-                    <li><a href="{{route('admin.users.index')}}" class="slide-item"> کاربران بوت کمپ</a></li>
                     <li><a href="{{route('admin.advisors.index')}}" class="slide-item"> مشاوره های بوت کمپ</a></li>
                 </ul>
             </li>
@@ -49,9 +48,9 @@
                     <span class="side-menu__label">مدیریت بلاگ</span><i class="angle fa fa-angle-left"></i>
                 </a>
                 <ul class="slide-menu">
-                        <li><a href="{{route('admin.post-categories.index')}}" class="slide-item">دسته بندی ها</a></li>
-                        <li><a href="{{route('admin.posts.index')}}" class="slide-item">مطالب</a></li>
-                        <li><a href="{{route('admin.post-comments.index')}}" class="slide-item">نظرات</a></li>
+                    <li><a href="{{route('admin.post-categories.index')}}" class="slide-item">دسته بندی ها</a></li>
+                    <li><a href="{{route('admin.posts.index')}}" class="slide-item">مطالب</a></li>
+                    <li><a href="{{route('admin.post-comments.index')}}" class="slide-item">نظرات</a></li>
                 </ul>
             </li>
 
@@ -62,7 +61,7 @@
                     <span class="side-menu__label">مدیریت کاربر ها</span><i class="angle fa fa-angle-left"></i>
                 </a>
                 <ul class="slide-menu">
-{{--                    <li><a href="{{ route('admin.admins.index') }}" class="slide-item">ادمین ها</a></li>--}}
+                    {{--                    <li><a href="{{ route('admin.admins.index') }}" class="slide-item">ادمین ها</a></li>--}}
                     <li><a href="{{ route('admin.professors.index') }}" class="slide-item">استاد ها</a></li>
                 </ul>
             </li>
@@ -73,13 +72,15 @@
                     <span class="side-menu__label">مدیریت درخواست ها</span><i class="angle fa fa-angle-left"></i>
                 </a>
                 <ul class="slide-menu">
-                    <li><a href="{{ route(('admin.consultation-requests.index') ) }}" class="slide-item">درخواست های مشاوره</a></li>
+                    <li><a href="{{route('admin.course-registers.index')}}" class="slide-item"> درخواست های دوره</a></li>
+                    <li><a href="{{route('admin.users.index')}}" class="slide-item"> درخواست های بوت کمپ </a></li>
                     <li><a href="{{ route(('admin.cooperation-requests.index') ) }}" class="slide-item">درخواست های همکاری</a></li>
+                    <li><a href="{{ route(('admin.consultation-requests.index') ) }}" class="slide-item">درخواست های مشاوره</a></li>
                 </ul>
             </li>
 
-                <li class="slide">
-                    <a class="side-menu__item" data-toggle="slide" href="#">
+            <li class="slide">
+                <a class="side-menu__item" data-toggle="slide" href="#">
                         <i class="feather feather-globe sidemenu_icon"></i>
                         <span class="side-menu__label">مدیریت محتوا</span><i class="angle fa fa-angle-left"></i>
                     </a>
