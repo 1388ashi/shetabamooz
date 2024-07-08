@@ -23,10 +23,10 @@ class DashboardController extends Controller
         $count['bootcamps'] = Bootcamp::query()->count();
         $count['professors'] = Professor::query()->count();
         $count['posts'] = Post::query()->count();
-        $courseRegisters = CourseRegister::query()->select('id','name','mobile','course_id','status')->where('status',0)->take(10)->with('course:id,title')->get();
-        $bootcampRegisters = BootcampUser::query()->select('id','name','mobile','status')->where('status','new')->take(10)->with('bootcamps:id,title')->get();
-        $cooperationRequestes = CooperationRequest::query()->select('id','name','mobile','status')->where('status',0)->take(10)->get();
-        $consultationRequestes = ConsultationRequest::query()->select('id','name','mobile','status')->where('status',0)->take(10)->get();
+        $courseRegisters = CourseRegister::query()->select('id','name','mobile','course_id','status')->where('status',0)->take(10)->with('course:id,title')->latest('id')->get();
+        $bootcampRegisters = BootcampUser::query()->select('id','name','mobile','status')->where('status','new')->take(10)->with('bootcamps:id,title')->latest('id')->get();
+        $cooperationRequestes = CooperationRequest::query()->select('id','name','mobile','status')->where('status',0)->take(10)->latest('id')->get();
+        $consultationRequestes = ConsultationRequest::query()->select('id','name','mobile','status')->where('status',0)->take(10)->latest('id')->get();
 
         return view('dashboard::dashboard.index',compact('count','courseRegisters','bootcampRegisters','cooperationRequestes','consultationRequestes'));
     }

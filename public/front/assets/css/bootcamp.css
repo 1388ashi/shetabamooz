@@ -54,14 +54,14 @@
 
 body {
     --green-dark: #347733;
-    --green: #3c873a !important;
+    --green: #004e98 !important;
     --green-50-transparent: #3c873a80;
     --green-5: #f6f9f6 !important;
     --green-7: #f2f7f2 !important;
     --green-10: #ecf3ec !important;
     --green-15: #e2ede2 !important;
-    --green-20: #d8e7d8 !important;
-    --green-30: #c5dbc4 !important;
+    --green-20: #3a6ea5 !important;
+    --green-30: #ebf2fa !important;
     --green-50: #9ec39d !important;
     --green-60: #8ab789 !important;
     --base-color: #08192b;
@@ -76,7 +76,7 @@ body {
     color: var(--gray-20);
 }
 .text-color-greenDark {
-    color: var(--green-dark);
+    color: var(--green);
 }
 .text-white {
     color: var(--white);
@@ -129,6 +129,14 @@ body {
     color: var(--indigo-main);
 }
 
+.text-color-indigo-main1:hover {
+    color: #fff;
+}
+.text-color-indigo-main2 {
+    color: #fff;
+}
+
+
 .text-color-indigo-50 {
     color: var(--indigo-50);
 }
@@ -154,7 +162,7 @@ body {
 }
 
 .bg-color-green-10 {
-    background-color: var(--green-10);
+    background-color: var(--green-30);
 }
 
 .bg-color-green-15 {
@@ -162,7 +170,7 @@ body {
 }
 
 .bg-color-green-20 {
-    background-color: var(--green-20);
+    background-color: #ff6700 ;
 }
 
 .bg-color-green-30 {
@@ -198,7 +206,9 @@ body {
     width: 80%;
     margin: 0 auto;
 }
-
+ .off{
+    color: var(--gray-20);
+ }
 .containerFlouidBootcamp {
     width: 100%;
     margin: 0 auto;
@@ -206,10 +216,10 @@ body {
 }
 
 .buttonBootCamp {
-    background-color: var(--green-20);
+    background-color: var(--green);
     border: none;
     padding: 15px 30px;
-    color: var(--green);
+    color: var(--white);
     border-radius: 10px;
     width: fit-content;
 }
@@ -337,7 +347,7 @@ body {
 
 /* Heading Start */
 #heading {
-    background-color: var(--green-20);
+    background-color: var(--green-30);
 }
 
 #heading summary {
@@ -352,7 +362,8 @@ body {
 }
 
 #heading summary:hover {
-    background-color: var(--green-50-transparent);
+    background-color: #3a6ea5;
+    color: white;
 }
 #heading summary .coutMeeting {
     width: 8%;
@@ -465,7 +476,8 @@ body {
     display: flex;
     border-radius: 10px;
     padding: 30px 0;
-    box-shadow: -1px 0px 36px 10px rgba(61, 135, 58, 0.219);
+
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
     margin-top: 60px;
 }
 .informationTeacher {
@@ -521,10 +533,7 @@ body {
     border-radius: 10px;
     height: 100px;
 }
-.signInMiniCard:hover {
-    background-color: var(--green-50);
-    transition: 0.5s;
-}
+
 
 .listInformationSignIn {
     width: 70%;
@@ -843,14 +852,12 @@ body {
     align-items: center;
     transition: 0.2s ease-in-out;
     padding: 20px 20px;
-    background-color: var(--green-15);
+    background-color: var(--green-30);
     color: var(--blue-dark);
     border-radius: 5px;
 }
 
-#faq summary:hover {
-    background-color: var(--green-50-transparent);
-}
+
 #faq summary .coutMeeting {
     width: 8%;
     display: flex;
@@ -990,9 +997,9 @@ body {
 }
 .form-group input {
     height: 100%;
-    background-color: #08192b;
+
     border-radius: 5px 0 0 5px;
-    background-color: var(--green-20);
+    background-color: #ebebeb;
 }
 
 input:focus {

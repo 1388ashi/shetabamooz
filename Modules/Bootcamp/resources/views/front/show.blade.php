@@ -151,7 +151,7 @@
                     xmlns="http://www.w3.org/2000/svg"
                     width="33"
                     height="33"
-                    fill="#347733"
+                    fill="#004e98"
                     class="bi bi-list"
                     viewBox="0 0 16 16"
                   >
@@ -160,7 +160,7 @@
                       d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
                     />
                   </svg>
-                  <div class="text-color-indigo-main">{{$headline->title}}</div>
+                  <div class="text-color-indigo-main1">{{$headline->title}}</div>
                 </div>
 
                 <div class="coutMeeting text-color-grayLight">
@@ -245,7 +245,7 @@
               xmlns="http://www.w3.org/2000/svg"
               width="100"
               height="100"
-              fill="#347733"
+              fill="#ff6700"
               class="bi bi-pencil-square"
               viewBox="0 0 16 16"
             >
@@ -307,7 +307,7 @@
                 xmlns="http://www.w3.org/2000/svg"
                 width="40"
                 height="40"
-                fill="#347733"
+                fill="#ff6700"
                 class="bi bi-alarm"
                 viewBox="0 0 16 16"
               >
@@ -327,7 +327,7 @@
                 xmlns="http://www.w3.org/2000/svg"
                 width="40"
                 height="40"
-                fill="#347733"
+                fill="#ff6700"
                 class="bi bi-chat-left"
                 viewBox="0 0 16 16"
               >
@@ -336,15 +336,15 @@
                 />
               </svg>
             </div>
-            <ul class="listInformationSignIn text-color-indigo-main font-w-6
+            <ul class="listInformationSignIn text-color-indigo-main2 font-w-6
 
             00 font-s-md ">
-            <li><b>پیش نیاز :</b>{{$bootcamp->prerequisite}}</li>
-            <li><b>پشتیبانی :</b>{{$bootcamp->support}}</li>
-            <li><b>پذیرایی :</b>{{$bootcamp->catering}}</li>
-            <li><b>جایزه :</b>{{$bootcamp->gifts}}</li>
-            <li><b>مکان برگذاری :</b>{{$bootcamp->eventplace}}</li>
-            <li><b>نوع بوت کمپ :</b>{{$bootcamp->type}}</li>
+            <li><b>پیش نیاز :{{$bootcamp->prerequisite}}</b></li>
+            <li><b>پشتیبانی :{{$bootcamp->support}}</b></li>
+            <li><b>پذیرایی :{{$bootcamp->catering}}</b></li>
+            <li><b>جایزه :{{$bootcamp->gifts}}</b></li>
+            <li><b>مکان برگذاری :{{$bootcamp->eventplace}}</b></li>
+            <li><b>نوع بوت کمپ :{{$bootcamp->type}}</b></li>
             </ul>
           </div>
         </div>
@@ -447,7 +447,7 @@
                     xmlns="http://www.w3.org/2000/svg"
                     width="33"
                     height="33"
-                    fill="#347733"
+                    fill="#2a3554"
                     class="bi bi-list"
                     viewBox="0 0 16 16"
                   >

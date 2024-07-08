@@ -292,7 +292,7 @@
 @yield('contact')
 <!-- =======================
 Footer START -->
-<footer class="pt-0 bg-blue rounded-4 position-relative mx-2 mx-md-4 mb-3">
+<footer class="pt-0 bg-blue-footer rounded-4 position-relative mx-2 mx-md-4 mb-3">
     <!-- SVG decoration for curve -->
     <figure class="mb-0">
         <svg
