@@ -257,7 +257,7 @@ h1,
 @media (min-width: 1200px) {
     h1,
     .h1 {
-        font-size: 2.8125rem;
+        font-size: 32px;
     }
 }
 
@@ -301,16 +301,17 @@ h5,
 @media (min-width: 1200px) {
     h5,
     .h5 {
-        font-size: 1.3125rem;
+        font-size:18px;
     }
 }
 
 h6,
 .h6 {
-    font-size: 0.9375rem;
+    font-size: 15px;
 }
 
 p {
+    font-size: 14px;
     margin-top: 0;
     margin-bottom: 1rem;
 }
@@ -17222,7 +17223,7 @@ fieldset:disabled .btn {
 }
 @media (min-width: 1200px) {
     .fs-1 {
-        font-size: 2.8125rem !important;
+        font-size: 28px !important;
     }
     .fs-2 {
         font-size: 2.34375rem !important;

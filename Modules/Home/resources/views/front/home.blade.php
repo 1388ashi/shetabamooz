@@ -637,7 +637,7 @@
                 <!-- Title -->
                 <div class="row mb-4">
                     <div class="col-lg-8 text-center mx-auto">
-                        <h2 class="fs-1">دوره های شتاب آموز</h2>
+                        <h2 class="fs-1 mb-0">دوره های شتاب آموز</h2>
                         <p class="mb-0">
                             بهترین انتخاب برای شروعی متفاوت در مسیر یادگیری
                         </p>
