@@ -109,10 +109,9 @@
                             <!-- Content -->
                             <div class="col-sm-6 col-md-12">
                                 <div class="bg-grad rounded-4 p-5 text-start">
-                                    <h3 class="text-white">
-                                        “ما با برنامه نویسی حرفه ای را تجربه کنید و لذب ببرین و هر
-                                        جا دوست دارین وارد بازار کار بشین”
-                                    </h3>
+                                    <h4 class="text-white">
+                                        “با شتاب آموز آموزش برنامه نویسی به صورت حرفه ای تجربه کنید
+                                    </h4>
                                 </div>
                             </div>
                             <!-- Image -->
