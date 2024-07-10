@@ -110,7 +110,7 @@
                             <div class="col-sm-6 col-md-12">
                                 <div class="bg-grad rounded-4 p-5 text-start">
                                     <h4 class="text-white">
-                                        “ با شتاب آموز،برنامه نویسی و حرفه ای شروع کن“
+                                        “با شتاب آموز،برنامه نویسی و حرفه ای شروع کن“
                                     </h4>
                                 </div>
                             </div>
