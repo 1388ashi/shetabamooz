@@ -32,7 +32,7 @@
                             {{ $course->category->name }}
                         </h6>
                         <!-- Title -->
-                        <h1 style="font-size: 28px">{{ $course->title }}</h1>
+                        <h2>{{ $course->title }}</h2>
                         <p>
                             {{ $course->short_description }}
                         </p>
