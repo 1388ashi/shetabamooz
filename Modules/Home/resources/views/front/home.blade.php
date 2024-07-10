@@ -682,7 +682,7 @@
                 <!-- Title -->
                 <div class="row mb-4">
                     <div class="col-lg-8 mx-auto text-center">
-                        <h2 class="mb-0">نظرات شتاب آموزی ها</h2>
+                        <h2 class="mb-0" style="font-size: 28px">نظرات شتاب آموزی ها</h2>
                         <p class="mb-0">
                             آخرین دیدگاه هنرجویان آکادمی شتاب آموز
                         </p>
@@ -750,7 +750,7 @@
     @endforeach
     @if (!empty($bootcamp))
     <section class="containerFlouidBootcamp marginSection my-7">
-        <h1 class="text-center">بوت کمپ های شتاب</h1>
+        <h1 class="text-center" style="font-size: 28px">بوت کمپ های شتاب</h1>
         @foreach ($bootcamps as $bootcamp)
         <section>
           <article>
@@ -957,7 +957,7 @@
                     <div
                         class="d-md-flex justify-content-md-between align-items-center"
                     >
-                        <h2 class="mb-2 mb-md-0">آخرین مقالات شتاب </h2>
+                        <h2 class="mb-2 mb-md-0" style="font-size: 28px">آخرین مقالات شتاب </h2>
 
                         <div>
                             <a href="{{ route('weblogs.index') }}" class="btn btn-sm btn-primary-soft mb-0"

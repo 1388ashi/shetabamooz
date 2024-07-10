@@ -32,7 +32,7 @@
                             {{ $course->category->name }}
                         </h6>
                         <!-- Title -->
-                        <h1>{{ $course->title }}</h1>
+                        <h1 style="font-size: 28px">{{ $course->title }}</h1>
                         <p>
                             {{ $course->short_description }}
                         </p>
@@ -597,10 +597,10 @@
                                             <!-- Price and time -->
                                             <div>
                                                 <div class="d-flex align-items-center">
-                                                    <h3 class="fw-bold mb-0 me-2">{{ number_format($course->price - $course->discount) }} هزار تومان</h3>
+                                                    <h3 class="fw-bold mb-0 me-2" style="font-size: 22px">{{ number_format($course->price - $course->discount) }} هزار تومان</h3>
                                                     @if($course->discount)
                                                         <span class="text-decoration-line-through mb-0 me-2"
-                                                        >{{ number_format($course->price) }}</span
+                                                        style="font-size: 26px">{{ number_format($course->price) }}</span
                                                         >
                                                     @endif
                                                 </div>
@@ -620,7 +620,7 @@
                                 <!-- Course info START -->
                                 <div class="card card-body shadow p-4 mb-4">
                                     <!-- Title -->
-                                    <h4 class="mb-3">اطلاعات دوره</h4>
+                                    <h4 class="mb-3" style="font-size: 23px">اطلاعات دوره</h4>
                                     <ul class="list-group list-group-borderless">
                                         <li
                                             class="list-group-item d-flex justify-content-between align-items-center"
