@@ -107,14 +107,14 @@
                     <div class="col-md-4">
                         <div class="row g-4">
                             <!-- Content -->
-                            {{-- <div class="col-sm-6 col-md-12">
+                            <div class="col-sm-6 col-md-12">
                                 <div class="bg-grad rounded-4 p-5 text-start">
                                     <h3 class="text-white">
                                         “ما با برنامه نویسی حرفه ای را تجربه کنید و لذب ببرین و هر
                                         جا دوست دارین وارد بازار کار بشین”
                                     </h3>
                                 </div>
-                            </div> --}}
+                            </div>
                             <!-- Image -->
                             <div class="col-sm-6 col-md-12 col-lg-6">
                                 <img
