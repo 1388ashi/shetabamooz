@@ -682,7 +682,7 @@
                 <!-- Title -->
                 <div class="row mb-4">
                     <div class="col-lg-8 mx-auto text-center">
-                        <h2>نظرات شتاب آموزی ها</h2>
+                        <h2 class="mb-0">نظرات شتاب آموزی ها</h2>
                         <p class="mb-0">
                             آخرین دیدگاه هنرجویان آکادمی شتاب آموز
                         </p>
