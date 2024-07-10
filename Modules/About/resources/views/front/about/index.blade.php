@@ -109,7 +109,7 @@
                             <!-- Content -->
                             <div class="col-sm-6 col-md-12">
                                 <div class="bg-grad rounded-4 p-5 text-start">
-                                    <h4 class="text-white">
+                                    <h4 class="text-white" style="text-align: justify">
                                         “با شتاب آموز آموزش برنامه نویسی به صورت حرفه ای تجربه کنید“
                                     </h4>
                                 </div>
