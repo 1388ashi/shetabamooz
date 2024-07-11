@@ -17,8 +17,8 @@ Page Banner START -->
     <section
         class="bg-dark align-items-center d-flex"
         style="
-          background: url({{ asset('front/assets/images/pattern/04.png') }}) no-repeat center center;
-          background-size: cover;
+        background: url({{ asset('front/assets/images/pattern/04.png') }}) no-repeat center center;
+        background-size: cover;
         "
     >
         <!-- Main banner background image -->
@@ -74,7 +74,7 @@ Page content START -->
                             <div class="card-body">
                                 <!-- Title -->
                                 <h5 class="card-title">
-                                    <a href="{{ route('weblogs.show',$post->id) }}">{{ $post->title }}</a>
+                                    <a href="{{ route('weblogs.show',[$post->slug]) }}">{{ $post->title }}</a>
                                 </h5>
                                 <p class="text-truncate-2">
                                     {{ $post->short_description }}

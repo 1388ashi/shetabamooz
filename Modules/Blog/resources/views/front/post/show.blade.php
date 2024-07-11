@@ -71,13 +71,6 @@ Main Content START -->
                                 <div class="badge text-bg-primary">{{ $category->name }}</div>
                             @endforeach
                             <!-- Title -->
-                            <h1 class="mt-2 mb-0 display-5">
-                                {{ $post->title }}
-                            </h1>
-                            <!-- Info -->
-                            <p class="mt-2">
-                                {{ $post->short_description }}
-                            </p>
                         </div>
                     </div>
                     <!-- Title and Info END -->
@@ -295,7 +288,7 @@ Related blog START -->
                                     <div class="card-body">
                                         <!-- Title -->
                                         <h6 class="card-title">
-                                            <a href="{{ route('weblogs.show',$related_posts->id) }}">{{ $related_posts->title }}</a>
+                                            <a href="{{ route('weblogs.show',[$related_posts->slug]) }}">{{ $related_posts->title }}</a>
                                         </h6>
                                         <span class="small">{{ verta($related_posts->created_at)->formatDifference() }}</span>
                                     </div>
