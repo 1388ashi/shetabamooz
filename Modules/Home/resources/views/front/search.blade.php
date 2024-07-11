@@ -132,7 +132,7 @@
                                 <div class="card-body">
                                     <!-- Title -->
                                     <h5 class="card-title">
-                                        <a href="{{ route('weblogs.show',$post->id) }}">{{ $post->title }}</a>
+                                        <a href="{{ route('weblogs.show',[$post->slug]) }}">{{ $post->title }}</a>
                                     </h5>
                                     <p class="text-truncate-2">
                                         {{ $post->short_description }}
