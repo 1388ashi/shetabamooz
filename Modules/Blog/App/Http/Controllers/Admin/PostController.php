@@ -77,9 +77,9 @@ class PostController extends Controller
             ->with('success', 'پست شما با موفقیت حذف شد');
     }
 
-    public function show($id)
+    public function show($slug)
     {
-        $post=Post::findOrFail($id);
+        $post = Post::where('slug',$slug)->first();
         $categories=$post->categories()->get();
         $comments=$post->comments()->get();
         $tags = $post->tagsWithType(TypedTag::TYPE_BLOG);
