@@ -35,7 +35,7 @@ Page Banner START -->
             <div class="row">
                 <div class="col-12">
                     <!-- Title -->
-                    <h1 class="text-white">چطور یک طراح سایت شوم</h1>
+                    <h1 class="text-white">{{$post->title}}</h1>
                     <!-- Breadcrumb -->
                     <div class="d-flex">
                         <nav aria-label="breadcrumb">

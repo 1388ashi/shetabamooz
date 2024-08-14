@@ -204,7 +204,6 @@ type="text/javascript"></script>
 <!-- Custom js-->
 <script src="{{asset('assets/js/custom.js')}}"></script>
 <!-- Main js -->
-<script src="{{ asset('assets/js/main.js') }}"></script>
 {{--{{\Illuminate\Support\Facades\Session::flush()}}--}}
 @stack('vue')
 
