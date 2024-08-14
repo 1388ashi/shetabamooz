@@ -181,7 +181,7 @@
                                     <td>{{verta($post->published_at)->formatDate()}}</td>
                                     <td>@include('components.status', ['status' => $post->status])</td>
                                     <td>
-                                        <a href="{{route('admin.posts.show',$post->id)}}" data-original-title="نمایش" data-toggle="tooltip" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
+                                        <a href="{{route('admin.posts.show',[$post->slug])}}" data-original-title="نمایش" data-toggle="tooltip" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
                                         <a href="{{route('admin.posts.edit',$post->id)}}" data-original-title="ویرایش" data-toggle="tooltip" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></a>
                                         {{-- Delete --}}
                                         <button class="btn btn-danger btn-sm text-white" data-original-title="حذف" data-toggle="tooltip"

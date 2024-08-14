@@ -650,7 +650,7 @@
                         <div class="col-sm-6 col-lg-4 col-xl-3">
                             <!-- Image -->
                             <div class="card card-metro overflow-hidden rounded-3">
-                                <img src="{{ $course->image }}" alt="{{ $course->image_alt }}" />
+                                <a href="{{route('courses.show',[$course->slug])}}"><img src="{{ $course->image }}" alt="{{ $course->image_alt }}" /></a>
                                 <!-- Image overlay -->
                                 <div class="card-img-overlay d-flex">
                                     <!-- Info -->
@@ -1005,7 +1005,7 @@
                                             <!-- Card overlay bottom -->
                                             <div class="w-100 mt-auto">
                                                 <!-- Category -->
-                                                <a href="{{ route('weblogs.show',$post->id) }}" class="badge text-bg-white fs-6 rounded-1"
+                                                <a href="{{ route('weblogs.show',[$post->slug]) }}" class="badge text-bg-white fs-6 rounded-1"
                                                 ><i class="far fa-calendar-alt text-orange me-2"></i
                                                     >{{ verta($post->published_at)->formatWord('l d F') }}</a
                                                 >
@@ -1017,7 +1017,7 @@
                                     <div class="card-body px-2">
                                         <!-- Title -->
                                         <h5 class="card-title">
-                                            <a href="{{ route('weblogs.show',$post->id) }}">{{ $post->title }}</a>
+                                            <a href="{{ route('weblogs.show',[$post->slug]) }}">{{ $post->title }}</a>
                                         </h5>
                                         <p class="mb-0 text-truncate-2">{{ $post->short_description }}</p>
                                     </div>

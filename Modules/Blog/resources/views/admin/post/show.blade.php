@@ -55,11 +55,11 @@
                         <br>
 
                         <span class="text-bold">وضعیت نمایش:</span>
-                        <span class="text-bold">@include('components.status', ['status' =>\Modules\Blog\Entities\Post::getStatus($post->status) ])</span>
+                        <span class="text-bold">@include('components.status', ['status' =>Modules\Blog\App\Models\Post::getStatus($post->status) ])</span>
                         <br>
                         <br>
-                        <span class="text-bold">تاریخ انتشار:</span>
-                        <span>@include('components.time',['time' => verta($post->created_at)->formatDate()])</span>
+                        {{-- <span class="text-bold">تاریخ انتشار:</span>
+                        <span>@include('components.time',['time' => verta($post->created_at)->formatDate()])</span> --}}
                     </div>
 
                     <div class="col-12">

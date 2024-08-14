@@ -22,9 +22,12 @@ class PostController extends Controller
         return view('blog::front.post.index',compact('posts','tags'));
     }
 
-    public function show($id)
+    public function show($slug)
     {
-        $post=Post::findOrFail($id);
+        $post = Post::where('slug',$slug)->first();
+        if($post == null){
+            abort(404);
+        }
         $comments=$post->comments()->get();
         $tags = $post->tagsWithType(TypedTag::TYPE_BLOG);
         if ($post->status ==0){
