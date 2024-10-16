@@ -1,6 +1,7 @@
 @extends('layouts.front.master')
 
 @section('metas')
+    <meta name="description" content="آموزش برنامه نویسی گرگان، آموزش جدیدترین دوره های برنامه نویسی در گرگان، آموزش برنامه نویسی با مدرک فنی حرفه ای و پرداخت اقساطی-آموزشگاه برنامه نویسی شتاب آموز">
     @if(\Modules\Setting\App\Models\Setting::getFromName('home_meta_title'))
         <title>{{ \Modules\Setting\App\Models\Setting::getFromName('home_meta_title') }}</title>
     @endif
