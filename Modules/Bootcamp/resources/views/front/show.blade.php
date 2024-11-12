@@ -118,7 +118,6 @@
     </section>
 
     <!--Headline START -->
-    @if ($headlines)
       @if ($headlines[0])
         <section id="heading" class="marginSection">
           <section class="containerBootcamp">
@@ -190,7 +189,6 @@
           </section>
         </section>
       @endif
-    @endif
 
     <!-- Teacher STRAT -->
     <section id="teacher" class="containerBootcamp marginSection">
@@ -430,8 +428,7 @@
         </div>
 
       </section>
-    @if ($faqs)
-      @if ($faqs[0])
+      @if (isset($faqs[0]))
       <section id="faq" class=" marginSection">
           <section class="containerBootcamp">
             <div
@@ -492,5 +489,4 @@
           </section>
       </section>
       @endif
-    @endif
 @endsection
