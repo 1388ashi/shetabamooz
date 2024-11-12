@@ -18,7 +18,7 @@
 @endsection
 
 @section('contact')
-<section class="containerFlouidBootcamp bootcamp">
+<section class="containerFlouidBootcamp bootcamp pb-0">
     <!-- Main Banner START -->
     <section id="MainBAnner" class="bg-color-green-30">
       <section class="containerBootcamp">
