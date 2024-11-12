@@ -118,7 +118,7 @@
     </section>
 
     <!--Headline START -->
-      @if ($headlines[0])
+      @if (isset($headlines[0]))
         <section id="heading" class="marginSection">
           <section class="containerBootcamp">
             <div
