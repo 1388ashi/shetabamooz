@@ -228,7 +228,7 @@
                                             name="status"
                                             id="status"
                                             value="1"
-                                            {{ old('status', $faq->status) == 1 ? 'checked' : null }}
+                                            {{ old('status', $bootcamp->status) == 1 ? 'checked' : null }}
                                           />
                                           <span class="custom-control-label">فعال</span>
                                         </label>
