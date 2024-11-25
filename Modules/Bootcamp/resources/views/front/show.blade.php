@@ -446,7 +446,7 @@
             </div>
 
             <div class="d-flex flex-column gap-2 py-5">
-              @foreach ($faqs->sortBy('id') as $faq)  
+              @foreach ($faqs as $faq)  
               <details>
                 <summary
                   class="font-s-lg font-w-600 d-flex justify-content-between align-items-center"

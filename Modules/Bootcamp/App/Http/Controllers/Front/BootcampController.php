@@ -23,7 +23,7 @@ class BootcampController extends Controller
             abort(404);
         }
         $properties = json_decode($bootcamp->properties);
-        $faqs = BootcampFaq::query()->latest('id')->where('bootcamp_id',$bootcamp->id)->get();
+        $faqs = BootcampFaq::query()->where('bootcamp_id',$bootcamp->id)->get();
         $headlines = Headline::query()->latest('id')->where('bootcamp_id',$bootcamp->id)->get();
         $professors = Professor::query()
         ->with('specialties')->whereHas('bootcamps')->get();
