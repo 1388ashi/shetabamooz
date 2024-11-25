@@ -342,13 +342,13 @@
 
             00 font-s-md ">
             <li><b>پیش نیاز :{{$bootcamp->prerequisite}}</b></li>
-            @if ($bootcamp->support)
+            @if ($bootcamp->support == 1)
             <li><b>پشتیبانی :{{$bootcamp->support}}</b></li>
             @endif
-            @if ($bootcamp->catering)
+            @if ($bootcamp->catering == 1)
               <li><b>پذیرایی :{{$bootcamp->catering}}</b></li>
             @endif
-            @if ($bootcamp->gifts)
+            @if ($bootcamp->gifts == 1)
               <li><b>جایزه :{{$bootcamp->gifts}}</b></li>
             @endif
             <li><b>مکان برگذاری :{{$bootcamp->eventplace}}</b></li>
@@ -446,7 +446,7 @@
             </div>
 
             <div class="d-flex flex-column gap-2 py-5">
-              @foreach ($faqs->sortByDesc('id') as $faq)  
+              @foreach ($faqs->sortByAsc('id') as $faq)  
               <details>
                 <summary
                   class="font-s-lg font-w-600 d-flex justify-content-between align-items-center"
