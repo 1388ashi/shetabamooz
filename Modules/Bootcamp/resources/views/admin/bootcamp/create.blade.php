@@ -208,10 +208,16 @@
                                     </div>
                                 </div>
                                 <div class="col-2">
-                                    <p class="form-label">وضعیت نمایش <span class="text-danger">&starf;</span></p>
+                                    <label for="label" class="control-label"> وضعیت: </label>
                                     <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" name="status" value="1" checked>
-                                        <span class="custom-control-label">فعال</span>
+                                      <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        name="status"
+                                        value="1"
+                                        {{ old('status', 1) == 1 ? 'checked' : null }}
+                                      />
+                                      <span class="custom-control-label">فعال</span>
                                     </label>
                                 </div>
                             </div>

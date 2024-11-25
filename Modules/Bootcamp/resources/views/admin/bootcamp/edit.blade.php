@@ -220,15 +220,19 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="status" class="control-label">وضعیت نمایش</label>
-                                        <span class="text-danger">&starf;</span>
+                                        <label for="label" class="control-label"> وضعیت: </label>
                                         <label class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="status"
-                                                {{ $bootcamp->status ? ' checked' : '' }}
-                                            >
-                                            <span class="custom-control-label">فعال</span>
+                                          <input
+                                            type="checkbox"
+                                            class="custom-control-input"
+                                            name="status"
+                                            id="status"
+                                            value="1"
+                                            {{ old('status', $faq->status) == 1 ? 'checked' : null }}
+                                          />
+                                          <span class="custom-control-label">فعال</span>
                                         </label>
-                                    </div>
+                                      </div>
                                 </div>
                             </div>
                         </div>
