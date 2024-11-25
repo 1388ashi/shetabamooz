@@ -31,8 +31,8 @@ class StoreRequest extends FormRequest
             'price' => 'nullable',
             'discount' => 'nullable',
             'contacts' => 'required|max:193',
-            'support' => 'required|max:193',
-            'gifts' => 'required|max:193',
+            'support' => 'nullable|max:193',
+            'gifts' => 'nullable|max:193',
             'type' => 'required|max:193',
             'summary' => 'required|min:3|max:5000',
             'description' => 'required|min:3|max:100000',
@@ -50,7 +50,7 @@ class StoreRequest extends FormRequest
     protected function prepareForValidation()
     {
         $this->merge([
-            'status' => $this->has('status'),
+            'status' => (bool) $this->input('status', 0),
             'meta_robots' => $this->has('meta_robots'),
             'price' => $this->filled('price') ? Helpers::removeComma($this->input('price')) : null,
             'discount' => $this->filled('discount') ? Helpers::removeComma($this->input('discount')) : null,

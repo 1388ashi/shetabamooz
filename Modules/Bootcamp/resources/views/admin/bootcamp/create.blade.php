@@ -115,10 +115,9 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="gifts" class="control-label">هدایا</label>
-                                        <span class="text-danger">&starf;</span>
                                         <input type="text" name="gifts" value="{{ old('gifts') }}"
                                             class="form-control" id="gifts"
-                                            placeholder="هدایا را اینجا وارد کنید..." required autofocus>
+                                            placeholder="هدایا را اینجا وارد کنید..." >
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -158,19 +157,17 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="support" class="control-label">پشتیبانی</label>
-                                        <span class="text-danger">&starf;</span>
                                         <input type="text" name="support" value="{{ old('support') }}"
                                             class="form-control" id="support"
-                                            placeholder="پشتیبانی را اینجا وارد کنید..." required autofocus>
+                                            placeholder="پشتیبانی را اینجا وارد کنید...">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="catering" class="control-label">پذیرایی</label>
-                                        <span class="text-danger">&starf;</span>
                                         <input type="text" name="catering" value="{{ old('catering') }}"
                                             class="form-control" id="catering"
-                                            placeholder="پذیرایی را اینجا وارد کنید..." required autofocus>
+                                            placeholder="پذیرایی را اینجا وارد کنید...">
                                     </div>
                                 </div>
                             </div>

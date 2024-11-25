@@ -342,13 +342,13 @@
 
             00 font-s-md ">
             <li><b>پیش نیاز :{{$bootcamp->prerequisite}}</b></li>
-            @if ($bootcamp->support == 1)
+            @if ($bootcamp->support)
             <li><b>پشتیبانی :{{$bootcamp->support}}</b></li>
             @endif
-            @if ($bootcamp->catering == 1)
+            @if ($bootcamp->catering)
               <li><b>پذیرایی :{{$bootcamp->catering}}</b></li>
             @endif
-            @if ($bootcamp->gifts == 1)
+            @if ($bootcamp->gifts)
               <li><b>جایزه :{{$bootcamp->gifts}}</b></li>
             @endif
             <li><b>مکان برگذاری :{{$bootcamp->eventplace}}</b></li>
