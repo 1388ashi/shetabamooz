@@ -751,7 +751,7 @@
     @endforeach
     @if (!empty($bootcamp))
     <section class="containerFlouidBootcamp marginSection my-7">
-        <h1 class="text-center" style="font-size: 28px">بوت کمپ های شتاب</h1>
+        <h1 class="text-center" style="font-size: 28px">بوت کمپ های شتاب آموز</h1>
         @foreach ($bootcamps as $bootcamp)
         <section>
           <article>
