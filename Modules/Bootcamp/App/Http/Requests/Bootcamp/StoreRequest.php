@@ -60,7 +60,6 @@ class StoreRequest extends FormRequest
 
     public function validated($key = null, $default = null) {
         $validated = parent::validated();
-        $validated['status'] = $this->filled('status') ? 1 : 0;
         unset(
             $validated['professors'],
             $validated['image'],

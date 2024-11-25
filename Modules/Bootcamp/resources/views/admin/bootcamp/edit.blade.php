@@ -84,7 +84,9 @@
                                     <div
                                         class="form-group">
                                         <label for="price" class="control-label">قیمت (تومان)</label>
-                                        <input type="text" name="price" value="{{ old('price',number_format($bootcamp->price)) }}"
+                                        <input type="text" name="price" @if (!$bootcamp->price) value="{{ old('price') }}" 
+                                            @else value="{{ old('price',number_format($bootcamp->price)) }}"
+                                            @endif
                                             class="form-control comma" id="price"
                                             placeholder="قیمت را اینجا وارد کنید...">
                                         <span class="text-info">اگر قیمت را وارد نکنید دوره رایگان می باشد.</span>
