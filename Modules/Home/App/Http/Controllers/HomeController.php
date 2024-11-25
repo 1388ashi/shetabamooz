@@ -20,7 +20,7 @@ class HomeController extends Controller
         $professors = Professor::query()->latest('id')->active()->take(6)->get();
         $posts = Post::query()->latest('id')->active()->take(6)->get();
         $studentPovs = StudentPov::query()->latest('id')->active()->get();
-        $bootcamps = Bootcamp::query()->latest('id')->take(4)->get();
+        $bootcamps = Bootcamp::query()->where('status',1)->latest('id')->take(4)->get();
 
         return view('home::front.home',compact('courses','professors','posts','studentPovs','bootcamps'));
     }

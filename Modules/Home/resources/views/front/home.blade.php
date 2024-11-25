@@ -789,11 +789,11 @@
                     <div class="">
                         @if ($bootcamp->price !== null)
                         @if($bootcamp->discount !== null)
-                        <h6 ><del class="off">قیمت اصلی: {{ $bootcamp->getPrice() }} تومان </del></h6>
-                        <h5 style="margin-bottom: 0px" class="text-color-green">قیمت با تخفیف: {{ number_format($bootcamp->getPriceWithDiscount()) }} تومان </h5>
-                        @else
-                        <h5 style="margin-bottom: 0px" class="text-color-green">قیمت: {{$bootcamp->getPrice() }} تومان </h5>
-                        @endif
+                            <h6 ><del class="off">قیمت اصلی: {{ $bootcamp->getPrice() }} تومان </del></h6>
+                            <h5 style="margin-bottom: 0px" class="text-color-green">قیمت با تخفیف: {{ number_format($bootcamp->getPriceWithDiscount()) }} تومان </h5>
+                            @else
+                            <h5 style="margin-bottom: 0px" class="text-color-green">قیمت: {{$bootcamp->getPrice() }} تومان </h5>
+                            @endif
                         @else
                         <h4 class="text-color-green">رایگان</h4>
                         @endif
