@@ -7,7 +7,8 @@ use Illuminate\Foundation\Http\FormRequest;
 use Modules\Bootcamp\App\Models\BootcampUser;
 use Modules\Core\Helpers\Helpers;
 
-class StoreRequest extends FormRequest
+class 
+StoreRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.

@@ -11,5 +11,6 @@
     "Request": true,
     "Home": true,
     "Setting": true,
-    "Bootcamp": true
+    "Bootcamp": true,
+    "Sms": true
 }
