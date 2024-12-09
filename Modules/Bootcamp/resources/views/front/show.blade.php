@@ -402,10 +402,11 @@
         </div>
 
         <div class="sectionImg widthTwoSection">
-            <figure class="figureimgBanner w-100">
+            <figure class="figureimgBanner w-80">
               <img
                 class=" imgBanner bg-color-green"
-                src="{{asset('front/assets/images/bootcamp/lms-course-counseling.png')}}"
+                style="width: 80%"
+                src="{{asset('assets/images/4b89b84e-bff1-4e3c-8330-3cccdc013262.png')}}"
                 alt=""
               />
             </figure>

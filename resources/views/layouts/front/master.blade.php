@@ -160,9 +160,16 @@
         #growls-default {
             right: 80%;
         }
+        .responsive-gif {  
+            width: 100%;  
+            height: auto;  
+        }  
     </style>
 </head>
 <body>
+    <a href="{{route('bootcamps.show','کارگاه-بوت-استرپ')}}">
+        <img src="{{asset('assets/images/bootcamp.gif')}}" alt="Description of gif" class="responsive-gif"> 
+    </a>
 <!-- Header START -->
 <header class="navbar-light navbar-sticky header-static">
     <!-- Logo Nav START -->

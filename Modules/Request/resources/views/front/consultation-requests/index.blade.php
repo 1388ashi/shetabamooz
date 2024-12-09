@@ -38,7 +38,7 @@
                                 <li class="list-item mb-3 h6 fw-light">
                                     <a href="#">
                                         <i class="fas fa-fw fa-map-marker-alt me-2 mt-1"></i>
-                                        گرگان ، ویلاشهر ، رو به رو ویلاشهر 14 ، مجتمع گیتی ، طبقه 4 ، واحد 31
+                                        گرگان, میدان کاخ, برج سرمایه, طبقه 5, واحد 53 
                                     </a>
                                 </li>
                                 <!-- Phone number -->
