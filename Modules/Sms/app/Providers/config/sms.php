@@ -29,7 +29,7 @@ return [
             'urlNormal'   => 'https://ippanel.com/services.jspd',
             'from'        => '+983000505',
         ],
-        'kavehnegar' => [
+        'kavenegar' => [
             'api_key'    => app(\Modules\Core\Classes\CoreSettings::class)->get('sms.api_key'),
             'from'       => app(\Modules\Core\Classes\CoreSettings::class)->get('sms.sender'),
         ]
@@ -50,5 +50,5 @@ return [
     'map' => [
         'farazsms'      => \Modules\Sms\Drivers\Farazsms::class,
         'kavenegar'     => \Modules\Sms\Drivers\Kavenegar::class
-    ],
+    ]
 ];

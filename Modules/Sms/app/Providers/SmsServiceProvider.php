@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Modules\Sms;
+namespace Modules\Sms\app\Providers;
 
 use App\Providers\AppServiceProvider;
 use Illuminate\Support\ServiceProvider;

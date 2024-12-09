@@ -14,7 +14,7 @@ class Kavenegar implements SmsInterface
     const APIPATH = "%s://api.kavenegar.com/v1/%s/%s/%s.json/";
     const VERSION = "1.2.2";
 
-    protected string $drive = 'kavehnegar';
+    protected string $drive = 'kavenegar';
 
     protected string $apiKey;
 
