@@ -405,7 +405,7 @@
             <figure class="figureimgBanner w-80">
               <img
                 class=" imgBanner bg-color-green"
-                style="width: 80%"
+                style="width: 50%"
                 src="{{asset('assets/images/4b89b84e-bff1-4e3c-8330-3cccdc013262.png')}}"
                 alt=""
               />
