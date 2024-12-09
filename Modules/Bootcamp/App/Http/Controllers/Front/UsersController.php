@@ -28,7 +28,7 @@ class UsersController extends Controller
         $user = BootcampUser::create($request->validated());
         $user->bootcamps()->attach($request->bootcamp_id);
 
-        $pattern = app(CoreSettings::class)->get('sms.shetabamooz_bootcamp_day_reminder');
+        $pattern = app(CoreSettings::class)->get('sms.patterns.shetabamooz_bootcamp_register');
         $output = Sms::pattern($pattern)  
         ->data([  
             'token' => '.',  
