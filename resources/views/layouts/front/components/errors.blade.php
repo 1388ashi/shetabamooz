@@ -3,7 +3,7 @@
 
 <script>
     @foreach($errors->all() as $error)
-    @if ($error == 'کاربر قبلا ثبت نام کرده!')
+    @if ($error == 'شما قبلا در بوتکمپ ثبت نام کرده‌اید!')
         Toastify({
             text: @json($error),
             duration: 3000,
