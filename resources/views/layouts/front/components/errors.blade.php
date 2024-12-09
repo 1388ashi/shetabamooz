@@ -3,6 +3,18 @@
 
 <script>
     @foreach($errors->all() as $error)
+    @if ($error == 'کاربر قبلا ثبت نام کرده!')
+        Toastify({
+            text: @json($error),
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            positionLeft: true, // `true` or `false`
+            backgroundColor: "linear-gradient(to right, #FF5353, #FF5353)",
+        }).showToast();
+    @else
         Toastify({
             text: "لطفا اطلاعات را به صورت صحیح وارد کنید!",
             duration: 3000,
@@ -13,6 +25,7 @@
             positionLeft: true, // `true` or `false`
             backgroundColor: "linear-gradient(to right, #FF5353, #FF5353)",
         }).showToast();
+    @endif
     @endforeach
 </script>
 {{--source:--}}

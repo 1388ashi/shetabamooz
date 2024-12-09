@@ -158,7 +158,7 @@
     </script>
    <style>  
     #growls-default {  
-        right: 80%;  
+        right: 75%;  
     }  
     
     .responsive-gif {  
@@ -166,7 +166,7 @@
         height: auto;  
     }  
 
-    @media only screen and (max-width: 768px) { /* برای موبایل */  
+    @media only screen and (max-width: 768px) { 
         .responsive-gif {  
             height: 5vh;
         }  
