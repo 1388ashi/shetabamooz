@@ -28,11 +28,11 @@ class UsersController extends Controller
         $user = BootcampUser::create($request->validated());
         $user->bootcamps()->attach($request->bootcamp_id);
 
-        // $pattern = app(CoreSettings::class)->get('sms.patterns.shetabamooz_bootcamp_register');
-        // $output = Sms::pattern($pattern)  
-        // ->data([  
-        //     'token' => '.',  
-        // ])->to([$user->mobile])->send();  
+        $pattern = app(CoreSettings::class)->get('sms.patterns.shetabamooz_bootcamp_register');
+        $output = Sms::pattern($pattern)  
+        ->data([  
+            'token' => '.',  
+        ])->to([$user->mobile])->send();  
 
         return redirect()->back()->with('success','شما با موفقیت در بوت کمپ ثبت نام شدید');
     }
