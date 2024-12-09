@@ -156,15 +156,22 @@
 
         gtag("config", "G-7N7LGGGWT1");
     </script>
-    <style>
-        #growls-default {
-            right: 80%;
-        }
+   <style>  
+    #growls-default {  
+        right: 80%;  
+    }  
+    
+    .responsive-gif {  
+        width: 100%;  
+        height: auto;  
+    }  
+
+    @media only screen and (max-width: 768px) { /* برای موبایل */  
         .responsive-gif {  
-            width: 100%;  
-            height: auto;  
+            height: 5vh;
         }  
-    </style>
+    }  
+</style>
 </head>
 <body>
     <a href="{{route('bootcamps.show','کارگاه-بوت-استرپ')}}">
