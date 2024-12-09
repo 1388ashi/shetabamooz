@@ -50,5 +50,8 @@ return [
     'map' => [
         'farazsms'      => \Modules\Sms\Drivers\Farazsms::class,
         'kavenegar'     => \Modules\Sms\Drivers\Kavenegar::class
-    ]
+    ],
+    'providers' => [  
+        Modules\Sms\SmsServiceProvider::class,  
+    ],
 ];
