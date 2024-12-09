@@ -30,7 +30,7 @@ StoreRequest extends FormRequest
                         ->exists();  
     
                     if ($exists) {  
-                        $fail('شما قبلا در بوتمپ ثبت نام کرده اید');  
+                        return redirect()->back()->with('error','شما قبلا در بوتکمپ ثبت نام کرده اید');
                     }  
                 },  
             ],  
