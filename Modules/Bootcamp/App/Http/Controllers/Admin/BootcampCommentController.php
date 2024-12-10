@@ -6,62 +6,41 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Modules\Bootcamp\App\Models\Bootcamp;
+use Modules\Bootcamp\App\Models\BootcampComment;
 
 class BootcampCommentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        return view('bootcamp::index');
-    }
+        $bootcamps = Bootcamp::select(["id","title"])->get();
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        return view('bootcamp::create');
-    }
+        $name = request('name');
+        $bootcampId = request('bootcamp_id');
+        $status = request('status');
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request): RedirectResponse
-    {
-        //
-    }
+        $bootcampComments = BootcampComment::query()
+        ->when($name, fn ($query) => $query->where('name', 'like', "%$name%"))
+        ->when($bootcampId, function ($query) use ($bootcampId) {
+            return $query->whereHas('bootcamp', function($q) use ($bootcampId) {
+                return $q->where('bootcamps.id', $bootcampId);
+            });
+        })
+        ->when(isset($status), fn ($query) => $query->where("status", $status))
+        ->with('bootcamp:id,title')
+        ->latest('id')
+        ->paginate(15);
 
-    /**
-     * Show the specified resource.
-     */
-    public function show($id)
-    {
-        return view('bootcamp::show');
+        return view('bootcamp::admin.bootcamp-comments.index', compact('bootcampComments','bootcamps'));
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit($id)
+    public function update(Request $request,$id): RedirectResponse
     {
-        return view('bootcamp::edit');
-    }
+        $bootcampComment = BootcampComment::find($id);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, $id): RedirectResponse
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy($id)
-    {
-        //
+        $bootcampComment->update([
+            'status' => $request->status,
+            'admin_description' => $request->admin_description,
+        ]);
+        return redirect()->back()->with('success','نظر با موفقیت به روزرسانی شد');
     }
 }

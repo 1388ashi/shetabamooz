@@ -158,7 +158,7 @@
     </script>
    <style>  
     #growls-default {  
-        right: 75%;  
+        right: 78%;  
     }  
     
     .responsive-gif {  

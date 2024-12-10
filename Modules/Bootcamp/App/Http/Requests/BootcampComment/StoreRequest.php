@@ -12,7 +12,11 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|min:3|max:191',
+            'mobile' => 'required|digits:11|regex:/(^09\d{9}$)/u',
+            'description' => 'required|min:3',
+            'bootcamp_id' => 'required|exists:bootcamps,id',
+            'status' => 'required'
         ];
     }
 

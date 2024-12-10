@@ -157,6 +157,10 @@ class Bootcamp extends Model implements HasMedia, Viewable
     {
         return $this->belongsToMany(BootcampUser::class);
     }
+    public function comments()
+    {
+        return $this->hasMany(BootcampComment::class);
+    }
     public function BootcampFaqs()
     {
         return $this->hasMany(BootcampFaq::class);

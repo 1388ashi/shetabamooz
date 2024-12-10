@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Modules\Bootcamp\App\Http\Controllers\Admin\AdvisorController;
+use Modules\Bootcamp\App\Http\Controllers\Admin\BootcampCommentController;
 use Modules\Bootcamp\App\Http\Controllers\Admin\BootcampController;
 use Modules\Bootcamp\App\Http\Controllers\Admin\BootcampFaqController;
 use Modules\Bootcamp\App\Http\Controllers\Admin\HeadlineController;
@@ -43,11 +44,15 @@ Route::webSuperGroup('admin', function () {
     ]);
     Route::resource('users',UsersController::class);
     Route::resource('advisors',AdvisorController::class)->except('store');
+    Route::get('bootcamp-comments/', [BootcampCommentController::class, 'index'])->name('bootcamps.comments.index');
+    Route::patch('bootcamp-comments/{id}', [BootcampCommentController::class, 'update'])->name('bootcamps.comments.update');
+
 });
 
 Route::Resource('bootcamps', \Modules\Bootcamp\App\Http\Controllers\Front\BootcampController::class)->only(['show']);
 Route::post('advisors/store', [\Modules\Bootcamp\App\Http\Controllers\Front\AdvisorController::class, 'store'])->name('advisors.store');
 Route::post('bootcamp-registers/store', [\Modules\Bootcamp\App\Http\Controllers\Front\UsersController::class, 'store'])->name('users.store');
+Route::post('bootcamp-comment/store', [\Modules\Bootcamp\App\Http\Controllers\Front\BootcampCommentController::class, 'store'])->name('bootcamps.comments.store');
 
 
 // Route::get('course-registers', [\Modules\Course\App\Http\Controllers\Front\CourseRegisterController::class, 'index'])

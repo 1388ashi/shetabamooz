@@ -278,29 +278,29 @@
             @endif
             <form action="{{ route('users.store') }}" method="post">
                 @csrf
-            <div class="row mt-3">
-            <div class="col-lg-6">
-                <label class="form-label">نام و نام خانوادگی *</label>
-                <input
-                    type="text"
-                    class="form-control"
-                    aria-label="First name"
-                    name="name"
-                    value="{{ old('name') }}"
-                    required
-                />
-            </div>
-            <input type="hidden" name="bootcamp_id" value="{{ request()->bootcamp_id }}">
-            <div class="col-lg-6">
-                <label class="form-label">شماره تماس *</label>
-                <input type="text" class="form-control" name="mobile" value="{{ old('mobile') }}" required/>
-            </div>
-            <input type="hidden" name="bootcamp_id" value="{{$bootcamp->id}}">
-            <div class="d-flex justify-content-center align-items-center">
-                <button type="submit" class="buttonBootCamp  mt-3">ثبت نام</button    >
-            </div>
-            </div>
-        </form>
+              <div class="row mt-3">
+              <div class="col-lg-6">
+                  <label class="form-label">نام و نام خانوادگی *</label>
+                  <input
+                      type="text"
+                      class="form-control"
+                      aria-label="First name"
+                      name="name"
+                      value="{{ old('name') }}"
+                      required
+                  />
+              </div>
+              <input type="hidden" name="bootcamp_id" value="{{ request()->bootcamp_id }}">
+              <div class="col-lg-6">
+                  <label class="form-label">شماره تماس *</label>
+                  <input type="text" class="form-control" name="mobile" value="{{ old('mobile') }}" required/>
+              </div>
+              <input type="hidden" name="bootcamp_id" value="{{$bootcamp->id}}">
+              <div class="d-flex justify-content-center align-items-center">
+                  <button type="submit" class="buttonBootCamp  mt-3">ثبت نام</button    >
+              </div>
+              </div>
+          </form>
         </div>
           <div class="signinInformationLeft bg-color-green-20">
             <div class="signInMiniCard mb-3">
@@ -358,9 +358,118 @@
         </div>
       </section>
     </section>
-     <!-- contact US -->
-     <section class="contactUs containerBootcamp marginSection">
+    <section class="containerFlouidBootcamp" style="background-color: rgb(230, 227, 227)">
+      <section class="containerBootcamp">
+        <div class="text-center">
+          <h1 class="text-color-indigo-main">نظر بدهید</h1>
+          <p class="font-s-lg text-color-green">
+            تجربه بوتکمپ خود را به اشتراک بگذارید.
+          </p>
+        </div>
 
+        <div class="signIn justify-content-center">
+          <div class="signinInformationRight d-flex" style="border-radius: 8px">
+            <form action="{{ route('bootcamps.comments.store') }}" method="post">
+                @csrf
+              <div class="row mt-3 p-2">
+                <div class="col-lg-6">
+                    <label class="form-label">نام و نام خانوادگی *</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        aria-label="First name"
+                        name="name"
+                        value="{{ old('name') }}"
+                        required
+                    />
+                </div>
+                <input type="hidden" name="bootcamp_id" value="{{ request()->bootcamp_id }}">
+                <div class="col-lg-6">
+                    <label class="form-label">شماره تماس *</label>
+                    <input type="text" class="form-control" name="mobile" value="{{ old('mobile') }}" required/>
+                </div>
+                <div class="col-lg-12">
+                    <label class="form-label">توضیحات *</label>
+                    <textarea name="description" class="form-control" id="" cols="25" rows="3">{{ old('description') }}</textarea>
+                </div>
+                <input type="hidden" name="bootcamp_id" value="{{$bootcamp->id}}">
+                <input type="hidden" name="status" value="pending">
+                <div class="d-flex justify-content-center align-items-center">
+                    <button type="submit" class="buttonBootCamp  mt-3">ثبت نظر</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section class="containerFlouidBootcamp bg-color-green-10">
+      <section class="containerBootcamp">
+        @if ($comments)
+        <div class="blog-comment section pt-0">
+            <h3 class="mb-3">نظرات ({{ count($comments) }})</h3>
+            <ol class="comments-list">
+                <li class="comments-items">
+                    @foreach ($comments as $i => $comment)
+                        {{ $loop->iteration }}.
+                        <div class="comments-item px-0 d-flex w-100">
+                            <div class="flex-shrink-0 comment-img">
+                                <img
+                                class="blur-up lazyload img-comment"
+                                data-src="{{asset('front/assets/c2487b8c-09ed-4d59-81f0-971ddd5586d9')}}"
+                                src="{{asset('front/assets/c2487b8c-09ed-4d59-81f0-971ddd5586d9')}}"
+                                alt=" نظر"
+                                width="200"
+                                height="200"
+                                />
+                            </div>
+                            <div class="flex-grow-1 comment-content">
+                                <div class="comment-user d-flex-center justify-content-between">
+                                    <div class="comment-author fw-600">{{$comment->name ?: '...'}}</div>
+                                        <div class="comment-date opacity-75">
+                                            <time datetime="2023-01-02"
+                                            >{{verta($comment->created_at)->format('%d %B %Y')}}
+                                            </time>
+                                        </div>
+                                    </div>
+                                    <div class="comment-text my-2">
+                                        {{ $comment->description }}
+                                    </div>
+                            </div>
+                        </div>
+                        @if ($comment->admin_description)
+                            <div class="comments-item d-flex w-100">
+                                <div class="flex-shrink-0 comment-img">
+                                    <img
+                                    class="blur-up lazyload img-comment"
+                                    data-src="{{asset('front/assets/c2487b8c-09ed-4d59-81f0-971ddd5586d9')}}"
+                                    src="{{asset('front/assets/c2487b8c-09ed-4d59-81f0-971ddd5586d9')}}"
+                                    alt=" نظر"
+                                    width="200"
+                                    height="200"
+                                    />
+                                </div>
+                                <div class="flex-grow-1 comment-content">
+                                    <div class="comment-user d-flex-center justify-content-between">
+                                        <div class="comment-author fw-600">ادمین</div>
+                                    </div>
+                                    <div class="comment-text my-2">
+                                        {{ $comment->admin_description }}
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+                </li>
+            </ol>
+        </div>
+        @else
+        <h3>تا‌کنون نظری ثبت نشده است</h3>
+        @endif
+      </section>
+    </section>
+     <!-- contact US -->
+      <section class="contactUs containerBootcamp marginSection">
         <div class="widthTwoSection">
           <div class="form-container">
             <h1 class="text-color-indigo-main ">در کنار شما هستیم</h1>

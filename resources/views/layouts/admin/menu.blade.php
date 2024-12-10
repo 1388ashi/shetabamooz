@@ -39,6 +39,7 @@
                 <ul class="slide-menu">
                     <li><a href="{{route('admin.bootcamps.index')}}" class="slide-item">بوت کمپ ها</a></li>
                     <li><a href="{{route('admin.advisors.index')}}" class="slide-item"> مشاوره های بوت کمپ</a></li>
+                    <li><a href="{{route('admin.bootcamps.comments.index')}}" class="slide-item">نظرات بوتکمپ</a></li>
                 </ul>
             </li>
 

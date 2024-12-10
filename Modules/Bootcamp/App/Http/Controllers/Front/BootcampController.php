@@ -7,6 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Modules\Bootcamp\App\Models\Bootcamp;
+use Modules\Bootcamp\App\Models\BootcampComment;
 use Modules\Bootcamp\App\Models\BootcampFaq;
 use Modules\Bootcamp\App\Models\Headline;
 use Modules\Professor\App\Models\Professor;
@@ -27,7 +28,8 @@ class BootcampController extends Controller
         $headlines = Headline::query()->latest('id')->where('bootcamp_id',$bootcamp->id)->get();
         $professors = Professor::query()
         ->with('specialties')->whereHas('bootcamps')->get();
-        
-        return view('bootcamp::front.show', compact('bootcamp','headlines','properties','faqs','professors'));
+        $comments = BootcampComment::where('bootcamp_id',$bootcamp->id)->where('status','accepted')->get();
+
+        return view('bootcamp::front.show', compact('comments','bootcamp','headlines','properties','faqs','professors'));
     }
 }

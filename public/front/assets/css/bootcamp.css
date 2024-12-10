@@ -1,3 +1,26 @@
+.comments-item + .comments-item {
+    border-top: 1px solid #ececec;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-right: 40px;
+}
+.comments-list{
+    list-style-type: none;
+}
+.comment-form {
+    background: var(--white);
+    padding: 30px;
+    border: 1px solid #ececec;
+}
+.comment-img {
+    width: 65px;
+    margin-left: 20px;
+}
+.img-comment {
+    width: 65px;
+    margin-left: 20px;
+    border-radius: 21px;
+}
 .font-s-xs {
     font-size: 12px;
     line-height: 16px;

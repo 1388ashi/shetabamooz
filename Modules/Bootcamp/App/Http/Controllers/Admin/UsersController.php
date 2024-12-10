@@ -41,12 +41,6 @@ class UsersController extends Controller
         $user->update([
             'status' => $request->status,
         ]);
-        $data = [
-            'status' => 'success',
-            'message' => 'کاربر با موفقیت به روزرسانی شد'
-        ];
-
-        return redirect()->route('admin.users.index')
-        ->with($data);
+        return redirect()->back()->with('success','کاربر با موفقیت به روزرسانی شد');
     }
 }
