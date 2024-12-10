@@ -170,12 +170,21 @@
         .responsive-gif {  
             height: 5vh;
         }  
+        .box-gif-bootcamp{
+            display: none;
+        }
+        .box-gif-bootcamp-mobile{
+            display: flex;
+        }
     }  
 </style>
 </head>
 <body>
-    <a href="{{route('bootcamps.show','کارگاه-بوت-استرپ')}}">
+    <a class="box-gif-bootcamp" href="{{route('bootcamps.show','کارگاه-بوت-استرپ')}}">
         <img src="{{asset('assets/images/bootcamp.gif')}}" alt="Description of gif" class="responsive-gif"> 
+    </a>
+    <a class="box-gif-bootcamp-mobile" href="{{route('bootcamps.show','کارگاه-بوت-استرپ')}}">
+        <img src="{{asset('front/bootcamp-mobile-size.gif')}}" alt="Description of gif" class="responsive-gif"> 
     </a>
 <!-- Header START -->
 <header class="navbar-light navbar-sticky header-static">

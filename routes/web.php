@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DBController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'admin/FileManager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
+Route::get('/add-table',[DBController::class,'add']);
