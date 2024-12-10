@@ -177,6 +177,11 @@
             display: flex;
         }
     }  
+    @media only screen and (min-width: 768px) { 
+        .box-gif-bootcamp-mobile{
+            display: none;
+        }
+    }  
 </style>
 </head>
 <body>
