@@ -132,14 +132,11 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">زمان برگزاری</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">
-                                                    <i class="feather feather-calendar"></i>
-                                                </div>
-                                            </div>
-                                            <input class="form-control fc-datepicker" id="payment_date_show" placeholder="تاریخ انتشار" type="text" autocomplete="off" value="{{ verta(old('published_at', today()->format('Y-m-d')))->format('Y-m-d') }}">
-                                            <input name="published_at" id="payment_date" type="hidden" value="{{old('published_at', today()->format('Y-m-d')) }}">
+                                        <label for="from_published_at_show" class="control-label">زمان برگزاری</label>
+                                            <input class="form-control fc-datepicker" id="from_published_at_show" type="text"
+                                                autocomplete="off" placeholder="زمان برگزاری را انتخاب کنید" />
+                                            <input name="published_at" id="from_published_at_hide" type="hidden"
+                                                value="{{ old('published_at') }}" />
                                         </div>
                                     </div>
                                 </div>
