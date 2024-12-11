@@ -31,7 +31,7 @@ class SmsBootcampUsersJob implements ShouldQueue
     
         $bootcamps = Bootcamp::whereDate('published_at', $tomorrow)->get();  
     
-        if ($bootcamps->isEmpty() &&   
+        if ($bootcamps->isNotEmpty() &&   
             Bootcamp::where('published_at', '>=', now()->subHours(2))  
             ->where('published_at', '<=', now())->exists()) {  
         
