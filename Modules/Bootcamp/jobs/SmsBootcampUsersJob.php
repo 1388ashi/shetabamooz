@@ -31,29 +31,24 @@ class SmsBootcampUsersJob implements ShouldQueue
     
         $bootcamps = Bootcamp::whereDate('published_at', $tomorrow)->get();  
     
-        if ($bootcamps->isEmpty() && 
-            Bootcamp::where('published_at', '>=', now()->subHours(2))
+        if ($bootcamps->isEmpty() &&   
+            Bootcamp::where('published_at', '>=', now()->subHours(2))  
             ->where('published_at', '<=', now())->exists()) {  
-
-            $bootcamps = Bootcamp::where('published_at', '>=', now()->subHours(2))
-            ->where('published_at', '<=', now())->get();  
-            
+        
+            $bootcamps = Bootcamp::where('published_at', '>=', now()->subHours(2))  
+                            ->where('published_at', '<=', now())->get();  
+        
             foreach ($bootcamps as $bootcamp) {  
-                $users = $bootcamp->users;   
-                foreach ($users as $user) {  
-                    if ($user->is_send == 0) {
-                        $this->sendSmsBeforeTowHour(user: $user);  
-                    }
+                foreach ($bootcamp->users as $user) {  
+                    $this->sendSmsBeforeTowHour($user);  
                 }  
             }  
-        } else {  
+        } elseif (Bootcamp::where('published_at', '>=', now()->addDay()->startOfDay())
+                            ->where('published_at', '<=', now()->addDay()->endOfDay())->exists()) {
+        
             foreach ($bootcamps as $bootcamp) {  
-                $users = $bootcamp->users;   
-                
-                foreach ($users as $user) {  
-                    if ($user->is_send == 0) {
-                        $this->sendSmsTomorrow($user);  
-                    }  
+                foreach ($bootcamp->users as $user) {  
+                    $this->sendSmsTomorrow($user);  
                 }  
             }  
         }  
