@@ -145,7 +145,7 @@
                                         <input class="form-control fc-datepicker" id="from_published_at_show" type="text"
                                             autocomplete="off" placeholder="زمان برگزاری را انتخاب کنید" />
                                         <input name="published_at" id="from_published_at_hide" type="hidden"
-                                            value="{{ old('published_at', $post->published_at) }}" />
+                                            value="{{ old('published_at', $bootcamp->published_at) }}" />
                                     </div>
                                 </div>
                             </div>
