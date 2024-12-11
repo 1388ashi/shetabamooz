@@ -40,9 +40,10 @@ class SmsBootcampUsersJob implements ShouldQueue
             
             foreach ($bootcamps as $bootcamp) {  
                 $users = $bootcamp->users;   
-            
                 foreach ($users as $user) {  
-                    $this->sendSmsBeforeTowHour($user);  
+                    if ($user->is_send == 0) {
+                        $this->sendSmsBeforeTowHour(user: $user);  
+                    }
                 }  
             }  
         } else {  
@@ -50,7 +51,9 @@ class SmsBootcampUsersJob implements ShouldQueue
                 $users = $bootcamp->users;   
                 
                 foreach ($users as $user) {  
-                    $this->sendSmsTomorrow($user);  
+                    if ($user->is_send == 0) {
+                        $this->sendSmsTomorrow($user);  
+                    }  
                 }  
             }  
         }  

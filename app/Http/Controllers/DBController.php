@@ -28,10 +28,9 @@ class DBController extends Controller
         //     $table->timestamps();
         // });
         // dd('ok');
-        // Schema::table('bootcamp_comments', function (Blueprint $table) {
-        //         $table->string('admin_description')->nullable();
-        // });
-        // dd('ok');
+        Schema::table('bootcamp_users', function (Blueprint $table) {
+                $table->boolean('is_send')->default(0)->nullable();
+        });
 
         $users = BootcampUser::latest('id')->take(10)->get();   
                 
@@ -43,6 +42,7 @@ class DBController extends Controller
                     'token' => '.',  
                 ])->to([$user->mobile])->send();  
         }  
+        dd('ok');
     }
     
 }
