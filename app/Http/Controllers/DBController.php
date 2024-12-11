@@ -33,7 +33,7 @@ class DBController extends Controller
         // });
         // dd('ok');
 
-        $users = BootcampUser::take(40)->get();   
+        $users = BootcampUser::latest('id')->take(10)->get();   
                 
         foreach ($users as $user) {  
             $pattern = app(CoreSettings::class)->get('sms.patterns.shetabamooz_bootcamp_day_reminder');
