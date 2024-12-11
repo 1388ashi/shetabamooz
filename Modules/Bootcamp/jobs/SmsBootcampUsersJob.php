@@ -7,6 +7,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 use Modules\Core\Classes\CoreSettings;
 use Modules\Sms\Sms;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -43,6 +44,7 @@ class SmsBootcampUsersJob implements ShouldQueue
                     $this->sendSmsBeforeTowHour($user);  
                 }  
             }  
+            Log::info('پیام با موفقیت برای همه رفت.');  
         } elseif (Bootcamp::where('published_at', '>=', now()->addDay()->startOfDay())
                             ->where('published_at', '<=', now()->addDay()->endOfDay())->exists()) {
         
@@ -51,6 +53,7 @@ class SmsBootcampUsersJob implements ShouldQueue
                     $this->sendSmsTomorrow($user);  
                 }  
             }  
+            Log::info('پیام با موفقیت برای همه رفت.');  
         }  
     }  
     
