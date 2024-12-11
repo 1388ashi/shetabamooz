@@ -185,12 +185,12 @@
 </style>
 </head>
 <body>
-    <a class="box-gif-bootcamp" href="{{route('bootcamps.show','کارگاه-بوت-استرپ')}}">
+    {{-- <a class="box-gif-bootcamp" href="{{route('bootcamps.show','کارگاه-بوت-استرپ')}}">
         <img src="{{asset('assets/images/bootcamp.gif')}}" alt="Description of gif" class="responsive-gif"> 
     </a>
     <a class="box-gif-bootcamp-mobile" href="{{route('bootcamps.show','کارگاه-بوت-استرپ')}}">
         <img src="{{asset('front/bootcamp-mobile-size.gif')}}" alt="Description of gif" class="responsive-gif"> 
-    </a>
+    </a> --}}
 <!-- Header START -->
 <header class="navbar-light navbar-sticky header-static">
     <!-- Logo Nav START -->
