@@ -58,7 +58,7 @@ class SmsBootcampUsersJob implements ShouldQueue
     
     protected function sendSmsBeforeTowHour($user)  
     {  
-        $pattern = app(CoreSettings::class)->get('sms.shetabamooz_bootcamp_hour_reminder');
+        $pattern = app(CoreSettings::class)->get('sms.patterns.shetabamooz_bootcamp_hour_reminder');
     
         $output = Sms::pattern($pattern)  
             ->data([  
@@ -68,9 +68,8 @@ class SmsBootcampUsersJob implements ShouldQueue
     
     protected function sendSmsTomorrow($user)  
     {  
-        $pattern = app(CoreSettings::class)->get('sms.shetabamooz_bootcamp_day_reminder');
-        $name = $user->name ?? 'هنرجوی';  
-    
+        $pattern = app(CoreSettings::class)->get('sms.patterns.shetabamooz_bootcamp_day_reminder');
+
         $output = Sms::pattern($pattern)  
             ->data([  
                 'token' => '.',  

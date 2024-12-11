@@ -4,24 +4,45 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Bus\Queueable;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Carbon\Carbon;
+use Modules\Bootcamp\App\Models\BootcampUser;
+use Modules\Core\Classes\CoreSettings;
+use Modules\Sms\Sms;
+use Illuminate\Foundation\Bus\Dispatchable;
+use Modules\Bootcamp\App\Models\Bootcamp;
 class DBController extends Controller
 {
     public function add(){
-        Schema::create('bootcamp_comments', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('bootcamp_id')->constrained('bootcamps')->cascadeOnDelete();
-            $table->string('name');
-            $table->string('mobile');
-            $table->string('description');
-            $table->string('admin_description')->nullable();
-            $table->enum('status', ['pending','rejected','accepted']);
-            $table->timestamps();
-        });
-        dd('ok');
+        // Schema::create('bootcamp_comments', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->foreignId('bootcamp_id')->constrained('bootcamps')->cascadeOnDelete();
+        //     $table->string('name');
+        //     $table->string('mobile');
+        //     $table->string('description');
+        //     $table->string('admin_description')->nullable();
+        //     $table->enum('status', ['pending','rejected','accepted']);
+        //     $table->timestamps();
+        // });
+        // dd('ok');
         // Schema::table('bootcamp_comments', function (Blueprint $table) {
         //         $table->string('admin_description')->nullable();
         // });
         // dd('ok');
 
+        $users = BootcampUser::take(40)->get();   
+                
+        foreach ($users as $user) {  
+            $pattern = app(CoreSettings::class)->get('sms.patterns.shetabamooz_bootcamp_day_reminder');
+        
+            $output = Sms::pattern($pattern)  
+                ->data([  
+                    'token' => '.',  
+                ])->to([$user->mobile])->send();  
+        }  
     }
+    
 }
