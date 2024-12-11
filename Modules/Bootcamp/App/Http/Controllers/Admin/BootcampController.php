@@ -79,7 +79,6 @@ class BootcampController extends Controller
      */
     public function update(UpdateRequest $request,Bootcamp $bootcamp): RedirectResponse
     {
-        dd($request->published_at);
         $bootcamp->update($request->validated());
         $bootcamp->uploadFiles($request);
 
