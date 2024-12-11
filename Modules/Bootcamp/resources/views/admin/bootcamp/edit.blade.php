@@ -325,6 +325,10 @@
 @endsection
 
 @section('scripts')
+    @include('bootcamp::admin.bootcamp.date-input-script', [
+        'dateInputId' => 'from_published_at_hide',
+        'textInputId' => 'from_published_at_show',
+    ])
     <!-- INTERNAL File uploads js -->
     <script src="{{ asset('assets/plugins/fileupload/js/dropify.js') }}"></script>
     <!-- Summernote js  -->
@@ -344,17 +348,5 @@
             filebrowserBrowseUrl: '/admin/FileManager?type=Files',
             filebrowserUploadUrl: '/admin/FileManager/upload?type=Files&_token='
         };
-        CKEDITOR.replace('ckEditor', options);
-        $('#payment_date_show').MdPersianDateTimePicker({
-        targetDateSelector: '#payment_date',
-        targetTextSelector: '#payment_date_show',
-        englishNumber: false,
-        toDate:true,
-        enableTimePicker: false,
-        dateFormat: 'yyyy-MM-dd',
-        textFormat: 'yyyy-MM-dd',
-        groupId: 'rangeSelector1',
-    });
-
     </script>
 @endsection

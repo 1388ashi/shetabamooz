@@ -304,22 +304,14 @@
 @endsection
 
 @section('scripts')
+    @include('bootcamp::admin.bootcamp.date-input-script', [
+        'dateInputId' => 'from_published_at_hide',
+        'textInputId' => 'from_published_at_show',
+    ])
     <script>
-
         $('#properties').select2({
             minimumResultsForSearch: '',
             tags: false
-        });
-
-        $('#payment_date_show').MdPersianDateTimePicker({
-            targetDateSelector: '#payment_date',
-            targetTextSelector: '#payment_date_show',
-            englishNumber: false,
-            toDate:true,
-            enableTimePicker: false,
-            dateFormat: 'yyyy-MM-dd',
-            textFormat: 'yyyy-MM-dd',
-            groupId: 'rangeSelector1',
         });
     </script>
 @endsection
