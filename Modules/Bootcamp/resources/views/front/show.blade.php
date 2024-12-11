@@ -403,9 +403,9 @@
         </div>
       </section>
     </section>
+    @if (count($comments) != 0 )
     <section class="containerFlouidBootcamp bg-color-green-10">
       <section class="containerBootcamp">
-        @if ($comments)
         <div class="blog-comment section pt-0">
             <h3 class="mb-3">نظرات ({{ count($comments) }})</h3>
             <ol class="comments-list">
@@ -463,11 +463,9 @@
                 </li>
             </ol>
         </div>
-        @else
-        <h3>تا‌کنون نظری ثبت نشده است</h3>
-        @endif
       </section>
     </section>
+    @endif
      <!-- contact US -->
       <section class="contactUs containerBootcamp marginSection">
         <div class="widthTwoSection">
