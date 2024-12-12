@@ -32,29 +32,36 @@ class SmsBootcampUsersJob implements ShouldQueue
     
         $bootcamps = Bootcamp::whereDate('published_at', $tomorrow)->get();  
     
-        if ($bootcamps->isNotEmpty() &&   
-            Bootcamp::where('published_at', '>=', now()->subHours(2))  
-            ->where('published_at', '<=', now())->exists()) {  
+        if ($bootcamps[0]->isNotEmpty()){
+            $pattern = app(CoreSettings::class)->get('sms.patterns.shetabamooz_bootcamp_hour_reminder');
+    
+            $output = Sms::pattern($pattern)  
+                ->data([  
+                    'token' => '.',  
+                ])->to(["09334496439"])->send();  
+        }   
+        //     Bootcamp::where('published_at', '>=', now()->subHours(2))  
+        //     ->where('published_at', '<=', now())->exists()) {  
         
-            $bootcamps = Bootcamp::where('published_at', '>=', now()->subHours(2))  
-                            ->where('published_at', '<=', now())->get();  
+        //     $bootcamps = Bootcamp::where('published_at', '>=', now()->subHours(2))  
+        //                     ->where('published_at', '<=', now())->get();  
         
-            foreach ($bootcamps as $bootcamp) {  
-                foreach ($bootcamp->users as $user) {  
-                    $this->sendSmsBeforeTowHour($user);  
-                }  
-            }  
-            Log::info('پیام با موفقیت برای همه رفت.');  
-        } elseif (Bootcamp::where('published_at', '>=', now()->addDay()->startOfDay())
-                            ->where('published_at', '<=', now()->addDay()->endOfDay())->exists()) {
+        //     foreach ($bootcamps as $bootcamp) {  
+        //         foreach ($bootcamp->users as $user) {  
+        //             $this->sendSmsBeforeTowHour($user);  
+        //         }  
+        //     }  
+        //     Log::info('پیام با موفقیت برای همه رفت.');  
+        // } elseif (Bootcamp::where('published_at', '>=', now()->addDay()->startOfDay())
+        //                     ->where('published_at', '<=', now()->addDay()->endOfDay())->exists()) {
         
-            foreach ($bootcamps as $bootcamp) {  
-                foreach ($bootcamp->users as $user) {  
-                    $this->sendSmsTomorrow($user);  
-                }  
-            }  
-            Log::info('پیام با موفقیت برای همه رفت.');  
-        }  
+        //     foreach ($bootcamps as $bootcamp) {  
+        //         foreach ($bootcamp->users as $user) {  
+        //             $this->sendSmsTomorrow($user);  
+        //         }  
+        //     }  
+        //     Log::info('پیام با موفقیت برای همه رفت.');  
+        // }  
     }  
     
     protected function sendSmsBeforeTowHour($user)  
