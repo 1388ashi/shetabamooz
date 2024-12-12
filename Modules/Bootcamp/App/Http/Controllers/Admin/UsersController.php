@@ -31,7 +31,7 @@ class UsersController extends Controller
                         return $q->where('bootcamps.id', $bootcampId);  
                     });  
                 })  
-                ->take(40) 
+                // ->take(40) 
                 ->get();  
     
             return Excel::download(new BootcampUsersExport($users), 'bootcamp_users.xlsx');  
