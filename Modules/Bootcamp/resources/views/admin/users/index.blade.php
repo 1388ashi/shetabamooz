@@ -31,10 +31,15 @@
                 </div>
                 <!---index header closed-->
                 <div class="card-body">
+                    <div id="buttonsRow" class="hidden mb-3">
+                        <button type="button" class="btn btn-sm mr-2 btn-warning" data-target="#changeStatus" data-toggle="modal">تغییر وضعیت</button>
+                    </div>
                     <div class="table-responsive">
                         <table id="example-2" class="table table-striped table-bordered text-nowrap text-center">
+                            <form action="{{ route('admin.orders.changeStatusSelectedOrders') }}" method="post" id="myForm">
                             <thead>
                             <tr>
+                                <th class="wd-20p" style="width: 5%;"><input type="checkbox" id="check_all"></th>
                                 <th class="border-top">@sortablelink('id', 'ردیف')</th>
                                 <th class="border-top">@sortablelink('name', 'نام و نام خانوادگی')</th>
                                 <th class="border-top">@sortablelink('mobile', 'شماره موبایل')</th>
@@ -47,6 +52,9 @@
                             <tbody>
                             @forelse($users as $i => $user)
                                 <tr>
+                                    <td><input type="checkbox" class="checkbox toggleCheckbox"
+                                        value="{{ $order->id }}">
+                                    </td>
                                     <td>{{++$i}}</td>
                                     <td>{{$user->name}}</td>
                                     <td>{{$user->mobile}}</td>
@@ -73,6 +81,7 @@
                                 </tr>
                             @endforelse
                             </tbody>
+                        </form>
                         </table>
                         {{$users->links()}}
                     </div>
@@ -82,6 +91,102 @@
             <!-- section-wrapper -->
         </div>
     </div>
+    <div class="modal fade" id="changeStatus">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="modal-title font-weight-bolder">تغییر وضعیت</p>
+                    <button class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <select class="form-control status2" id="status2" required>
+                                <option value="">- انتخاب کنید -</option>
+                                <option value="present">حاضر در بوتکمپ</option>
+                                <option value="absent">غایب در بوتکمپ</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button id="submitButton" type="submit" class="btn btn-primary text-right item-right">ثبت</button>
+                    <button class="btn btn-outline-danger  text-right item-right" data-dismiss="modal">برگشت</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- row closed -->
     @include('bootcamp::admin.users.edit')
     @endsection
+    @section('scripts')
+
+    @include('order::admin.includes.filter-form-scripts')
+    @include('order::admin.includes.index-scripts')
+
+    <script>
+        
+        $('#status2').select2({
+            placeholder: 'انتخاب وضعیت'
+        });
+
+        document.getElementById('submitButton').addEventListener('click', function() {
+            document.getElementById('myForm').submit();
+        });
+
+
+        $('.status-btn').on('click', function() {
+            $('.status-btn').removeClass('test').addClass('inactive');
+            $(this).removeClass('inactive').addClass('test');
+        });
+
+        $(document).ready(function() {
+
+            const statusSelectBox = $('#status2');
+            const $outputInput = $('#output');
+            const checkAll = $('#check_all');
+
+            statusSelectBox.on('change', function() {
+                let selectedValue = statusSelectBox.val();
+                $outputInput.val(selectedValue);
+                console.log('Selected value: ' + selectedValue);
+            });
+
+            checkAll.on('click', function(e) {
+                if ($(this).is(':checked', true)) {
+                    $(".checkbox").attr('checked', true);
+                } else {
+                    $(".checkbox").attr('checked', false);
+                }
+            });
+
+            checkAll.click(() => {
+                $('#buttonsRow').toggleClass('hidden');
+                $('#buttonsRow').toggleClass('add');
+            });
+
+            $('.toggleCheckbox').on('click', function() {
+                const anyChecked = $('.toggleCheckbox:checked').length > 0;
+
+                if (anyChecked) {
+                    $('#buttonsRow').removeClass('hidden').addClass('add');
+                } else {
+                    $('#buttonsRow').addClass('hidden').removeClass('add');
+                }
+            });
+        });
+
+        document.querySelectorAll('.status-btn').forEach(item => {
+            item.addEventListener('click', event => {
+                document.querySelectorAll('.test').forEach(link => {
+                    $(selector).hasClass(className);
+                    link.classList.add('inactive');
+                });
+                item.classList.remove('inactive');
+            });
+        });
+
+    </script>
+@endsection
