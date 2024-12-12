@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DBController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,4 @@ Route::group(['prefix' => 'admin/FileManager', 'middleware' => ['web', 'auth']],
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
 Route::get('/add-table',[DBController::class,'add']);
+Route::get('/test',[TestController::class,'index']);

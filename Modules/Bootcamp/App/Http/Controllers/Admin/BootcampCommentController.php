@@ -5,16 +5,37 @@ namespace Modules\Bootcamp\App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Modules\Bootcamp\App\Models\Bootcamp;
 use Modules\Bootcamp\App\Models\BootcampComment;
+use Modules\Core\Classes\CoreSettings;
+use Modules\Core\Classes\Sms;
 
 class BootcampCommentController extends Controller
 {
     public function index()
     {
         $bootcamps = Bootcamp::select(["id","title"])->get();
-
+        
+        if(request('send_sms') && request('bootcamp_id')){
+            $bootcamp = Bootcamp::with(['users' => function($query) {  
+                $query->select('id', 'name', 'mobile')->where('status', 'present');  
+            }])  
+            ->find(request('bootcamp_id'));
+            foreach ($bootcamp->users as $user) {
+                $pattern = app(CoreSettings::class)->get('sms.patterns.shetabamooz_sms_comments');
+                $output = Sms::commentsReminderForBootcamp(
+                    $pattern,
+                    $user->mobile,
+                    $bootcamp->title,
+                    $user->name
+                );
+                // $output = Sms::pattern($pattern)  
+                // ->data([  
+                //     'token' => '.',  
+                // ])->to([$user->mobile])->send(); 
+            }
+        }
+        
         $name = request('name');
         $bootcampId = request('bootcamp_id');
         $status = request('status');

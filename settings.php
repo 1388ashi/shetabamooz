@@ -9,6 +9,7 @@ return [
             'shetabamooz_bootcamp_hour_reminder' => 'shetabamooz-bootcamp-hour-reminder',
             'shetabamooz_bootcamp_day_reminder' => 'shetabamooz-bootcamp-day-reminder',
             'shetabamooz_bootcamp_register' => 'shetabamooz-bootcamp-register',
+            'shetabamooz_sms_comments' => 'shetabamooz-sms-comments'
         ],
         'new_order' => [
             'dont_send_full_name' => false

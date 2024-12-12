@@ -99,12 +99,15 @@
 
                                         <form id="send-sms-form" class="d-none" action="{{route('admin.bootcamps.index')}}" method="get">
                                             <input type="hidden" name="send_sms" value="1">
+                                            <input type="hidden" name="bootcamp_id" value="1">
                                         </form>
 
                                         <button
                                             onclick="$('#send-sms-form').submit()"
                                             type="button"
                                             class="btn btn-info btn-sm text-white"
+                                            data-toggle="tooltip"
+                                            title="ارسال sms نظرسنجی"
                                             data-original-title="ارسال sms نظرسنجی">
                                             <i class="fa fa-comment"></i>
                                         </button>   
