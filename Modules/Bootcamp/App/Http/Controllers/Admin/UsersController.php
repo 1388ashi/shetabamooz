@@ -60,13 +60,13 @@ class UsersController extends Controller
     }
     public function changeStatusSelectedOrders(Request $request)
     {
+        dd($request->all());
         $request->validate([
             'ids' => 'required|array',
             'ids.*' => 'required|integer|exists:orders,id',
             'status' => ['required']
         ]);
         $users = BootcampUser::whereIn('id', $request->ids)->get();
-        dd($request->all(),$users);
 
         foreach ($users as $user) {
             $user->update([
