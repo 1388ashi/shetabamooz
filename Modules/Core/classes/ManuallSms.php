@@ -5,10 +5,9 @@ namespace Modules\Core\Classes;
 use Illuminate\Support\Facades\Log;
 use Modules\Sms\Exceptions\ApiException;
 use Modules\Sms\Exceptions\HttpException;
-use Shetabit\Shopit\Modules\Core\Helpers\Sms as BaseSms;
 
 class ManuallSms {
-    public static function execute_manually_to_kavenegar($data = null)
+    private static function execute_manually_to_kavenegar($data = null)
     {
         $coreSetting = app(CoreSettings::class);
         $url = "https://api.kavenegar.com/v1/" . $coreSetting->get('sms.api_key') . "/verify/lookup.json/";
