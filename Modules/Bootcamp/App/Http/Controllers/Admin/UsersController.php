@@ -66,6 +66,7 @@ class UsersController extends Controller
             'status' => ['required']
         ]);
         $users = BootcampUser::whereIn('id', $request->ids)->get();
+        dd($request->all(),$users);
 
         foreach ($users as $user) {
             $user->update([
