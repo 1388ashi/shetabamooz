@@ -1,5 +1,5 @@
 @foreach($users as $user)
-    <div class="modal fade mt-5" tabindex="-1" id="edit-menu-{{ $user->id }}" role="dialog"
+    <div class="modal fade mt-5" tabindex="-1" id="edit-status-{{ $user->id }}" role="dialog"
         aria-labelledby="modelTitleId" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

@@ -71,7 +71,7 @@
                                     </td>
                                     <td>{{verta($user->created_at)->format('Y/m/d H:i')}}</td>
                                     <td>
-                                        <button data-toggle="modal" data-original-title="ویرایش" data-target="#edit-menu-{{ $user->id }}"  class="btn btn-warning btn-sm text-white">
+                                        <button data-toggle="modal" data-original-title="ویرایش" type="button" data-target="#edit-status-{{ $user->id }}" class="btn btn-warning btn-sm text-white">
                                             <i class="fa fa-pencil"></i>
                                         </button>
                                     </td>
