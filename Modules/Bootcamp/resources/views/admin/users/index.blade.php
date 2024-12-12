@@ -55,6 +55,7 @@
                             @forelse($users as $i => $user)
                                 <tr>
                                     <td><input type="checkbox" class="checkbox toggleCheckbox"
+                                        name="ids[]"
                                         value="{{ $user->id }}">
                                     </td>
                                     <td>{{++$i}}</td>

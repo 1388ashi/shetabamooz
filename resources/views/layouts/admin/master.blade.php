@@ -322,7 +322,7 @@ type="text/javascript"></script>
         if(document.querySelector('.dont_activate')){
             document.querySelector('.dont_activate').classList.remove('active');
         }
-          });
+    });
 </script>
 <!-- Main js -->
 </body>
