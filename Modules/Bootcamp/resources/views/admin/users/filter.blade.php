@@ -31,9 +31,9 @@
                             <select name="status" class="form-control">
                                 <option value="">همه</option>
                                 <option value="new" @selected(request("status") == "new")>جدید</option>
-                                <option value="rejected" @selected(request("$user->status") == 'rejected')>ثبت نام نمیکند</option>
-                                <option value="present" @selected(request("$user->status") == 'present')>حاضر</option>
-                                <option value="absent" @selected(request("$user->status") == 'absent')>غایب</option>
+                                <option value="rejected" @selected(request("status") == 'rejected')>ثبت نام نمیکند</option>
+                                <option value="present" @selected(request("status") == 'present')>حاضر</option>
+                                <option value="absent" @selected(request("status") == 'absent')>غایب</option>
                             </select>
                         </div>
                     </div>
