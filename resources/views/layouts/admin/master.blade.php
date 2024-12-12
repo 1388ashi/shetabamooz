@@ -77,6 +77,24 @@
     .text-bold{
         font-weight: bold;
     }
+        .test {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .inactive {
+            opacity: 0.5;
+        }
+
+        .hidden {
+            display: none;
+            float: left;
+        }
+
+        .add {
+            display: flex;
+            float: left;
+        }
     </style>
 
     @yield('styles')
