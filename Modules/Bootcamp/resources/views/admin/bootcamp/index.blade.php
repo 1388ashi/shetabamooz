@@ -72,7 +72,7 @@
                                 <tr>
                                     <td>
                                         <input type="checkbox" class="checkbox"
-                                               data-id="{{$bootcamp->id}}" {{ $bootcamp->isDeletable() ? '' : 'disabled' }}>
+                                            data-id="{{$bootcamp->id}}" {{ $bootcamp->isDeletable() ? '' : 'disabled' }}>
                                     </td>
                                     <td>{{ ++$i }}</td>
                                     <td>{{ Str::limit($bootcamp->title, 30) }}</td>
@@ -96,6 +96,13 @@
                                     <td>@include('components.status', ['status' => $bootcamp->status])</td>
                                     <td>{{ $bootcamp->getJalaliCreatedAt() }}</td>
                                     <td>
+                                        <form action="{{route('admin.bootcamps.index')}}" method="get">
+                                            <input type="hidden" name="send_sms" value="1">
+                                            <button class="btn btn-info"  data-original-title="ارسال sms نظرسنجی">
+                                                <i class="fe fe-message-square"></i>
+                                            </button>
+                                        </form>
+
                                         <a href="{{route('admin.faqs-bootcamp',[$bootcamp->id])}}"
                                             class="btn btn-success btn-sm text-white" data-toggle="tooltip"
                                             data-original-title="نمایش سوالات متداول">
