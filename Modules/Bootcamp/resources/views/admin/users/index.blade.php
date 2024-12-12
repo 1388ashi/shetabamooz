@@ -123,9 +123,6 @@
     @endsection
     @section('scripts')
 
-    @include('order::admin.includes.filter-form-scripts')
-    @include('order::admin.includes.index-scripts')
-
     <script>
         
         $('#status2').select2({
