@@ -33,6 +33,7 @@ class SmsBootcampUsersJob implements ShouldQueue
         $bootcamps = Bootcamp::whereDate('published_at', $tomorrow)->get();  
     
         if ($bootcamps[0]->isNotEmpty()){
+            Log::info('بوتکمپ وجود دارد.');  
             $pattern = app(CoreSettings::class)->get('sms.patterns.shetabamooz_bootcamp_hour_reminder');
     
             $output = Sms::pattern($pattern)  
