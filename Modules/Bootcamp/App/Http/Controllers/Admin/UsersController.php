@@ -62,7 +62,7 @@ class UsersController extends Controller
     {
         $request->validate([
             'ids' => 'required|array',
-            'ids.*' => 'required|integer|exists:orders,id',
+            'ids.*' => 'required|integer',
             'status' => ['required']
         ]);
         $users = BootcampUser::whereIn('id', $request->ids)->get();
