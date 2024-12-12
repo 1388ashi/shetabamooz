@@ -98,7 +98,7 @@
                                     <td>
                                         <form action="{{route('admin.bootcamps.index')}}" method="get">
                                             <input type="hidden" name="send_sms" value="1">
-                                            <button class="btn btn-info"  data-original-title="ارسال sms نظرسنجی">
+                                            <button class="btn btn-info btn-sm text-white"  data-original-title="ارسال sms نظرسنجی">
                                                 <i class="fe fe-message-square"></i>
                                             </button>
                                         </form>
