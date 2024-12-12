@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Modules\Bootcamp\App\Models\Bootcamp;
 use Modules\Bootcamp\App\Models\BootcampComment;
 use Modules\Core\Classes\CoreSettings;
-use Modules\Core\Classes\Sms;
+use Modules\Core\Classes\ManuallSms;
 
 class BootcampCommentController extends Controller
 {
@@ -23,7 +23,7 @@ class BootcampCommentController extends Controller
             ->find(request('bootcamp_id'));
             foreach ($bootcamp->users as $user) {
                 $pattern = app(CoreSettings::class)->get('sms.patterns.shetabamooz_sms_comments');
-                $output = Sms::commentsReminderForBootcamp(
+                $output = ManuallSms::commentsReminderForBootcamp(
                     $pattern,
                     $user->mobile,
                     $bootcamp->title,
