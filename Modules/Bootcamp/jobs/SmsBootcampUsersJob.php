@@ -32,9 +32,12 @@ class SmsBootcampUsersJob implements ShouldQueue
     
         $bootcamps = Bootcamp::whereDate('published_at', $tomorrow)->get();  
     
-        if ($bootcamps->isNotEmpty()) {  
+        if ($bootcamps->isNotEmpty() &&   
+            Bootcamp::where('published_at', '>=', now()->subHours(2))  
+            ->where('published_at', '<=', now())->exists()) {  
         
-            $bootcamps = Bootcamp::get();  
+            $bootcamps = Bootcamp::where('published_at', '>=', now()->subHours(2))  
+                            ->where('published_at', '<=', now())->get();  
         
             foreach ($bootcamps as $bootcamp) {  
                 foreach ($bootcamp->users as $user) {  
@@ -42,17 +45,16 @@ class SmsBootcampUsersJob implements ShouldQueue
                 }  
             }  
             Log::info('پیام با موفقیت برای همه رفت.');  
-        }
-        // } elseif (Bootcamp::where('published_at', '>=', now()->addDay()->startOfDay())
-        //                     ->where('published_at', '<=', now()->addDay()->endOfDay())->exists()) {
+        } elseif (Bootcamp::where('published_at', '>=', now()->addDay()->startOfDay())
+                            ->where('published_at', '<=', now()->addDay()->endOfDay())->exists()) {
         
-        //     foreach ($bootcamps as $bootcamp) {  
-        //         foreach ($bootcamp->users as $user) {  
-        //             $this->sendSmsTomorrow($user);  
-        //         }  
-        //     }  
-        //     Log::info('پیام با موفقیت برای همه رفت.');  
-        // }  
+            foreach ($bootcamps as $bootcamp) {  
+                foreach ($bootcamp->users as $user) {  
+                    $this->sendSmsTomorrow($user);  
+                }  
+            }  
+            Log::info('پیام با موفقیت برای همه رفت.');  
+        }  
     }  
     
     protected function sendSmsBeforeTowHour($user)  

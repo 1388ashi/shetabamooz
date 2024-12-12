@@ -39,12 +39,15 @@ class DBController extends Controller
         //         ])->to([$user->mobile])->send();  
         // }  
         // dd('ok');
-        $pattern = app(CoreSettings::class)->get('sms.patterns.shetabamooz_bootcamp_hour_reminder');
+        $bootcamp = Bootcamp::with('users')->find(3);
+            foreach ($bootcamp->users as $user) {  
+                $pattern = app(CoreSettings::class)->get('sms.patterns.shetabamooz_bootcamp_hour_reminder');
     
-        $output = Sms::pattern($pattern)  
-            ->data([  
-                'token' => '.',  
-            ])->to(["09334496439"])->send();  
+                $output = Sms::pattern($pattern)  
+                    ->data([  
+                        'token' => '.',  
+                    ])->to([$user->mobile])->send();  
+            }  
     }
     
 }
