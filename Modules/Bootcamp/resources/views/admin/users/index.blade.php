@@ -36,7 +36,7 @@
                     </div>
                     <div class="table-responsive">
                         <table id="example-2" class="table table-striped table-bordered text-nowrap text-center">
-                            <form action="{{ route('admin.orders.changeStatusSelectedOrders') }}" method="post" id="myForm">
+                            <form action="{{ route('admin.bootcamp-users.changeStatusSelectedUsers') }}" method="post" id="myForm">
                             <thead>
                             <tr>
                                 <th class="wd-20p" style="width: 5%;"><input type="checkbox" id="check_all"></th>

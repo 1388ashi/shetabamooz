@@ -58,4 +58,23 @@ class UsersController extends Controller
         ]);
         return redirect()->back()->with('success','کاربر با موفقیت به روزرسانی شد');
     }
+    public function changeStatusSelectedOrders(Request $request)
+    {
+        $request->validate([
+            'ids' => 'required|array',
+            'ids.*' => 'required|integer|exists:orders,id',
+            'status' => ['required']
+        ]);
+        $users = BootcampUser::whereIn('id', $request->ids)->get();
+
+        foreach ($users as $user) {
+            $user->update([
+                'status' => $request->status
+            ]);
+        }
+        // if (request()->header('Accept') == 'application/json') {
+        //     return response()->success('تغییر وضعیت با موفقیت انجام شد.', null);
+        // }
+        return redirect()->back()->with('success', 'تغییر وضعیت با موفقیت انجام شد.');
+    }
 }

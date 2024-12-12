@@ -46,6 +46,7 @@ Route::webSuperGroup('admin', function () {
     Route::resource('advisors',AdvisorController::class)->except('store');
     Route::get('bootcamp-comments/', [BootcampCommentController::class, 'index'])->name('bootcamps.comments.index');
     Route::patch('bootcamp-comments/{id}', [BootcampCommentController::class, 'update'])->name('bootcamps.comments.update');
+    Route::post('/status/changes', [UsersController::class,'changeStatusSelectedOrders'])->name('bootcamp-users.changeStatusSelectedUsers');
 
 });
 
