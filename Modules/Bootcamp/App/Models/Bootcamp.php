@@ -29,9 +29,9 @@ class Bootcamp extends Model implements HasMedia, Viewable
      */
     protected $fillable = [
         'title','subtitle','eventplace','support','catering','gifts','fromhours'
-        ,'summary','description','published_at','price','type'
-        ,'discount','prerequisite','contacts','time','status',
-        'slug','image_alt','meta_title','meta_description','meta_robots','canonical_tag',
+        ,'summary','description','published_at','price','type','is_send','its_over'
+        ,'discount','prerequisite','contacts','time','status','slug'
+        ,'image_alt','meta_title','meta_description','meta_robots','canonical_tag',
     ];
 
      //start media-library

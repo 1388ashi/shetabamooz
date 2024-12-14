@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bootcamp_bootcamp_user', function (Blueprint $table) {
-            $table->id();
-            $table->foreignIdFor(Bootcamp::class)->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(BootcampUser::class)->constrained()->cascadeOnDelete();
-            $table->timestamps();
-        });
+        // Schema::create('bootcamp_bootcamp_user', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->foreignIdFor(Bootcamp::class)->constrained()->cascadeOnDelete();
+        //     $table->foreignIdFor(BootcampUser::class)->constrained()->cascadeOnDelete();
+        //     $table->timestamps();
+        // });
     }
 
     /**

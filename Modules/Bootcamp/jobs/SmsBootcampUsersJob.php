@@ -32,30 +32,27 @@ class SmsBootcampUsersJob implements ShouldQueue
     
         $bootcamps = Bootcamp::whereDate('published_at', $tomorrow)->get();  
     
-        if ($bootcamps->isNotEmpty() &&   
-            $bootcamps->subHour(2) == now()) {  
-        
-            $bootcamps = Bootcamp::where('published_at', '>=', now()->subHours(2))  
-                            ->where('published_at', '<=', now())->get();  
-        
+        if ($bootcamps->isNotEmpty()) {  
             foreach ($bootcamps as $bootcamp) {  
-                foreach ($bootcamp->users as $user) {  
-                    $this->sendSmsBeforeTowHour($user);  
+                if (now()->isBetween($bootcamp->published_at->subHours(2), $bootcamp->published_at)) {  
+                    foreach ($bootcamp->users as $user) {  
+                        $this->sendSmsBeforeTowHour($user);  
+                    }  
+                    Log::info('پیام با موفقیت برای همه رفت برای بوک‌ کمپ: ' . $bootcamp->id);  
                 }  
             }  
-            Log::info('پیام با موفقیت برای همه رفت.');  
-        } elseif (Bootcamp::where('published_at', '>=', now()->addDay()->startOfDay())
-                            ->where('published_at', '<=', now()->addDay()->endOfDay())->exists()) {
-        
+        }  
+        // بررسی بوک‌کمپ‌های فردا برای ارسال پیامک  
+        if (Bootcamp::where('published_at', '>=', now()->addDay()->startOfDay())  
+                    ->where('published_at', '<=', now()->addDay()->endOfDay())->exists()) {  
             foreach ($bootcamps as $bootcamp) {  
                 foreach ($bootcamp->users as $user) {  
                     $this->sendSmsTomorrow($user);  
                 }  
             }  
-            Log::info('پیام با موفقیت برای همه رفت.');  
+            Log::info('پیام با موفقیت برای همه رفت برای بوک‌کمپ‌های فردا.');  
         }  
     }  
-    
     protected function sendSmsBeforeTowHour($user)  
     {  
         $pattern = app(CoreSettings::class)->get('sms.patterns.shetabamooz_bootcamp_hour_reminder');
