@@ -857,6 +857,51 @@ body {
     background-color: var(--green-20);
 }
 
+#details{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#details ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#details ul li {
+    position: relative;
+    width: 92%;
+    margin: 0 auto;
+    padding: 6px 0;
+    direction: rtl; /* This line changes the direction of the list */
+}
+
+#details ul li::before {
+    content: " ";
+    position: absolute;
+    top: 35%;
+    right: -19px;
+    transform: translateY(-50%);
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: var(--green);
+}
+
+#details ul li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    bottom: -31%;
+    right: -14px;
+    transform: translateY(-50%);
+    width: 2px;
+    border-radius: 10px;
+    height: 30px;
+    background-color: var(--green-20);
+}
+
 @media (min-width: 1024px) {
     .cardBootcamp {
         width: 80%;
@@ -993,7 +1038,7 @@ body {
 }
 
 .form-container {
-    max-width: 500px;
+    max-width: 550px;
     margin: auto;
     border-radius: 10px;
 }
@@ -1037,7 +1082,9 @@ input:focus {
     gap: 30px;
     text-align: center;
 }
-
+#form-register{
+    border-left: 1px solid black;
+}
 .widthTwoSection {
     width: 100%;
     margin-top: 30px;
@@ -1107,7 +1154,7 @@ input:focus {
         /* margin-top: ; */
     }
     .widthTwoSection {
-        width: 50%;
+        width: 100%;
         margin-top: 0px;
     }
 

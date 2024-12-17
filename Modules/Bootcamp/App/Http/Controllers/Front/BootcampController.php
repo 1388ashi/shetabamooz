@@ -9,6 +9,7 @@ use Illuminate\Http\Response;
 use Modules\Bootcamp\App\Models\Bootcamp;
 use Modules\Bootcamp\App\Models\BootcampComment;
 use Modules\Bootcamp\App\Models\BootcampFaq;
+use Modules\Bootcamp\App\Models\BootcampUser;
 use Modules\Bootcamp\App\Models\Headline;
 use Modules\Professor\App\Models\Professor;
 
@@ -29,7 +30,10 @@ class BootcampController extends Controller
         $professors = Professor::query()
         ->with('specialties')->whereHas('bootcamps')->get();
         $comments = BootcampComment::where('bootcamp_id',$bootcamp->id)->where('status','accepted')->get();
+        $countUsers = BootcampUser::whereHas('bootcamps', function ($query) use ($bootcamp) {  
+            return $query->where('bootcamps.id', $bootcamp->id);  
+        })->count();
 
-        return view('bootcamp::front.show', compact('comments','bootcamp','headlines','properties','faqs','professors'));
+        return view('bootcamp::front.show', compact('comments','bootcamp','headlines','countUsers','properties','faqs','professors'));
     }
 }
