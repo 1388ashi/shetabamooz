@@ -797,6 +797,11 @@
                         @else
                         <h4 class="text-color-green">رایگان</h4>
                         @endif
+                        @if ($bootcamp->its_over == 1)
+                            <h3 class="text-color-danger">برگزار شده</h3>
+                        @elseif($bootcamp->is_registers == 1)
+                            <h3 class="text-color-danger">در حال ثبت نام</h3>
+                        @endif
                     </div>
                     <a href="{{route('bootcamps.show',$bootcamp->slug)}}" class="buttonBootCamp">بیشتر</a>
                 </div>

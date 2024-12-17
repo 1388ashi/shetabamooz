@@ -37,7 +37,12 @@ class UpdateRequest extends FormRequest
             'summary' => 'required|min:3|max:5000',
             'description' => 'required|min:3|max:100000',
             'prerequisite' => 'required|min:3|max:1000',
+            'count_users' => 'required',
+            'link_video' => 'nullable|string',
+
             'status' => 'nullable|boolean',
+            'is_registers' => 'nullable|boolean',
+            'its_over' => 'nullable|boolean',
 
             'slug' => 'required',
             'image_alt'=> 'nullable',
@@ -51,6 +56,8 @@ class UpdateRequest extends FormRequest
     {
         $this->merge([
             'status' => (bool) $this->input('status', 0),
+            'its_over' => (bool) $this->input('its_over', 0),
+            'is_registers' => (bool) $this->input('is_registers', 0),
             'meta_robots' => $this->has('meta_robots'),
             'price' => $this->filled('price') ? Helpers::removeComma($this->input('price')) : null,
             'discount' => $this->filled('discount') ? Helpers::removeComma($this->input('discount')) : null,

@@ -203,8 +203,20 @@
                                         <input class="form-control" type="text" name="fromhours" required>
                                     </div>
                                 </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="label" class="control-label">لینک ویدیو</label>
+                                        <input class="form-control" type="text" name="link_video" value="{{ old('link_video') }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="label" class="control-label">ظرفیت هنرجویان</label><span class="text-danger">&starf;</span>
+                                        <input class="form-control" type="number" name="count_users" value="{{ old('count_users') }}" required>
+                                    </div>
+                                </div>
                                 <div class="col-2">
-                                    <label for="label" class="control-label"> وضعیت: </label>
+                                    <label for="label" class="control-label"> وضعیت نمایش: </label>
                                     <label class="custom-control custom-checkbox">
                                       <input
                                         type="checkbox"
@@ -212,6 +224,32 @@
                                         name="status"
                                         value="1"
                                         {{ old('status', 1) == 1 ? 'checked' : null }}
+                                      />
+                                      <span class="custom-control-label">فعال</span>
+                                    </label>
+                                </div>
+                                <div class="col-2">
+                                    <label for="label" class="control-label">در حال ثبت نام: </label>
+                                    <label class="custom-control custom-checkbox">
+                                      <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        name="is_registers"
+                                        value="1"
+                                        {{ old('is_registers', 1) == 1 ? 'checked' : null }}
+                                      />
+                                      <span class="custom-control-label">فعال</span>
+                                    </label>
+                                </div>
+                                <div class="col-2">
+                                    <label for="label" class="control-label"> برگزار شده: </label>
+                                    <label class="custom-control custom-checkbox">
+                                      <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        name="its_over"
+                                        value="0"
+                                        {{ old('its_over', 1) == 1 ? 'checked' : null }}
                                       />
                                       <span class="custom-control-label">فعال</span>
                                     </label>

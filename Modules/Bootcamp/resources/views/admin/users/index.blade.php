@@ -45,6 +45,7 @@
                                 <th class="border-top">@sortablelink('id', 'ردیف')</th>
                                 <th class="border-top">@sortablelink('name', 'نام و نام خانوادگی')</th>
                                 <th class="border-top">@sortablelink('mobile', 'شماره موبایل')</th>
+                                <th class="border-top">کد ملی</th>
                                 <th class="border-top">بوت کمپ</th>
                                 <th class="border-top">@sortablelink('status', 'وضعیت')</th>
                                 <th class="border-top">تاریخ ارسال</th>
@@ -61,6 +62,7 @@
                                     <td>{{++$i}}</td>
                                     <td>{{$user->name}}</td>
                                     <td>{{$user->mobile}}</td>
+                                    <td>{{$user->national_code}}</td>
                                     <td>
                                         @foreach ($user->bootcamps as $bootcamp)
                                         {{$bootcamp->title}}

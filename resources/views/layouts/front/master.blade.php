@@ -185,12 +185,17 @@
 </style>
 </head>
 <body>
-    {{-- <a class="box-gif-bootcamp" href="{{route('bootcamps.show','کارگاه-بوت-استرپ')}}">
-        <img src="{{asset('assets/images/bootcamp.gif')}}" alt="Description of gif" class="responsive-gif"> 
-    </a>
-    <a class="box-gif-bootcamp-mobile" href="{{route('bootcamps.show','کارگاه-بوت-استرپ')}}">
-        <img src="{{asset('front/bootcamp-mobile-size.gif')}}" alt="Description of gif" class="responsive-gif"> 
-    </a> --}}
+    @if(\Modules\Setting\App\Models\Setting::getFromName('banner_bootcamp_desktop'))
+        <a class="box-gif-bootcamp" href="{{\Modules\Setting\App\Models\Setting::getFromName('link_banner_bootcamp')}}">
+            <img src="{{asset('assets/images/bootcamp.gif')}}" alt="Description of gif" class="responsive-gif"> 
+        </a>
+    @endif
+    
+    @if(\Modules\Setting\App\Models\Setting::getFromName('banner_bootcamp_mobile'))
+        <a class="box-gif-bootcamp-mobile" href="{{\Modules\Setting\App\Models\Setting::getFromName('link_banner_bootcamp')}}">
+            <img src="{{asset('front/bootcamp-mobile-size.gif')}}" alt="Description of gif" class="responsive-gif"> 
+        </a>
+    @endif
 <!-- Header START -->
 <header class="navbar-light navbar-sticky header-static">
     <!-- Logo Nav START -->

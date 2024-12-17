@@ -18,7 +18,8 @@ StoreRequest extends FormRequest
         return [
             'name' => 'required|min:3|max:191',
             'mobile' => 'required|digits:11|regex:/(^09\d{9}$)/u',
-            'bootcamp_id' => 'required|exists:bootcamps,id'
+            'bootcamp_id' => 'required|exists:bootcamps,id',
+            'national_code' => 'nullable|digits:10'
         ];
     }
     protected function passedValidation(): void

@@ -215,7 +215,19 @@
                                         <input class="form-control" type="text" name="fromhours" value="{{ old('fromhours',$bootcamp->fromhours) }}" required>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="label" class="control-label">لینک ویدیو</label>
+                                        <input class="form-control" type="text" name="link_video"  value="{{ old('link_video',$bootcamp->link_video) }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="label" class="control-label">ظرفیت هنرجویان</label><span class="text-danger">&starf;</span>
+                                        <input class="form-control" type="number" name="count_users"  value="{{ old('count_users',$bootcamp->count_users) }}" required>
+                                    </div>
+                                </div>
+                                <div class="col-2">
                                     <div class="form-group">
                                         <label for="label" class="control-label"> وضعیت: </label>
                                         <label class="custom-control custom-checkbox">
@@ -229,7 +241,39 @@
                                           />
                                           <span class="custom-control-label">فعال</span>
                                         </label>
-                                      </div>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="form-group">
+                                    <label for="label" class="control-label">در حال ثبت نام: </label>
+                                        <label class="custom-control custom-checkbox">
+                                          <input
+                                            type="checkbox"
+                                            class="custom-control-input"
+                                            name="is_registers"
+                                            id="is_registers"
+                                            value="1"
+                                            {{ old('is_registers', $bootcamp->is_registers) == 1 ? 'checked' : null }}
+                                          />
+                                          <span class="custom-control-label">فعال</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="form-group">
+                                    <label for="label" class="control-label"> برگزار شده: </label>
+                                        <label class="custom-control custom-checkbox">
+                                          <input
+                                            type="checkbox"
+                                            class="custom-control-input"
+                                            name="its_over"
+                                            id="its_over"
+                                            value="1"
+                                            {{ old('its_over', $bootcamp->its_over) == 1 ? 'checked' : null }}
+                                          />
+                                          <span class="custom-control-label">فعال</span>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
