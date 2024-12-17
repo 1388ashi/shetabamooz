@@ -223,6 +223,7 @@ type="text/javascript"></script>
 <script src="{{asset('assets/js/custom.js')}}"></script>
 <!-- Main js -->
 {{--{{\Illuminate\Support\Facades\Session::flush()}}--}}
+@yield("scripts")
 @stack('vue')
 
 
@@ -257,6 +258,7 @@ type="text/javascript"></script>
 
 <script src="{{ asset('assets/plugins/notify/js/jquery.growl.js') }}"></script>
 <script src="{{ asset('assets/js/main.js') }}"></script>
+
 <script>
             
             $('#status2').select2({
