@@ -47,7 +47,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="control-label">استادان</label><span class="text-danger">&starf;</span>
-                                        <select class="form-control" id="properties" name="professors[]" multiple>
+                                        <select class="form-control select2" id="properties" name="professors[]" multiple>
                                             @foreach($professors as $professor)
                                             <option  value="{{$professor->id}}" @if(old('professors')) selected @endif>{{$professor->name}}</option>
                                             @endforeach
@@ -248,8 +248,7 @@
                                         type="checkbox"
                                         class="custom-control-input"
                                         name="its_over"
-                                        value="0"
-                                        {{ old('its_over', 1) == 1 ? 'checked' : null }}
+                                        value="1"
                                       />
                                       <span class="custom-control-label">فعال</span>
                                     </label>
