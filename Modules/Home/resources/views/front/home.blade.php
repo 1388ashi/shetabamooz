@@ -798,7 +798,7 @@
                         <h4 class="text-color-green">رایگان</h4>
                         @endif
                         @if ($bootcamp->its_over == 1)
-                            <h5 class="text-danger">برگزار شده</h5>
+                            <h5 class="text-success">برگزار شده</h5>
                         @elseif($bootcamp->is_registers == 1)
                             <h5 class="text-danger">در حال ثبت نام</h5>
                         @endif
