@@ -32,6 +32,7 @@ class Bootcamp extends Model implements HasMedia, Viewable
         ,'summary','description','published_at','price','type','is_send','its_over'
         ,'discount','prerequisite','contacts','time','status','slug','count_users'
         ,'image_alt','meta_title','meta_description','meta_robots','canonical_tag',
+        'is_registers'
     ];
 
      //start media-library
