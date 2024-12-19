@@ -15,12 +15,13 @@ class UsersController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)  
+    public function index(Request $request,$bootcampId = null)  
     {  
         $bootcamps = Bootcamp::select(["id","title"])->get();  
     
         $name = $request->input('name');  
-        $bootcampId = $request->input('bootcamp_id');  
+        if (!$bootcampId) 
+            $bootcampId = $request->input('bootcamp_id');  
         $status = $request->input('status');  
     
         // بررسی اگر باید خروجی اکسلی بدهیم  
