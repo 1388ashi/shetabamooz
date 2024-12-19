@@ -86,6 +86,7 @@
                         <span class="side-menu__label">مدیریت محتوا</span><i class="angle fa fa-angle-left"></i>
                     </a>
                     <ul class="slide-menu">
+                        <li><a href="{{ route('admin.bootcamp-galleries.index') }}" class="slide-item">رسانه‌ی بوتکمپ</a></li>
                         <li><a href="{{ route('admin.student-povs.index') }}" class="slide-item">نظر هنرجویان</a></li>
                     </ul>
                 </li>

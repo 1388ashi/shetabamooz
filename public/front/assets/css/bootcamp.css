@@ -433,14 +433,30 @@ body {
         transform: rotateY(1);
     }
 }
-
-@media screen and (max-width: 640px) {
-    #heading details[open] summary::after {
-        background: url("../../../assets/images/Home/Vector23.svg") no-repeat;
-        background-size: contain;
-        width: 10%;
+    @media (max-width: 768px) { 
+        #form-register{
+            border-left: 0px;
+        }
+        .bootcamp-video{
+            width: 100%; 
+            height: 140px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+        .bootcamp-image{
+            width: 100%; 
+            height: 140px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+        }
+    }  
+    @media screen and (max-width: 640px) {
+        #heading details[open] summary::after {
+            background: url("../../../assets/images/Home/Vector23.svg") no-repeat;
+            background-size: contain;
+            width: 10%;
+        }
     }
-}
 
 #heading ul {
     list-style: none;
@@ -973,6 +989,9 @@ body {
 }
 
 @media screen and (max-width: 640px) {
+    .desc-bootcamp{
+        font-size: 12px;
+    }
     #faq details[open] summary::after {
         background: url("../../../assets/images/Home/Vector23.svg") no-repeat;
         background-size: contain;
@@ -1082,9 +1101,7 @@ input:focus {
     gap: 30px;
     text-align: center;
 }
-#form-register{
-    border-left: 1px solid black;
-}
+
 .widthTwoSection {
     width: 100%;
     margin-top: 30px;
@@ -1104,6 +1121,22 @@ input:focus {
 }
 /* Media Queries for responsiveness */
 @media (min-width: 768px) {
+    #form-register{
+        border-left: 1px solid darkblue;
+    }
+    .sectionRightBootcamp{
+        padding-left: 50px;
+    }
+    .bootcamp-video{
+        width: 350px;
+        height: 200px;
+        border-radius: 20px;
+    }
+    .bootcamp-image{
+        width: 350px;
+        height: 200px;
+        border-radius: 15px;
+    }
     .cardBootcamp {
         flex-direction: row;
     }

@@ -5,6 +5,7 @@ use Modules\Bootcamp\App\Http\Controllers\Admin\AdvisorController;
 use Modules\Bootcamp\App\Http\Controllers\Admin\BootcampCommentController;
 use Modules\Bootcamp\App\Http\Controllers\Admin\BootcampController;
 use Modules\Bootcamp\App\Http\Controllers\Admin\BootcampFaqController;
+use Modules\Bootcamp\App\Http\Controllers\Admin\BootcampGalleriesController;
 use Modules\Bootcamp\App\Http\Controllers\Admin\HeadlineController;
 use Modules\Bootcamp\App\Http\Controllers\Admin\UsersController;
 
@@ -47,7 +48,11 @@ Route::webSuperGroup('admin', function () {
     Route::get('bootcamp-comments/', [BootcampCommentController::class, 'index'])->name('bootcamps.comments.index');
     Route::patch('bootcamp-comments/{id}', [BootcampCommentController::class, 'update'])->name('bootcamps.comments.update');
     Route::post('/status/changes', [UsersController::class,'changeStatusSelectedOrders'])->name('bootcamp-users.changeStatusSelectedUsers');
-
+    
+    Route::get('bootcamp-galleries/', [BootcampGalleriesController::class, 'index'])->name('bootcamp-galleries.index');
+    Route::post('bootcamp-galleries/', [BootcampGalleriesController::class, 'store'])->name('bootcamp-galleries.store');
+    Route::patch('bootcamp-galleries/{id}', [BootcampGalleriesController::class, 'update'])->name('bootcamp-galleries.update');
+    Route::delete('bootcamp-galleries/{id}', [BootcampGalleriesController::class, 'destroy'])->name('bootcamp-galleries.destroy');
 });
 
 Route::Resource('bootcamps', \Modules\Bootcamp\App\Http\Controllers\Front\BootcampController::class)->only(['show']);

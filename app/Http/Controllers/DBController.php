@@ -38,7 +38,12 @@ class DBController extends Controller
         //             'token' => '.',  
         //         ])->to([$user->mobile])->send();  
         // }  
-        // dd('ok');
+        Schema::create('bootcamp_galleries', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('bootcamp_id')->constrained('bootcamps')->cascadeOnDelete();
+            $table->timestamps();
+        });
+        dd('ok');
     }
     
 }

@@ -7,6 +7,7 @@ use CyrildeWit\EloquentViewable\InteractsWithViews;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Log;
@@ -45,7 +46,7 @@ class Bootcamp extends Model implements HasMedia, Viewable
     public function registerMediaCollections() : void
     {
         $this->addMediaCollection('bootcamp_images')->singleFile();
-        $this->addMediaCollection('bootcamp_videos')->singleFile();
+        $this->addMediaCollection('bootcamp_video')->singleFile();
     }
 
     protected function image(): Attribute
@@ -68,7 +69,7 @@ class Bootcamp extends Model implements HasMedia, Viewable
     }
     protected function video(): Attribute
     {
-        $media = $this->getFirstMedia('bootcamp_videos');
+        $media = $this->getFirstMedia('bootcamp_video');
 
         return Attribute::make(
             get: fn () => [
@@ -89,7 +90,7 @@ class Bootcamp extends Model implements HasMedia, Viewable
 
     public function addVideo(UploadedFile $file): bool|\Spatie\MediaLibrary\MediaCollections\Models\Media
     {
-        return $this->addMedia($file)->toMediaCollection('bootcamp_videos');
+        return $this->addMedia($file)->toMediaCollection('bootcamp_video');
     }
     public function uploadFiles(Request $request): void{
 
@@ -169,5 +170,9 @@ class Bootcamp extends Model implements HasMedia, Viewable
     public function headlines(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Headline::class)->orderBy('order');
+    }
+    public function gallery(): HasOne
+    {
+        return $this->hasOne(BootcampGalleries::class);
     }
 }
