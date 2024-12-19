@@ -44,7 +44,7 @@
                             <button class="col-12 btn btn-primary align-self-center">جستجو</button>
                         </div>
                         <div class="col-3">
-                            <a href="{{route('admin.users.index')}}" class="col-12 btn btn-danger align-self-center">حذف فیلتر ها<i
+                            <a href="{{route('admin.bootcamp-users.index')}}" class="col-12 btn btn-danger align-self-center">حذف فیلتر ها<i
                                 class="fa fa-close"
                                 aria-hidden="true"></i></a>
                         </div>

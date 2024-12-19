@@ -74,7 +74,7 @@
                 </a>
                 <ul class="slide-menu">
                     <li><a href="{{route('admin.course-registers.index')}}" class="slide-item"> درخواست های دوره</a></li>
-                    <li><a href="{{route('admin.users.index')}}" class="slide-item"> درخواست های بوت کمپ </a></li>
+                    <li><a href="{{route('admin.bootcamp-users.index')}}" class="slide-item"> درخواست های بوت کمپ </a></li>
                     <li><a href="{{ route(('admin.cooperation-requests.index') ) }}" class="slide-item">درخواست های همکاری</a></li>
                     <li><a href="{{ route(('admin.consultation-requests.index') ) }}" class="slide-item">درخواست های مشاوره</a></li>
                 </ul>

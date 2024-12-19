@@ -97,7 +97,7 @@
             <div class="card-header border-0">
                 <p class="card-title">آخرین درخواستی های بوت کمپ</p>
                 <div class="card-options">
-                    <a href="{{ route('admin.users.index') }}" class="btn btn-outline-light ml-3">مشاهده
+                    <a href="{{ route('admin.bootcamp-users.index') }}" class="btn btn-outline-light ml-3">مشاهده
                         همه</a>
                 </div>
             </div>

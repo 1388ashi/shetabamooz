@@ -7,7 +7,7 @@
             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}"><i class="fe fe-life-buoy ml-1"></i> داشبورد</a></li>
             <li class="breadcrumb-item active" aria-current="page">لیست کاربران بوت کمپ</li>
         </ol>
-        <form action="{{ route('admin.users.index') }}" method="GET">  
+        <form action="{{ route('admin.bootcamp-users.index') }}" method="GET">  
             <input type="hidden" name="bootcamp_id" value="{{ request('bootcamp_id') }}">  
             <input type="hidden" name="export" value="excel">  
             <button type="submit" class="btn btn-primary">خروجی اکسل</button>  

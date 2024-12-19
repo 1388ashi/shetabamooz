@@ -112,7 +112,7 @@
                                             <i class="fa fa-comment"></i>
                                         </button>   
 
-                                        <a href="{{route('admin.users.index',[$bootcamp->id])}}"
+                                        <a href="{{route('admin.bootcamp-users.index',[$bootcamp->id])}}"
                                             class="btn btn-secondary btn-sm text-white" data-toggle="tooltip"
                                             data-original-title="نمایش کابران">
                                              <i class="fa fa-users" data-original-title="mdi-account"></i>
