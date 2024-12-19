@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="card-body">
-            <form action="{{ route("admin.users.index") }}">
+            <form action="{{ route("admin.bootcamp-users.index") }}">
                 <div class="row">
                     <div class="col-4 col-lg-4 form-group">
                         <label class="font-weight-bold">نام:</label>
