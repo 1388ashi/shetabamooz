@@ -238,7 +238,7 @@
         @endforeach
       </section>
   <br>
-    @if ($bootcamp->its_over == 1)
+    @if ($bootcamp->its_over == 1 && isset($bootcampGalleries[0]))
       <section class="containerFlouidBootcamp bg-color-green-10 marginSection">
         <section class="containerBootcamp">
           <div class="text-center my-5">
