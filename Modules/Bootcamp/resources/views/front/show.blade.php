@@ -257,6 +257,7 @@
               @endif
             </div>  
           </div>  
+          @if (isset($bootcampGalleries[0]))
           <div class="text-center" style="margin-top: 5rem !important;">
             <h3 style="margin-top: 5rem !important;" class="text-color-indigo-main">نظرات هنرجویان</h3>
             <p class="font-s-lg text-color-green">
@@ -270,6 +271,7 @@
               @endforeach
             </div>
           </div>
+          @endif
         </section>
       </section>
     @endif
