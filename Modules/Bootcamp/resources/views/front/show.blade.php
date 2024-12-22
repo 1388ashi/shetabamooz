@@ -238,7 +238,7 @@
         @endforeach
       </section>
   <br>
-    @if ($bootcamp->its_over == 1 && isset($bootcampGalleries[0]))
+    @if ($bootcamp->its_over == 1)
       <section class="containerFlouidBootcamp bg-color-green-10 marginSection">
         <section class="containerBootcamp">
           <div class="text-center my-5">
@@ -250,9 +250,11 @@
           <div class="d-flex mb-4 justify-content-center">  
             <div class="row col-12">  
               <video class="bootcamp-video col-12 col-md-4" src="{{ $bootcamp->video['url'] }}" controls></video>  
-              @foreach ($bootcampGalleries[0]->galleries as $item)  
-                <img src="{{ $item['url'] }}" class="bootcamp-image col-12 col-md-4" />  
-              @endforeach  
+              @if (isset($bootcampGalleries[0]))
+                @foreach ($bootcampGalleries[0]->galleries as $item)  
+                  <img src="{{ $item['url'] }}" class="bootcamp-image col-12 col-md-4" />  
+                @endforeach  
+              @endif
             </div>  
           </div>  
           <div class="text-center" style="margin-top: 5rem !important;">
