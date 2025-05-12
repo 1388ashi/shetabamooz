@@ -267,9 +267,9 @@
                                                 <div class="col-md-5">
                                                     <!-- Image -->
                                                     <img
-                                                        src="{{ $course->professor->image }}"
+                                                        src="{{ $course->professor?->image }}"
                                                         class="img-fluid rounded-3"
-                                                        alt="{{ $course->professor->image }}"
+                                                        alt="{{ $course->professor?->image }}"
                                                     />
                                                 </div>
                                                 <div class="col-md-7">
