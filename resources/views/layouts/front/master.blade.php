@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
 <head>
@@ -217,21 +218,29 @@
             <!-- Logo END -->
 
             <!-- Responsive navbar toggler -->
-            <button
-                class="navbar-toggler ms-auto"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarCollapse"
-                aria-controls="navbarCollapse"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-            <span class="navbar-toggler-animation">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-            </button>
+            <div class="d-flex">
+                <div class="navbar-toggler">
+                    <a href="https://panel.shetabamooz.com/student/login" class="btn btn-danger-soft mb-0 justify-content-center align-items-center">
+                        <i class="fas fa-sign-in-alt me-2"></i>ورود هنرجو
+                    </a>
+                </div>
+                <button
+                    class="navbar-toggler ms-auto"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-animation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    </span>
+                </button>
+            </div>
+
 
             <!-- Main navbar START -->
             <div class="navbar-collapse w-100 collapse" id="navbarCollapse">
@@ -300,11 +309,11 @@
                         </form>
                     </div>
                 </div>
-                <div class="navbar-nav d-none d-lg-inline-block">
+                <div class="navbar-nav d-lg-inline-block">
                     <a href="https://panel.shetabamooz.com/student/login" class="btn btn-danger-soft mb-0 d-flex justify-content-center align-items-center">
                       <i class="fas fa-sign-in-alt me-2"></i>ورود هنرجو
                     </a>
-                  </div>
+                </div>
                 <!-- Nav Search END -->
 
                 <!-- Signout button  -->
