@@ -3,8 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Modules\Bootcamp\App\Models\Bootcamp;
-use Modules\Bootcamp\App\Models\BootcampUser;
 
 return new class extends Migration
 {
@@ -13,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bootcamp_bootcamp_user', function (Blueprint $table) {
+        Schema::create('game_gifts', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Bootcamp::class)->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(BootcampUser::class)->constrained()->cascadeOnDelete();
+            $table->string('title');
+            $table->text('gift');
+            $table->foreignId('game_id')->constrained('games')->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bootcamp_user');
+        Schema::dropIfExists('game_gifts');
     }
 };

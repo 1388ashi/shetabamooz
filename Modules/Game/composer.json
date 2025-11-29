@@ -1,0 +1,31 @@
+{
+    "name": "nwidart/game",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Game\\": "",
+            "Modules\\Game\\App\\": "app/",
+            "Modules\\Game\\Database\\Factories\\": "database/factories/",
+            "Modules\\Game\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Game\\Tests\\": "tests/"
+        }
+    }
+}

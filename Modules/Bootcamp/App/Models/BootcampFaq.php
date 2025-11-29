@@ -5,7 +5,6 @@ namespace Modules\Bootcamp\App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Kyslik\ColumnSortable\Sortable;
-use Modules\Bootcamp\Database\factories\BootcampFaqFactory;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 

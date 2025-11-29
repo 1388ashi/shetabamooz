@@ -33,6 +33,15 @@
             </li>
             <li class="slide">
                 <a class="side-menu__item" data-toggle="slide" href="#">
+                    <i class=" fa fa-trophy sidemenu_icon"></i>
+                    <span class="side-menu__label">مدیریت مسابقات</span><i class="angle fa fa-angle-left"></i>
+                </a>
+                <ul class="slide-menu">
+                    <li><a href="{{route('admin.games.index')}}" class="slide-item">مسابقه ها</a></li>
+                </ul>
+            </li>
+            <li class="slide">
+                <a class="side-menu__item" data-toggle="slide" href="#">
                     <i class=" fa fa-graduation-cap sidemenu_icon"></i>
                     <span class="side-menu__label">مدیریت بوت کمپ ها</span><i class="angle fa fa-angle-left"></i>
                 </a>
@@ -74,6 +83,7 @@
                 </a>
                 <ul class="slide-menu">
                     <li><a href="{{route('admin.course-registers.index')}}" class="slide-item"> درخواست های دوره</a></li>
+                    <li><a href="{{route('admin.game-users.index')}}" class="slide-item"> درخواست های مسابقه </a></li>
                     <li><a href="{{route('admin.bootcamp-users.index')}}" class="slide-item"> درخواست های بوت کمپ </a></li>
                     <li><a href="{{ route(('admin.cooperation-requests.index') ) }}" class="slide-item">درخواست های همکاری</a></li>
                     <li><a href="{{ route(('admin.consultation-requests.index') ) }}" class="slide-item">درخواست های مشاوره</a></li>

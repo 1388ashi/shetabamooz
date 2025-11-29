@@ -149,9 +149,6 @@
 @endsection
 
 @section('scripts')
-
-
-    <script src="{{asset('assets\plugins\sweet-alert\sweetalert.min.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
     <script src="{{asset('js/app.js')}}"></script>
 
