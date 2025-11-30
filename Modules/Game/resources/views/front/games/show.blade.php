@@ -108,6 +108,7 @@
             <div class="fs-6 text-color-green">جهت اطلاعات بیشتر با این شماره تماس بگیرید:09119002509</div>
             <form class="mt-4" action="{{route('game-users.store')}}" method="POST">
                 @csrf
+                <input type="hidden" name="game_id" value="{{ $game->id }}">
                 <div class="form-group" >
                     <label for="name" class="text-nowrap">نام شما</label>
                     <input type="text" name="name" class="form-control" id="name" placeholder="مثال: عرشیا بطیاری">
