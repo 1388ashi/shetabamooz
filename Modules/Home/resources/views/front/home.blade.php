@@ -797,7 +797,7 @@
             @endforeach
         </section>
     @endif
-    @if ($bootcamps && count($bootcamps) > 0)
+    {{-- @if ($bootcamps && count($bootcamps) > 0)
     <section class="containerFlouidBootcamp marginSection my-7">
         <h1 class="text-center" style="font-size: 28px">بوت کمپ های شتاب آموز</h1>
         @foreach ($bootcamps as $bootcamp)
@@ -860,7 +860,7 @@
             </section>
         @endforeach
     </section>
-    @endif
+    @endif --}}
 
       <!-- =======================
         Instructor START -->
