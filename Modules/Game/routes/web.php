@@ -29,4 +29,4 @@ Route::webSuperGroup('admin', function () {
     
 });
 
-Route::Resource('bootcamps', \Modules\Game\App\Http\Controllers\Front\GameController::class)->only(['show']);
+Route::Resource('games', \Modules\Game\App\Http\Controllers\Front\GameController::class)->only(['show']);

@@ -9,6 +9,7 @@ use Illuminate\Http\Response;
 use Modules\Blog\App\Models\Post;
 use Modules\Bootcamp\App\Models\Bootcamp;
 use Modules\Course\App\Models\Course;
+use Modules\Game\App\Models\Game;
 use Modules\Home\App\Models\StudentPov;
 use Modules\Professor\App\Models\Professor;
 
@@ -21,8 +22,9 @@ class HomeController extends Controller
         $posts = Post::query()->latest('id')->active()->take(6)->get();
         $studentPovs = StudentPov::query()->latest('id')->active()->get();
         $bootcamps = Bootcamp::query()->where('status',1)->latest('id')->take(4)->get();
+        $games = Game::query()->where('status',1)->latest('id')->take(4)->get();
 
-        return view('home::front.home',compact('courses','professors','posts','studentPovs','bootcamps'));
+        return view('home::front.home',compact('courses','professors','posts','studentPovs','bootcamps','games'));
     }
 
     public function search()
