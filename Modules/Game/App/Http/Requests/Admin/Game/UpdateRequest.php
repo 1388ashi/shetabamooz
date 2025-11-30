@@ -16,6 +16,7 @@ class UpdateRequest extends FormRequest
 
             'fromhours' => 'required|max:193',
             'catering' => 'nullable|max:193',
+            'fromhours_num' => 'required|integer',
             'published_at' => 'required|date',
             'summary' => 'required|min:3|max:5000',
            

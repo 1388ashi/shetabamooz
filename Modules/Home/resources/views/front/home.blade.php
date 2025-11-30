@@ -630,7 +630,57 @@
         </section>
         <!-- =======================
     Counter END -->
-   
+    @if ($games && count($games) > 0)
+         <section class="containerFlouidBootcamp marginSection my-7">
+        <h1 class="text-center" style="font-size: 28px">مسابقات شتاب آموز</h1>
+        @foreach ($games as $game)
+            <section>
+            <article>
+                <div class="cardBootcamp text-color-indigo-main">
+                    <figure>
+                    <img   src="{{ $game->image['url'] }}" alt="">
+                </figure>
+                <div class="informationCardBootcamp">
+                    <div class="dateCard">
+                        <h1>{{verta($game->published_at)->format('%d')}}</h1>
+                        <span>{{verta($game->published_at)->format('%B %d')}}</span>
+                    </div>
+                    <div class="mainInformation">
+                        <h6 class="font-s-xl text-color-indigo-main">{{$game->title}}</h6>
+                        <div class="clockAndPlace">
+                        <div class="d-flex gap-2 align-items-center">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3a6ea5" class="bi bi-clock-fill" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                            </svg>
+                        </div>
+                        <div class="mt-1">{{$game->fromhours}}</div>
+                    </div>
+                    <div class="d-flex gap-2 align-items-center">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3a6ea5" class="bi bi-map" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.5.5 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103M10 1.91l-4-.8v12.98l4 .8zm1 12.98 4-.8V1.11l-4 .8zm-6-.8V1.11l-4 .8v12.98z"/>
+                            </svg>
+                        </div>
+                        <div>{{ $game->eventplace }}</div>
+                        </div>
+                    </div>
+                    <p>{{$game->summary}}</p>
+                    <div class="d-flex justify-content-between align-items-end">
+                        <div class="">
+                            <h5 class="text-color-gray">هزینه مسایقه:</h5>
+                            <h4 class="text-color-green">رایگان</h4>
+                        </div>
+                        <a href="{{route('games.show',$game->slug)}}" class="buttonBootCamp">بیشتر</a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                </article>
+            </section>
+        @endforeach
+    </section>
+    @endif
         <!-- =======================
     IT courses START -->
         <section>
@@ -747,70 +797,7 @@
         </section>
         <!-- =======================
     Client feedback END -->
-    @if ($games && count($games) > 0)
-         <section class="containerFlouidBootcamp marginSection my-7">
-        <h1 class="text-center" style="font-size: 28px">بوت کمپ های شتاب آموز</h1>
-        @foreach ($games as $game)
-            <section>
-            <article>
-                <div class="cardBootcamp text-color-indigo-main">
-                    <figure>
-                    <img   src="{{ $game->image['url'] }}" alt="">
-                </figure>
-                <div class="informationCardBootcamp">
-                    <div class="dateCard">
-                        <h1>{{verta($game->published_at)->format('%d')}}</h1>
-                        <span>{{verta($game->published_at)->format('%B %d')}}</span>
-                    </div>
-                    <div class="mainInformation">
-                        <h6 class="font-s-xl text-color-indigo-main">{{$game->title}}</h6>
-                        <div class="clockAndPlace">
-                        <div class="d-flex gap-2 align-items-center">
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3a6ea5" class="bi bi-clock-fill" viewBox="0 0 16 16">
-                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
-                            </svg>
-                        </div>
-                        <div class="mt-1">{{$game->fromhours}}</div>
-                    </div>
-                    <div class="d-flex gap-2 align-items-center">
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#3a6ea5" class="bi bi-map" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.5.5 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103M10 1.91l-4-.8v12.98l4 .8zm1 12.98 4-.8V1.11l-4 .8zm-6-.8V1.11l-4 .8v12.98z"/>
-                            </svg>
-                        </div>
-                        <div>{{ $game->eventplace }}</div>
-                        </div>
-                    </div>
-                    <p>{{$game->summary}}</p>
-                    <div class="d-flex justify-content-between align-items-end">
-                        <div class="">
-                            @if ($game->price !== null)
-                            @if($game->discount !== null)
-                                <h6 ><del class="off">قیمت اصلی: {{ $game->getPrice() }} تومان </del></h6>
-                                <h5 style="margin-bottom: 0px" class="text-color-green">قیمت با تخفیف: {{ number_format($game->getPriceWithDiscount()) }} تومان </h5>
-                                @else
-                                <h5 style="margin-bottom: 0px" class="text-color-green">قیمت: {{$game->getPrice() }} تومان </h5>
-                                @endif
-                            @else
-                            <h4 class="text-color-green">رایگان</h4>
-                            @endif
-                            @if ($game->its_over == 1)
-                                <h5 class="text-danger">برگزار شده</h5>
-                            @elseif($game->is_registers == 1)
-                                <h5 class="text-success">در حال ثبت نام</h5>
-                            @endif
-                        </div>
-                        <a href="{{route('games.show',$game->slug)}}" class="buttonBootCamp">بیشتر</a>
-                    </div>
-                    </div>
-                </div>
-                </div>
-                </article>
-            </section>
-        @endforeach
-    </section>
-    @endif
+   
     @if ($bootcamps && count($bootcamps) > 0)
     <section class="containerFlouidBootcamp marginSection my-7">
         <h1 class="text-center" style="font-size: 28px">بوت کمپ های شتاب آموز</h1>

@@ -30,3 +30,4 @@ Route::webSuperGroup('admin', function () {
 });
 
 Route::Resource('games', \Modules\Game\App\Http\Controllers\Front\GameController::class)->only(['show']);
+Route::post('/game-users',[\Modules\Game\App\Http\Controllers\Front\GameUserController::class,'store'])->name('game-users.store');

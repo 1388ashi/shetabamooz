@@ -25,7 +25,7 @@ class Game extends Model implements HasMedia
     protected $fillable = [
         'title','subtitle','summary','description','count_users','prerequisite','eventplace','video_link',
         'fromhours','published_at','slug','image_alt','meta_title','meta_description','meta_robots','canonical_tag',
-        'catering','status',
+        'catering','status','fromhours_num'
     ];
     
     protected $with = ['media'];

@@ -18,6 +18,7 @@ class StoreRequest extends FormRequest
             'image' => 'required|image',
 
             'fromhours' => 'required|max:193',
+            'fromhours_num' => 'required|integer',
             'catering' => 'nullable|max:193',
             'published_at' => 'required|date',
             'summary' => 'required|min:3|max:5000',

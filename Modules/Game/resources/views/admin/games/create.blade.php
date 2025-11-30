@@ -119,6 +119,12 @@
                                         <input class="form-control" type="number" name="count_users"  placeholder="ظرفیت نفرات را وارد کنید" value="{{ old('count_users') }}" required>
                                     </div>
                                 </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="label" class="control-label">ساعت شروع مسابقه(عدد)</label><span class="text-danger">&starf;</span>
+                                        <input class="form-control" type="number" name="fromhours_num" placeholder="ساعت شروع مسابقه را وارد کنید" value="{{ old('fromhours_num') }}" required>
+                                    </div>
+                                </div>
                                 <div class="col-2">
                                     <label for="label" class="control-label"> وضعیت نمایش: </label>
                                     <label class="custom-control custom-checkbox">
