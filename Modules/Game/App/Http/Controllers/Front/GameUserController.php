@@ -17,8 +17,7 @@ class GameUserController extends Controller
         $user = GameUser::create($request->validated());
         $user->games()->attach($request->game_id);
         $game = Game::find($request->game_id);
-        $publishedAt = verta($game->published_at)->format('%B %d');
-        dd($publishedAt,$game->fromhours_num);
+        $publishedAt = verta($game->published_at)->format('Y/n/j');
 
         $pattern = app(CoreSettings::class)->get('sms.patterns.shetabamooz_game_register');
 
