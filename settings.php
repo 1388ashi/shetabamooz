@@ -9,8 +9,10 @@ return [
             'shetabamooz_bootcamp_hour_reminder' => 'shetabamooz-bootcamp-hour-reminder',
             'shetabamooz_bootcamp_day_reminder' => 'shetabamooz-bootcamp-day-reminder',
             'shetabamooz_bootcamp_register' => 'shetabamooz-bootcamp-register',
+            'shetabamooz_bootcamp_comment_video' => 'shetabamooz-bootcamp-comment-video',
             'shetabamooz_sms_comments' => 'shetabamooz-sms-comments',
-            'shetabamooz_game_register' => 'shetabamooz-game-register'
+            'shetabamooz_game_register' => 'shetabamooz-game-register',
+            'shetabamooz_game_day_reminder' => 'shetabamooz-game-day-reminder'
         ],
         'new_order' => [
             'dont_send_full_name' => false
