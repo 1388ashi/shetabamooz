@@ -97,7 +97,7 @@
                         $rank = $loop->iteration;
                         $colorClass = match ($rank) {
                             1 => 'gold',
-                            2 => 'silver',
+                            2 => 'silver',           
                             3 => 'bronze',
                             default => 'normal',
                         };
@@ -115,7 +115,6 @@
             </div>
         </section>
         @endif
-        <!-- contact US -->
         <section id="bottom" class="contactUs containerBootcamp marginSection">
             <div class="widthTwoSection sectionRightBootcamp" id="form-register">
                 <div class="form-container">
