@@ -89,7 +89,6 @@
         </section>
         <br>
         @if ($game->gameGifts && count($game->gameGifts) > 0)
-        @endif
         <section class="gifts-section">
             <div class="gifts-title">جوایز مسابقه</div>
             <div class="gifts-list">
@@ -115,6 +114,7 @@
                 @endforeach
             </div>
         </section>
+        @endif
         <!-- contact US -->
         <section id="bottom" class="contactUs containerBootcamp marginSection">
             <div class="widthTwoSection sectionRightBootcamp" id="form-register">

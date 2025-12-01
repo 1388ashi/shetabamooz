@@ -671,7 +671,7 @@
                             <h5 class="text-color-gray">هزینه مسایقه:</h5>
                             <h4 class="text-color-green">رایگان</h4>
                         </div>
-                        <a href="{{route('games.show',$game->slug)}}" class="buttonBootCamp">بیشتر</a>
+                        <a href="{{route('games.show',$game->slug)}}" class="buttonBootCamp">ثبت نام</a>
                     </div>
                     </div>
                 </div>
