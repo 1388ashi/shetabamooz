@@ -23,7 +23,7 @@ Route::webSuperGroup('admin', function () {
     route::get('game-gifts/{game}/{gameGift}/edit',[GiftController::class,'edit'])->name('game-gifts.edit');
 
     Route::get('game-users/{id?}',[GameUserController::class,'index'])->name('game-users.index');
-    Route::patch('game-users/{GameUser}', [GameUserController::class,'update'])->name('game-users.update');
+    Route::patch('game-users/{gameUser}', [GameUserController::class,'update'])->name('game-users.update');
     Route::post('/status/changes', [GameUserController::class,'changeStatusSelectedOrders'])->name('game-users.changeStatusSelectedUsers');
 
     

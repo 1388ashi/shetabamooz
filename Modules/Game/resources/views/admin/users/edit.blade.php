@@ -16,7 +16,7 @@
                     <div class="form-group">
                         <select class="select2" name="status">
                             <option value="rejected" @selected($user->status == 'rejected')>ثبت نام نمیکند</option>
-                            <option value="accepted" @selected($user->status == 'accepted')>حاضر</option>
+                            <option value="accepted" @selected($user->status == 'accepted')>ثبت نام میکند</option>
                         </select>
                     </div>
                 </div>

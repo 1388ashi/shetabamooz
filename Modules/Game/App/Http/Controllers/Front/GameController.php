@@ -13,7 +13,7 @@ class GameController extends Controller
 {
     public function show($slug)
     {
-        $game = Game::where('slug',$slug)->first();
+        $game = Game::where('slug',$slug)->with('gameGifts')->first();
         $countUsers = GameUser::whereHas('games', function ($query) use ($game) {  
             return $query->where('games.id', $game->id);  
         })->count();

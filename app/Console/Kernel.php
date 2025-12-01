@@ -5,6 +5,7 @@ namespace App\Console;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use Modules\Bootcamp\Jobs\SmsBootcampUsersJob;
+use Modules\Game\Jobs\SmsGameUsersJob;
 
 class Kernel extends ConsoleKernel
 {
@@ -15,6 +16,7 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('sitemap:generate')->dailyAt('01:00');
         $schedule->job(SmsBootcampUsersJob::class)->everyMinute();
+        $schedule->job(SmsGameUsersJob::class)->everyMinute();
     }
 
     /**

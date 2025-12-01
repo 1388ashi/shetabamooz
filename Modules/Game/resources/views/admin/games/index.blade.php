@@ -79,7 +79,6 @@
                                     <td>@include('components.status', ['status' => $game->status])</td>
                                     <td>{{ $game->getJalaliCreatedAt() }}</td>
                                     <td>
-
                                         {{-- <form id="send-sms-form" class="d-none" action="{{route('admin.games.index')}}" method="get">
                                             <input type="hidden" name="send_sms" value="1">
                                             <input type="hidden" name="game_id" value="1">
@@ -95,11 +94,7 @@
                                             <i class="fa fa-comment"></i>
                                         </button>    --}}
 
-                                        {{-- <a href="{{route('admin.game-users.index',[$game->id])}}"
-                                            class="btn btn-secondary btn-sm text-white" data-toggle="tooltip"
-                                            data-original-title="نمایش کابران">
-                                             <i class="fa fa-users" data-original-title="mdi-account"></i>
-                                         </a> --}}
+                                       
                                         <button type="button" class="btn btn-secondary btn-sm text-white"
                                             data-toggle="modal"
                                             title="جوایز"
@@ -107,7 +102,11 @@
                                                 <i class="fa fa-gift" aria-hidden="true" data-toggle="tooltip"
                                                 data-original-title="جوایز"></i>
                                             </button>
-
+                                        <a href="{{route('admin.game-users.index',[$game->id])}}"
+                                            class="btn btn-success btn-sm text-white" data-toggle="tooltip"
+                                            data-original-title="نمایش کابران">
+                                             <i class="fa fa-users" data-original-title="mdi-account"></i>
+                                         </a>
                                         {{-- <a href="{{ route('admin.games.show', [$game->id]) }}"
                                             class="btn btn-primary btn-sm text-white" data-toggle="tooltip"
                                             data-original-title="نمایش"><i class="fa fa-eye"></i></a> --}}

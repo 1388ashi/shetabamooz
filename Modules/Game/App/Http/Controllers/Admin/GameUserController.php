@@ -48,9 +48,9 @@ class GameUserController extends Controller
     
         return view('game::admin.users.index', compact('users','games'));  
     }
-    public function update(Request $request,GameUser $user): RedirectResponse
+    public function update(Request $request,GameUser $gameUser): RedirectResponse
     {
-        $user->update([
+        $gameUser->update([
             'status' => $request->status,
         ]);
 

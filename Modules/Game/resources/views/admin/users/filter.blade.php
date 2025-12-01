@@ -32,7 +32,7 @@
                                 <option value="">همه</option>
                                 <option value="new" @selected(request("status") == "new")>جدید</option>
                                 <option value="rejected" @selected(request("status") == 'rejected')>ثبت نام نمیکند</option>
-                                <option value="accepted" @selected(request("status") == 'accepted')>حاضر</option>
+                                <option value="accepted" @selected(request("status") == 'accepted')>ثبت نام میکند</option>
                             </select>
                         </div>
                     </div>

@@ -12,7 +12,7 @@
                     <div class="form-group">
                         <select class="form-control status2" id="status2" required>
                             <option value="">- انتخاب کنید -</option>
-                            <option value="accepted">حاضر در مسابقه</option>
+                            <option value="accepted">ثبت نام میکند</option>
                             <option value="rejected">ثبت نام نمیکند</option>
                         </select>
                     </div>

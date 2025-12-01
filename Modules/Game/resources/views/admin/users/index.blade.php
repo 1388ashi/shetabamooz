@@ -14,7 +14,6 @@
         </form>
     </div>
     <!--  Page-header closed -->
-<!------->
 
     <!-- row opened -->
     <div class="row">
@@ -41,7 +40,7 @@
                             @csrf
                             <thead>
                             <tr>
-                                <th class="wd-20p" style="width: 5%;"><input type="checkbox" id="check_all"></th>
+                                <th class="border-top">انتخاب</th>
                                 <th class="border-top">@sortablelink('id', 'ردیف')</th>
                                 <th class="border-top">@sortablelink('name', 'نام و نام خانوادگی')</th>
                                 <th class="border-top">@sortablelink('mobile', 'شماره موبایل')</th>
