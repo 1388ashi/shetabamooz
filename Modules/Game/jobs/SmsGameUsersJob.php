@@ -44,7 +44,7 @@ class SmsGameUsersJob implements ShouldQueue
                     $this->sendSmsTomorrow($game,$user);  
                 }  
             }  
-            Log::info('پیام با موفقیت برای همه رفت برای بوک‌کمپ‌های فردا.');  
+            Log::info('پیام با موفقیت برای همه رفت برای مسابقه های فردا.');  
         }  
     }  
     
